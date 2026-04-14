@@ -5142,3 +5142,7 @@
 5142,,Kenya,,36.82,-1.29,580000,4/18/24,5/31/24,News,267,280000,Heavy Rain / Flooding,2,
 5143,,Nigeria,,13.15,11.83,920000,9/9/24,9/30/24,News,300,400000,Heavy Rain / Flooding (Maiduguri),2,
 5144,,Mali,,-3.0,16.26,1240000,8/1/24,9/30/24,News,100,350000,Heavy Rain / Flooding,2,
+5145,,Gambia (PROJECTION 2050),,-16.48,13.49,2000,1/1/30,12/31/50,Model,0,50000,Permanent Coastal Inundation Risk (Barra),2,
+5146,,Gambia (PROJECTION 2050),,-16.35,13.51,5000,1/1/30,12/31/50,Model,0,0,Total Salinity Loss (Rice Fields),2,
+5147,,Gambia (PROJECTION 2050),,-15.85,13.58,8000,1/1/30,12/31/50,Model,0,0,Extreme Heat Stress (>40C for 290 days/yr),1.5,
+5148,,Gambia (PROJECTION 2050),,-15.6,13.55,3000,1/1/30,12/31/50,Model,0,0,Flash Flood Intensity Increase (+34%),2,

@@ -41,8 +41,10 @@
 </head>
 <body>
     <div class="map-title">
-        <h2 style="margin:0; font-size: 20px;">Global Flood Archive</h2>
-        <p style="margin:5px 0 0 0; font-size: 13px; color: #666;">Data: DFO (1985-2021) + Manual Add (2024-2025)</p>
+        <h2 style="margin:0; font-size: 20px;">Global Flood & Climate Archive</h2>
+        <p style="margin:5px 0 0 0; font-size: 13px; color: #666;">Data: DFO (1985-2021) + Projections (2030-2050)</p>
+        
+        <!-- ... filter groups remain unchanged ... -->
         
         <div class="filter-group">
             <label for="yearSelect">Filter by Year:</label>
@@ -64,6 +66,18 @@
                 <option value="all">All Causes</option>
             </select>
         </div>
+
+        <div id="legend" style="margin-top: 15px; font-size: 12px;">
+            <strong>Legend:</strong><br>
+            <span style="color:#e31a1c">●</span> High Severity Flood (2)<br>
+            <span style="color:#fd8d3c">●</span> Med-High Flood (1.5)<br>
+            <span style="color:#feb24c">●</span> Medium Flood (1)<br>
+            <span style="color:#8c6d31">●</span> Drought / Deficit<br>
+            <span style="color:#d73027">●</span> Bushfire<br>
+            <span style="color:#7b3294">●</span> Coastal Erosion<br>
+            <span style="color:#969696">●</span> Salinity / Saltwater<br>
+            <span style="color:#00fafa">●</span> <strong>Future Projection (2050)</strong>
+        </div>
     </div>
     <div id="map"></div>
 
@@ -74,7 +88,7 @@
 
     <script>
         // 1. Initialize the map
-        var map = L.map('map').setView([5, 15], 4); // View centered on Africa
+        var map = L.map('map').setView([13.5, -16.0], 8); // Zoomed back to NBR for predictions
         var geojsonLayer;
         var allData;
 
@@ -84,23 +98,7 @@
             attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         }).addTo(map);
 
-        // 3. Add Legend to map title
-        const legendDiv = document.createElement('div');
-        legendDiv.style.marginTop = '15px';
-        legendDiv.style.fontSize = '12px';
-        legendDiv.innerHTML = `
-            <strong>Legend:</strong><br>
-            <span style="color:#e31a1c">●</span> High Severity Flood (2)<br>
-            <span style="color:#fd8d3c">●</span> Med-High Flood (1.5)<br>
-            <span style="color:#feb24c">●</span> Medium Flood (1)<br>
-            <span style="color:#8c6d31">●</span> Drought / Deficit<br>
-            <span style="color:#d73027">●</span> Bushfire<br>
-            <span style="color:#7b3294">●</span> Coastal Erosion<br>
-            <span style="color:#969696">●</span> Salinity / Saltwater
-        `;
-        document.querySelector('.map-title').appendChild(legendDiv);
-
-        // ... existing fetch and populateFilters code ...
+        // 3. Load the GeoJSON data
         fetch('floods.geojson?v=' + new Date().getTime())
             .then(response => response.json())
             .then(data => {
@@ -187,7 +185,7 @@
                 pointToLayer: function (feature, latlng) {
                     return L.circleMarker(latlng, {
                         radius: 6,
-                        fillColor: getColor(feature.properties.severity, feature.properties.cause),
+                        fillColor: getColor(feature.properties.severity, feature.properties.cause, feature.properties.country),
                         color: "#fff",
                         weight: 1,
                         opacity: 1,
@@ -207,9 +205,13 @@
             }).addTo(map);
         }
 
-        function getColor(s, cause) {
+        function getColor(s, cause, country) {
             const causeLower = cause ? cause.toLowerCase() : "";
+            const countryLower = country ? country.toLowerCase() : "";
             
+            if (countryLower.includes('projection')) {
+                return '#00fafa'; // Cyan for Future Projections
+            }
             if (causeLower.includes('deficit') || causeLower.includes('drought')) {
                 return '#8c6d31'; // Brownish/Tan for drought/deficit
             }

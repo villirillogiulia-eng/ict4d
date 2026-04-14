@@ -87431,6 +87431,74 @@
         "date": "8/1/24",
         "severity": "2"
       }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.48,
+          13.49
+        ]
+      },
+      "properties": {
+        "id": "5145",
+        "country": "Gambia (PROJECTION 2050)",
+        "cause": "Permanent Coastal Inundation Risk (Barra)",
+        "date": "1/1/30",
+        "severity": "2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.35,
+          13.51
+        ]
+      },
+      "properties": {
+        "id": "5146",
+        "country": "Gambia (PROJECTION 2050)",
+        "cause": "Total Salinity Loss (Rice Fields)",
+        "date": "1/1/30",
+        "severity": "2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.85,
+          13.58
+        ]
+      },
+      "properties": {
+        "id": "5147",
+        "country": "Gambia (PROJECTION 2050)",
+        "cause": "Extreme Heat Stress (>40C for 290 days/yr)",
+        "date": "1/1/30",
+        "severity": "1.5"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.6,
+          13.55
+        ]
+      },
+      "properties": {
+        "id": "5148",
+        "country": "Gambia (PROJECTION 2050)",
+        "cause": "Flash Flood Intensity Increase (+34%)",
+        "date": "1/1/30",
+        "severity": "2"
+      }
     }
   ]
 }
