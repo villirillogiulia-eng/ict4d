@@ -46,7 +46,8 @@
         }).addTo(map);
 
         // 3. Load the GeoJSON data we created
-        fetch('floods.geojson')
+        // Added a timestamp (?v=) to prevent the browser from caching the old, empty file
+        fetch('floods.geojson?v=' + new Date().getTime())
             .then(response => {
                 if (!response.ok) {
                     throw new Error("Could not load floods.geojson. Make sure the file exists!");
@@ -54,6 +55,19 @@
                 return response.json();
             })
             .then(data => {
+                console.log("Loaded " + data.features.length + " features.");
+                
+                // Add a simple legend or status indicator
+                var status = L.control({position: 'bottomleft'});
+                status.onAdd = function (map) {
+                    var div = L.DomUtil.create('div', 'info status');
+                    div.innerHTML = '<div style="background: white; padding: 5px; border-radius: 5px; border: 1px solid #ccc;">' +
+                                    '<strong>Loaded:</strong> ' + data.features.length + ' flood events' +
+                                    '</div>';
+                    return div;
+                };
+                status.addTo(map);
+
                 L.geoJSON(data, {
                     // Style the points as small circles
                     pointToLayer: function (feature, latlng) {
