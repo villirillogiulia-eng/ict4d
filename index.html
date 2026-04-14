@@ -43,6 +43,7 @@
     <div class="map-title">
         <h2 style="margin:0; font-size: 20px;">Global Flood & Climate Archive</h2>
         <p style="margin:5px 0 0 0; font-size: 13px; color: #666;">Data: DFO (1985-2021) + Projections (2030-2050)</p>
+        <p style="margin:5px 0 0 0; font-size: 11px; color: #0078ff;"><em>Switch backgrounds (Satellite/Terrain) using the icon on the right.</em></p>
         
         <!-- ... filter groups remain unchanged ... -->
         
@@ -101,21 +102,33 @@
         var geojsonLayer;
         var allData;
 
-        // 2. Add the base layer
-        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        // 2. Define Base Layers
+        var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 18,
             attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-        }).addTo(map);
+        });
 
-        // 3. Load the GeoJSON data
-        fetch('floods.geojson?v=' + new Date().getTime())
-            .then(response => response.json())
-            .then(data => {
-                allData = data;
-                populateFilters(data);
-                updateMap();
-            })
-            .catch(error => console.error('Error loading the GeoJSON:', error));
+        var satellite = L.tileLayer('https://tiles.maps.eox.at/wmts?layer=s2cloudless-2023&style=default&tilematrixset=googlemaps&Service=WMTS&Request=GetTile&Version=1.0.0&Format=image%2Fjpeg&TileMatrix={z}&TileCol={x}&TileRow={y}', {
+            attribution: '© <a href="https://s2maps.eu" target="_blank">EOX IT Services GmbH</a> (Contains modified Copernicus Sentinel data)'
+        });
+
+        var terrain = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+            maxZoom: 17,
+            attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a>'
+        });
+
+        // Add default layer
+        osm.addTo(map);
+
+        // 3. Add Layer Control
+        var baseMaps = {
+            "OpenStreetMap": osm,
+            "Satellite (Sentinel-2)": satellite,
+            "Terrain (Topography)": terrain
+        };
+        L.control.layers(baseMaps).addTo(map);
+
+        // ... existing Legend and fetch code ...
 
         function populateFilters(data) {
             const years = new Set();
