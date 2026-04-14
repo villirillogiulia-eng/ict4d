@@ -74,7 +74,7 @@
 
     <script>
         // 1. Initialize the map
-        var map = L.map('map').setView([20, 0], 2);
+        var map = L.map('map').setView([13.5, -16.0], 8); // Zoomed in to NBR Gambia by default
         var geojsonLayer;
         var allData;
 
@@ -84,7 +84,20 @@
             attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         }).addTo(map);
 
-        // 3. Load the GeoJSON data
+        // 3. Add Legend to map title
+        const legendDiv = document.createElement('div');
+        legendDiv.style.marginTop = '15px';
+        legendDiv.style.fontSize = '12px';
+        legendDiv.innerHTML = `
+            <strong>Legend:</strong><br>
+            <span style="color:#e31a1c">●</span> High Severity (2)<br>
+            <span style="color:#fd8d3c">●</span> Med-High (1.5)<br>
+            <span style="color:#feb24c">●</span> Medium (1)<br>
+            <span style="color:#8c6d31">●</span> Drought / Deficit
+        `;
+        document.querySelector('.map-title').appendChild(legendDiv);
+
+        // ... existing fetch and populateFilters code ...
         fetch('floods.geojson?v=' + new Date().getTime())
             .then(response => response.json())
             .then(data => {
@@ -170,12 +183,12 @@
                 },
                 pointToLayer: function (feature, latlng) {
                     return L.circleMarker(latlng, {
-                        radius: 5,
-                        fillColor: getColor(feature.properties.severity),
+                        radius: 6,
+                        fillColor: getColor(feature.properties.severity, feature.properties.cause),
                         color: "#fff",
                         weight: 1,
                         opacity: 1,
-                        fillOpacity: 0.7
+                        fillOpacity: 0.8
                     });
                 },
                 onEachFeature: function (feature, layer) {
@@ -191,10 +204,14 @@
             }).addTo(map);
         }
 
-        function getColor(d) {
-            return d == '2'   ? '#e31a1c' :
-                   d == '1.5' ? '#fd8d3c' :
-                   d == '1'   ? '#feb24c' :
+        function getColor(s, cause) {
+            const causeLower = cause.toLowerCase();
+            if (causeLower.includes('deficit') || causeLower.includes('drought')) {
+                return '#8c6d31'; // Brownish/Tan for drought/deficit
+            }
+            return s == '2'   ? '#e31a1c' :
+                   s == '1.5' ? '#fd8d3c' :
+                   s == '1'   ? '#feb24c' :
                                 '#ffeda0';
         }
     </script>

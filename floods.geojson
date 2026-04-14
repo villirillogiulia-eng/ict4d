@@ -87261,6 +87261,40 @@
         "date": "9/1/24",
         "severity": "1.5"
       }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.0,
+          13.5
+        ]
+      },
+      "properties": {
+        "id": "5135",
+        "country": "Gambia",
+        "cause": "Rainfall Deficit / Dry Spell",
+        "date": "6/1/24",
+        "severity": "1"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.0,
+          13.52
+        ]
+      },
+      "properties": {
+        "id": "5136",
+        "country": "Gambia",
+        "cause": "Delayed Onset / Rainfall Deficit",
+        "date": "6/1/25",
+        "severity": "1"
+      }
     }
   ]
 }
