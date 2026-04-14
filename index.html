@@ -74,7 +74,7 @@
 
     <script>
         // 1. Initialize the map
-        var map = L.map('map').setView([13.5, -16.0], 8); // Zoomed in to NBR Gambia by default
+        var map = L.map('map').setView([5, 15], 4); // View centered on Africa
         var geojsonLayer;
         var allData;
 
@@ -90,10 +90,13 @@
         legendDiv.style.fontSize = '12px';
         legendDiv.innerHTML = `
             <strong>Legend:</strong><br>
-            <span style="color:#e31a1c">●</span> High Severity (2)<br>
-            <span style="color:#fd8d3c">●</span> Med-High (1.5)<br>
-            <span style="color:#feb24c">●</span> Medium (1)<br>
-            <span style="color:#8c6d31">●</span> Drought / Deficit
+            <span style="color:#e31a1c">●</span> High Severity Flood (2)<br>
+            <span style="color:#fd8d3c">●</span> Med-High Flood (1.5)<br>
+            <span style="color:#feb24c">●</span> Medium Flood (1)<br>
+            <span style="color:#8c6d31">●</span> Drought / Deficit<br>
+            <span style="color:#d73027">●</span> Bushfire<br>
+            <span style="color:#7b3294">●</span> Coastal Erosion<br>
+            <span style="color:#969696">●</span> Salinity / Saltwater
         `;
         document.querySelector('.map-title').appendChild(legendDiv);
 
@@ -205,10 +208,21 @@
         }
 
         function getColor(s, cause) {
-            const causeLower = cause.toLowerCase();
+            const causeLower = cause ? cause.toLowerCase() : "";
+            
             if (causeLower.includes('deficit') || causeLower.includes('drought')) {
                 return '#8c6d31'; // Brownish/Tan for drought/deficit
             }
+            if (causeLower.includes('fire') || causeLower.includes('bushfire')) {
+                return '#d73027'; // Dark Red for bushfires
+            }
+            if (causeLower.includes('erosion')) {
+                return '#7b3294'; // Purple for coastal erosion
+            }
+            if (causeLower.includes('salinity') || causeLower.includes('saltwater')) {
+                return '#969696'; // Grey for salinity intrusion
+            }
+            
             return s == '2'   ? '#e31a1c' :
                    s == '1.5' ? '#fd8d3c' :
                    s == '1'   ? '#feb24c' :

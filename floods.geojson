@@ -87295,6 +87295,142 @@
         "date": "6/1/25",
         "severity": "1"
       }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.54,
+          13.48
+        ]
+      },
+      "properties": {
+        "id": "5137",
+        "country": "Gambia",
+        "cause": "Coastal Erosion (Barra)",
+        "date": "1/1/24",
+        "severity": "1.5"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.45,
+          13.52
+        ]
+      },
+      "properties": {
+        "id": "5138",
+        "country": "Gambia",
+        "cause": "Salinity Intrusion (Lower Niumi)",
+        "date": "1/1/24",
+        "severity": "1.5"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.9,
+          13.55
+        ]
+      },
+      "properties": {
+        "id": "5139",
+        "country": "Gambia",
+        "cause": "Record Bushfires (112 fires)",
+        "date": "3/1/24",
+        "severity": "1.5"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.05,
+          -17.82
+        ]
+      },
+      "properties": {
+        "id": "5140",
+        "country": "Zimbabwe",
+        "cause": "El Nino Drought",
+        "date": "1/1/24",
+        "severity": "2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.84,
+          -13.13
+        ]
+      },
+      "properties": {
+        "id": "5141",
+        "country": "Zambia",
+        "cause": "El Nino Drought",
+        "date": "1/1/24",
+        "severity": "2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.82,
+          -1.29
+        ]
+      },
+      "properties": {
+        "id": "5142",
+        "country": "Kenya",
+        "cause": "Heavy Rain / Flooding",
+        "date": "4/18/24",
+        "severity": "2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.15,
+          11.83
+        ]
+      },
+      "properties": {
+        "id": "5143",
+        "country": "Nigeria",
+        "cause": "Heavy Rain / Flooding (Maiduguri)",
+        "date": "9/9/24",
+        "severity": "2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.0,
+          16.26
+        ]
+      },
+      "properties": {
+        "id": "5144",
+        "country": "Mali",
+        "cause": "Heavy Rain / Flooding",
+        "date": "8/1/24",
+        "severity": "2"
+      }
     }
   ]
 }
