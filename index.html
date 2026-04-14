@@ -3,29 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Map of Turin</title>
+    <title>Global Historical Flood Archive (1985-2024)</title>
+    <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
      crossorigin=""/>
     <style>
-        body { margin: 0; padding: 0; }
+        body { margin: 0; padding: 0; font-family: sans-serif; }
         #map { height: 100vh; width: 100%; }
+        .map-title {
+            position: absolute;
+            top: 10px;
+            left: 50px;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        }
     </style>
 </head>
 <body>
+    <div class="map-title">
+        <h2 style="margin:0;">Global Historical Flood Events</h2>
+        <p style="margin:5px 0 0 0; font-size: 14px;">Data from the Dartmouth Flood Observatory (1985-2024)</p>
+    </div>
     <div id="map"></div>
+
+    <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
      crossorigin=""></script>
+
     <script>
-        var map = L.map('map').setView([45.0703, 7.6869], 13);
+        // 1. Initialize the map with a global view
+        var map = L.map('map').setView([20, 0], 2);
+
+        // 2. Add the OpenStreetMap base layer
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 19,
+            maxZoom: 18,
             attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         }).addTo(map);
-        L.marker([45.0703, 7.6869]).addTo(map)
-            .bindPopup('Turin, Italy')
-            .openPopup();
+
+        // 3. Load the GeoJSON data we created
+        fetch('floods.geojson')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Could not load floods.geojson. Make sure the file exists!");
+                }
+                return response.json();
+            })
+            .then(data => {
+                L.geoJSON(data, {
+                    // Style the points as small circles
+                    pointToLayer: function (feature, latlng) {
+                        return L.circleMarker(latlng, {
+                            radius: 4,
+                            fillColor: "#0078ff",
+                            color: "#fff",
+                            weight: 1,
+                            opacity: 1,
+                            fillOpacity: 0.6
+                        });
+                    },
+                    // Add a popup for each flood
+                    onEachFeature: function (feature, layer) {
+                        var popupContent = `
+                            <div style="font-size: 14px;">
+                                <strong>${feature.properties.country}</strong><br>
+                                <b>Date:</b> ${feature.properties.date}<br>
+                                <b>Cause:</b> ${feature.properties.cause}<br>
+                                <b>Severity:</b> ${feature.properties.severity}
+                            </div>
+                        `;
+                        layer.bindPopup(popupContent);
+                        
+                        // Highlight on hover
+                        layer.on('mouseover', function (e) {
+                            this.setStyle({ fillOpacity: 1, radius: 6 });
+                        });
+                        layer.on('mouseout', function (e) {
+                            this.setStyle({ fillOpacity: 0.6, radius: 4 });
+                        });
+                    }
+                }).addTo(map);
+            })
+            .catch(error => {
+                console.error('Error loading the GeoJSON:', error);
+                alert("Error loading flood data. Check the console for details.");
+            });
     </script>
 </body>
 </html>
