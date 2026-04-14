@@ -42,7 +42,7 @@
 <body>
     <div class="map-title">
         <h2 style="margin:0; font-size: 20px;">Global Flood Archive</h2>
-        <p style="margin:5px 0 0 0; font-size: 13px; color: #666;">Data: Dartmouth Flood Observatory (1985-2024)</p>
+        <p style="margin:5px 0 0 0; font-size: 13px; color: #666;">Data: Dartmouth Flood Observatory (1985-2021)</p>
         
         <div class="filter-group">
             <label for="yearSelect">Filter by Year:</label>
@@ -55,6 +55,13 @@
             <label for="countrySelect">Filter by Country:</label>
             <select id="countrySelect">
                 <option value="all">All Countries</option>
+            </select>
+        </div>
+
+        <div class="filter-group">
+            <label for="causeSelect">Filter by Cause:</label>
+            <select id="causeSelect">
+                <option value="all">All Causes</option>
             </select>
         </div>
     </div>
@@ -90,6 +97,7 @@
         function populateFilters(data) {
             const years = new Set();
             const countries = new Set();
+            const causes = new Set();
 
             data.features.forEach(f => {
                 const dateParts = f.properties.date.split('/');
@@ -101,6 +109,7 @@
                     years.add(year);
                 }
                 if (f.properties.country) countries.add(f.properties.country.trim());
+                if (f.properties.cause) causes.add(f.properties.cause.trim());
             });
 
             const yearSelect = document.getElementById('yearSelect');
@@ -119,13 +128,25 @@
                 countrySelect.appendChild(opt);
             });
 
+            const causeSelect = document.getElementById('causeSelect');
+            Array.from(causes).sort().forEach(cause => {
+                if (cause) {
+                    const opt = document.createElement('option');
+                    opt.value = cause;
+                    opt.textContent = cause;
+                    causeSelect.appendChild(opt);
+                }
+            });
+
             yearSelect.addEventListener('change', updateMap);
             countrySelect.addEventListener('change', updateMap);
+            causeSelect.addEventListener('change', updateMap);
         }
 
         function updateMap() {
             const selectedYear = document.getElementById('yearSelect').value;
             const selectedCountry = document.getElementById('countrySelect').value;
+            const selectedCause = document.getElementById('causeSelect').value;
 
             if (geojsonLayer) {
                 map.removeLayer(geojsonLayer);
@@ -144,7 +165,8 @@
                     
                     const yearMatch = selectedYear === 'all' || year === selectedYear;
                     const countryMatch = selectedCountry === 'all' || feature.properties.country.trim() === selectedCountry;
-                    return yearMatch && countryMatch;
+                    const causeMatch = selectedCause === 'all' || feature.properties.cause.trim() === selectedCause;
+                    return yearMatch && countryMatch && causeMatch;
                 },
                 pointToLayer: function (feature, latlng) {
                     return L.circleMarker(latlng, {
