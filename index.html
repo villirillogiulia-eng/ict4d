@@ -16,17 +16,47 @@
             top: 10px;
             left: 50px;
             z-index: 1000;
-            background: rgba(255, 255, 255, 0.8);
-            padding: 10px;
-            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 8px;
             box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            width: 300px;
+        }
+        .filter-group {
+            margin-top: 15px;
+        }
+        .filter-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+        .filter-group select {
+            width: 100%;
+            padding: 5px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
         }
     </style>
 </head>
 <body>
     <div class="map-title">
-        <h2 style="margin:0;">Global Historical Flood Events</h2>
-        <p style="margin:5px 0 0 0; font-size: 14px;">Data from the Dartmouth Flood Observatory (1985-2024)</p>
+        <h2 style="margin:0; font-size: 20px;">Global Flood Archive</h2>
+        <p style="margin:5px 0 0 0; font-size: 13px; color: #666;">Data: Dartmouth Flood Observatory (1985-2024)</p>
+        
+        <div class="filter-group">
+            <label for="yearSelect">Filter by Year:</label>
+            <select id="yearSelect">
+                <option value="all">All Years</option>
+            </select>
+        </div>
+
+        <div class="filter-group">
+            <label for="countrySelect">Filter by Country:</label>
+            <select id="countrySelect">
+                <option value="all">All Countries</option>
+            </select>
+        </div>
     </div>
     <div id="map"></div>
 
@@ -36,76 +66,115 @@
      crossorigin=""></script>
 
     <script>
-        // 1. Initialize the map with a global view
+        // 1. Initialize the map
         var map = L.map('map').setView([20, 0], 2);
+        var geojsonLayer;
+        var allData;
 
-        // 2. Add the OpenStreetMap base layer
+        // 2. Add the base layer
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 18,
             attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         }).addTo(map);
 
-        // 3. Load the GeoJSON data we created
-        // Added a timestamp (?v=) to prevent the browser from caching the old, empty file
+        // 3. Load the GeoJSON data
         fetch('floods.geojson?v=' + new Date().getTime())
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error("Could not load floods.geojson. Make sure the file exists!");
-                }
-                return response.json();
-            })
+            .then(response => response.json())
             .then(data => {
-                console.log("Loaded " + data.features.length + " features.");
-                
-                // Add a simple legend or status indicator
-                var status = L.control({position: 'bottomleft'});
-                status.onAdd = function (map) {
-                    var div = L.DomUtil.create('div', 'info status');
-                    div.innerHTML = '<div style="background: white; padding: 5px; border-radius: 5px; border: 1px solid #ccc;">' +
-                                    '<strong>Loaded:</strong> ' + data.features.length + ' flood events' +
-                                    '</div>';
-                    return div;
-                };
-                status.addTo(map);
-
-                L.geoJSON(data, {
-                    // Style the points as small circles
-                    pointToLayer: function (feature, latlng) {
-                        return L.circleMarker(latlng, {
-                            radius: 4,
-                            fillColor: "#0078ff",
-                            color: "#fff",
-                            weight: 1,
-                            opacity: 1,
-                            fillOpacity: 0.6
-                        });
-                    },
-                    // Add a popup for each flood
-                    onEachFeature: function (feature, layer) {
-                        var popupContent = `
-                            <div style="font-size: 14px;">
-                                <strong>${feature.properties.country}</strong><br>
-                                <b>Date:</b> ${feature.properties.date}<br>
-                                <b>Cause:</b> ${feature.properties.cause}<br>
-                                <b>Severity:</b> ${feature.properties.severity}
-                            </div>
-                        `;
-                        layer.bindPopup(popupContent);
-                        
-                        // Highlight on hover
-                        layer.on('mouseover', function (e) {
-                            this.setStyle({ fillOpacity: 1, radius: 6 });
-                        });
-                        layer.on('mouseout', function (e) {
-                            this.setStyle({ fillOpacity: 0.6, radius: 4 });
-                        });
-                    }
-                }).addTo(map);
+                allData = data;
+                populateFilters(data);
+                updateMap();
             })
-            .catch(error => {
-                console.error('Error loading the GeoJSON:', error);
-                alert("Error loading flood data. Check the console for details.");
+            .catch(error => console.error('Error loading the GeoJSON:', error));
+
+        function populateFilters(data) {
+            const years = new Set();
+            const countries = new Set();
+
+            data.features.forEach(f => {
+                const dateParts = f.properties.date.split('/');
+                if (dateParts.length === 3) {
+                    let year = dateParts[2];
+                    if (year.length === 2) {
+                        year = parseInt(year) > 25 ? '19' + year : '20' + year;
+                    }
+                    years.add(year);
+                }
+                if (f.properties.country) countries.add(f.properties.country.trim());
             });
+
+            const yearSelect = document.getElementById('yearSelect');
+            Array.from(years).sort().reverse().forEach(year => {
+                const opt = document.createElement('option');
+                opt.value = year;
+                opt.textContent = year;
+                yearSelect.appendChild(opt);
+            });
+
+            const countrySelect = document.getElementById('countrySelect');
+            Array.from(countries).sort().forEach(country => {
+                const opt = document.createElement('option');
+                opt.value = country;
+                opt.textContent = country;
+                countrySelect.appendChild(opt);
+            });
+
+            yearSelect.addEventListener('change', updateMap);
+            countrySelect.addEventListener('change', updateMap);
+        }
+
+        function updateMap() {
+            const selectedYear = document.getElementById('yearSelect').value;
+            const selectedCountry = document.getElementById('countrySelect').value;
+
+            if (geojsonLayer) {
+                map.removeLayer(geojsonLayer);
+            }
+
+            geojsonLayer = L.geoJSON(allData, {
+                filter: function(feature) {
+                    const dateParts = feature.properties.date.split('/');
+                    let year = '';
+                    if (dateParts.length === 3) {
+                        year = dateParts[2];
+                        if (year.length === 2) {
+                            year = parseInt(year) > 25 ? '19' + year : '20' + year;
+                        }
+                    }
+                    
+                    const yearMatch = selectedYear === 'all' || year === selectedYear;
+                    const countryMatch = selectedCountry === 'all' || feature.properties.country.trim() === selectedCountry;
+                    return yearMatch && countryMatch;
+                },
+                pointToLayer: function (feature, latlng) {
+                    return L.circleMarker(latlng, {
+                        radius: 5,
+                        fillColor: getColor(feature.properties.severity),
+                        color: "#fff",
+                        weight: 1,
+                        opacity: 1,
+                        fillOpacity: 0.7
+                    });
+                },
+                onEachFeature: function (feature, layer) {
+                    layer.bindPopup(`
+                        <div style="font-size: 14px;">
+                            <strong>${feature.properties.country}</strong><br>
+                            <b>Date:</b> ${feature.properties.date}<br>
+                            <b>Cause:</b> ${feature.properties.cause}<br>
+                            <b>Severity:</b> ${feature.properties.severity}
+                        </div>
+                    `);
+                }
+            }).addTo(map);
+        }
+
+        function getColor(d) {
+            return d == '2'   ? '#e31a1c' :
+                   d == '1.5' ? '#fd8d3c' :
+                   d == '1'   ? '#feb24c' :
+                                '#ffeda0';
+        }
     </script>
 </body>
 </html>
