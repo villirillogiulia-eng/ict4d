@@ -87499,6 +87499,74 @@
         "date": "1/1/30",
         "severity": "2"
       }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.02,
+          13.51
+        ]
+      },
+      "properties": {
+        "id": "5149",
+        "country": "Gambia (NBR)",
+        "cause": "Sept 2025 Flood: Barra-Kerewan Culvert Collapse",
+        "date": "8/30/25",
+        "severity": "2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.55,
+          13.28
+        ]
+      },
+      "properties": {
+        "id": "5150",
+        "country": "Gambia (WCR)",
+        "cause": "Sept 2025 Flood: 1,321 Households Affected",
+        "date": "8/30/25",
+        "severity": "1.5"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -14.21,
+          13.38
+        ]
+      },
+      "properties": {
+        "id": "5151",
+        "country": "Gambia (URR)",
+        "cause": "Sept 2025 Flood: Basse flash floods",
+        "date": "8/30/25",
+        "severity": "1.5"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.07,
+          13.58
+        ]
+      },
+      "properties": {
+        "id": "5152",
+        "country": "Gambia (CRR)",
+        "cause": "Sept 2025 Flood: Janjanbureh WASH contamination risk",
+        "date": "8/30/25",
+        "severity": "1.5"
+      }
     }
   ]
 }

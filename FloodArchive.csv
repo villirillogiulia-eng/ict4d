@@ -5146,3 +5146,7 @@
 5146,,Gambia (PROJECTION 2050),,-16.35,13.51,5000,1/1/30,12/31/50,Model,0,0,Total Salinity Loss (Rice Fields),2,
 5147,,Gambia (PROJECTION 2050),,-15.85,13.58,8000,1/1/30,12/31/50,Model,0,0,Extreme Heat Stress (>40C for 290 days/yr),1.5,
 5148,,Gambia (PROJECTION 2050),,-15.6,13.55,3000,1/1/30,12/31/50,Model,0,0,Flash Flood Intensity Increase (+34%),2,
+5149,,Gambia (NBR),,-16.02,13.51,2256,8/30/25,9/17/25,IFRC GO,7,240,Sept 2025 Flood: Barra-Kerewan Culvert Collapse,2,
+5150,,Gambia (WCR),,-16.55,13.28,1764,8/30/25,9/17/25,IFRC GO,0,0,"Sept 2025 Flood: 1,321 Households Affected",1.5,
+5151,,Gambia (URR),,-14.21,13.38,2000,8/30/25,9/17/25,IFRC GO,1,0,Sept 2025 Flood: Basse flash floods,1.5,
+5152,,Gambia (CRR),,-15.07,13.58,1500,8/30/25,9/17/25,IFRC GO,0,0,Sept 2025 Flood: Janjanbureh WASH contamination risk,1.5,
