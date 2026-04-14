@@ -87210,6 +87210,57 @@
         "date": "10/4/21",
         "severity": "1.5"
       }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.25,
+          13.5
+        ]
+      },
+      "properties": {
+        "id": "5132",
+        "country": "Gambia",
+        "cause": "Torrential Rain (Bridge Collapse)",
+        "date": "9/10/25",
+        "severity": "2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.8,
+          13.55
+        ]
+      },
+      "properties": {
+        "id": "5133",
+        "country": "Gambia",
+        "cause": "Monsoonal Rain (NBR)",
+        "date": "8/30/25",
+        "severity": "1.5"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.52,
+          13.57
+        ]
+      },
+      "properties": {
+        "id": "5134",
+        "country": "Gambia",
+        "cause": "Flash Flood & Windstorm (Sabach Sanjal)",
+        "date": "9/1/24",
+        "severity": "1.5"
+      }
     }
   ]
 }
