@@ -333,11 +333,11 @@
                                     className: 'pulse-marker'
                                 }).bindPopup(`
                                     <div style="font-size: 14px;">
-                                        <b style="color: orange;">GDACS DISASTER ALERT</b><br>
-                                        <strong>${props.eventname}</strong><br>
+                                        <b style="color: orange;"><i class="fa-solid fa-triangle-exclamation"></i> GDACS DISASTER ALERT</b><br>
+                                        <strong style="display:block; margin-top:5px;">${props.eventname}</strong>
                                         <b>Hazard:</b> ${props.eventtype}<br>
                                         <b>Severity:</b> ${props.severitydata?.severity || 'Alert'}<br>
-                                        <a href="${props.url?.report}" target="_blank">Full GDACS Report</a>
+                                        <a href="${props.url?.report}" target="_blank" style="display:block; margin-top:10px; color:orange; font-weight:600;">Full GDACS Report →</a>
                                     </div>
                                 `);
                                 liveLayer.addLayer(marker);
@@ -376,10 +376,10 @@
 
                                 marker.bindPopup(`
                                     <div style="font-size: 14px;">
-                                        <b style="color: blue;">RELIEFWEB REPORT</b><br>
-                                        <strong>${d.fields.name}</strong><br>
+                                        <b style="color: blue;"><i class="fa-solid fa-file-invoice"></i> RELIEFWEB REPORT</b><br>
+                                        <strong style="display:block; margin-top:5px;">${d.fields.name}</strong>
                                         <b>Country:</b> ${country}<br>
-                                        <a href="${d.fields.url}" target="_blank">Full Report on ReliefWeb</a>
+                                        <a href="${d.fields.url}" target="_blank" style="display:block; margin-top:10px; color:blue; font-weight:600;">View ReliefWeb Report →</a>
                                     </div>
                                 `);
                                 liveLayer.addLayer(marker);
@@ -388,7 +388,7 @@
                     });
             });
 
-            // D. Fetch from Open-Meteo for River Points
+            // D. Fetch from Open-Meteo for River Points (Forecasting)
             const riverPoints = [
                 { name: "Basse Santa Su", lat: 13.31, lon: -14.21 },
                 { name: "Janjanbureh", lat: 13.59, lon: -14.76 },
@@ -403,17 +403,17 @@
                         const discharge = data.daily.river_discharge[0];
                         const marker = L.circleMarker([point.lat, point.lon], {
                             radius: 8,
-                            fillColor: discharge > 1000 ? '#ff00ff' : '#0000ff', // Simple logic: pink if high, blue if normal
+                            fillColor: discharge > 1000 ? '#ff00ff' : '#0000ff',
                             color: '#fff',
                             weight: 1,
                             opacity: 1,
                             fillOpacity: 0.5
                         }).bindPopup(`
                             <div style="font-size: 14px;">
-                                <b>LIVE RIVER FORECAST</b><br>
-                                <strong>Location:</strong> ${point.name}<br>
+                                <b style="color: #0000ff;"><i class="fa-solid fa-water"></i> RIVER FORECAST</b><br>
+                                <strong style="display:block; margin-top:5px;">${point.name}</strong>
                                 <b>Current Discharge:</b> ${discharge} m³/s<br>
-                                <p style="font-size: 11px; color: #666;">Source: Open-Meteo (GloFAS v4)</p>
+                                <p style="font-size: 11px; color: #666; margin-top:10px;">Source: Open-Meteo (GloFAS v4)</p>
                             </div>
                         `);
                         liveLayer.addLayer(marker);
