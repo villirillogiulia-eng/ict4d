@@ -37,6 +37,15 @@
             border-radius: 4px;
             border: 1px solid #ccc;
         }
+        /* Pulsing animation for live markers */
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.7; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .pulse-marker {
+            animation: pulse 1.5s infinite ease-in-out;
+        }
     </style>
 </head>
 <body>
@@ -92,6 +101,7 @@
         // 1. Initialize the map
         var map = L.map('map').setView([13.44, -15.45], 8); // Centered on Gambia
         var geojsonLayer;
+        var liveLayer = L.layerGroup();
         var allData;
 
         // 2. Define Base Layers
@@ -109,16 +119,20 @@
             attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a>'
         });
 
-        // Add default layer
         osm.addTo(map);
+        liveLayer.addTo(map);
 
         // 3. Add Layer Control
         var baseMaps = {
             "OpenStreetMap": osm,
-            "Satellite (Sentinel-2)": satellite,
+            "Satellite (Esri)": satellite,
             "Terrain (Topography)": terrain
         };
-        L.control.layers(baseMaps).addTo(map);
+        var overlayMaps = {
+            "Historical & Projections": L.layerGroup(), // Placeholder, will be replaced by geojsonLayer
+            "Live Alerts (IFRC/Forecast)": liveLayer
+        };
+        var layerControl = L.control.layers(baseMaps, overlayMaps).addTo(map);
 
         // 4. Load the GeoJSON data
         fetch('floods.geojson?v=' + new Date().getTime())
@@ -133,16 +147,83 @@
                 document.getElementById('status').innerHTML = "<b>Data Loaded: " + data.features.length + " events</b>";
                 document.getElementById('status').style.color = "green";
                 
+                // Add the historical layer to the control correctly
+                layerControl.addOverlay(geojsonLayer, "Historical & Projections");
+
                 // Automatically zoom to fit all markers on load
                 if (geojsonLayer && geojsonLayer.getLayers().length > 0) {
                     map.fitBounds(geojsonLayer.getBounds(), { padding: [50, 50] });
                 }
+
+                // Load live data after static data
+                loadLiveAlerts();
             })
             .catch(error => {
                 console.error('Error loading the GeoJSON:', error);
                 document.getElementById('status').innerHTML = "<b>Error loading data!</b>";
                 document.getElementById('status').style.color = "red";
             });
+
+        function loadLiveAlerts() {
+            // A. Fetch from IFRC GO (Gambia ID: 70)
+            fetch('https://goadmin.ifrc.org/api/v2/event/?countries__in=70&limit=5')
+                .then(res => res.json())
+                .then(data => {
+                    data.results.forEach(event => {
+                        const date = new Date(event.disaster_start_date).toLocaleDateString();
+                        const marker = L.circleMarker([13.45, -16.57], { // Default to Banjul for national alerts
+                            radius: 12,
+                            fillColor: '#ff0000',
+                            color: '#fff',
+                            weight: 2,
+                            opacity: 1,
+                            fillOpacity: 0.6,
+                            className: 'pulse-marker'
+                        }).bindPopup(`
+                            <div style="font-size: 14px; width: 200px;">
+                                <b style="color: red;">LIVE EMERGENCY (IFRC)</b><br>
+                                <strong>${event.name}</strong><br>
+                                <b>Type:</b> ${event.dtype.name}<br>
+                                <b>Started:</b> ${date}<br>
+                                <a href="https://go.ifrc.org/emergencies/${event.id}" target="_blank">View on IFRC GO</a>
+                            </div>
+                        `);
+                        liveLayer.addLayer(marker);
+                    });
+                });
+
+            // B. Fetch from Open-Meteo for River Points (Forecasting)
+            const riverPoints = [
+                { name: "Basse Santa Su", lat: 13.31, lon: -14.21 },
+                { name: "Janjanbureh", lat: 13.59, lon: -14.76 },
+                { name: "Mansa Konko", lat: 13.46, lon: -15.54 },
+                { name: "Banjul", lat: 13.45, lon: -16.57 }
+            ];
+
+            riverPoints.forEach(point => {
+                fetch(`https://flood-api.open-meteo.com/v1/flood?latitude=${point.lat}&longitude=${point.lon}&daily=river_discharge&forecast_days=1`)
+                    .then(res => res.json())
+                    .then(data => {
+                        const discharge = data.daily.river_discharge[0];
+                        const marker = L.circleMarker([point.lat, point.lon], {
+                            radius: 8,
+                            fillColor: discharge > 1000 ? '#ff00ff' : '#0000ff', // Simple logic: pink if high, blue if normal
+                            color: '#fff',
+                            weight: 1,
+                            opacity: 1,
+                            fillOpacity: 0.5
+                        }).bindPopup(`
+                            <div style="font-size: 14px;">
+                                <b>LIVE RIVER FORECAST</b><br>
+                                <strong>Location:</strong> ${point.name}<br>
+                                <b>Current Discharge:</b> ${discharge} m³/s<br>
+                                <p style="font-size: 11px; color: #666;">Source: Open-Meteo (GloFAS v4)</p>
+                            </div>
+                        `);
+                        liveLayer.addLayer(marker);
+                    });
+            });
+        }
 
         function populateFilters(data) {
             const years = new Set();
