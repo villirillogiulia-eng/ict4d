@@ -289,6 +289,62 @@
         "date": "8/30/25",
         "severity": "1.5"
       }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-16.5790, 13.4549]
+      },
+      "properties": {
+        "id": "R001",
+        "country": "The Gambia (Banjul)",
+        "cause": "Coastal Erosion & Sea Level Rise",
+        "date": "1/1/50",
+        "severity": "2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-15.00, 14.50]
+      },
+      "properties": {
+        "id": "R002",
+        "country": "Senegal/Sahel",
+        "cause": "Drought & Desertification Risk",
+        "date": "1/1/24",
+        "severity": "1.5"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-17.0028, 14.7289]
+      },
+      "properties": {
+        "id": "R003",
+        "country": "Senegal",
+        "cause": "Historical Regional Flood (2012)",
+        "date": "8/24/12",
+        "severity": "1.5"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-7.65, 16.245]
+      },
+      "properties": {
+        "id": "R004",
+        "country": "Mauritania",
+        "cause": "Historical Regional Flood (2010)",
+        "date": "8/19/10",
+        "severity": "1.5"
+      }
     }
   ]
 }

@@ -50,9 +50,9 @@
 </head>
 <body>
     <div class="map-title">
-        <h2 style="margin:0; font-size: 20px;">Gambia Flood & Climate Archive</h2>
-        <p style="margin:5px 0 0 0; font-size: 13px; color: #666;">Historical Events (1985-2024) + Climate Projections (2050)</p>
-        <p style="margin:5px 0 0 0; font-size: 11px; color: #0078ff;"><em>Switch backgrounds (Satellite/Terrain) using the icon on the right.</em></p>
+        <h2 style="margin:0; font-size: 20px;">Gambia & Regional Climate Risk</h2>
+        <p style="margin:5px 0 0 0; font-size: 13px; color: #666;">Historical Hazards & Future Risks (1985-2050)</p>
+        <p style="margin:5px 0 0 0; font-size: 11px; color: #0078ff;"><em>Includes neighboring risks in Senegal, Mali, and Mauritania.</em></p>
         <p id="status" style="margin:5px 0 0 0; font-size: 12px; color: orange;"><b>Loading Data...</b></p>
         
         <div class="filter-group">
@@ -303,9 +303,17 @@
                     return yearMatch && causeMatch;
                 },
                 pointToLayer: function (feature, latlng) {
+                    const dateParts = (feature.properties.date || "").split('/');
+                    let year = '';
+                    if (dateParts.length === 3) {
+                        year = dateParts[2];
+                        if (year.length === 2) {
+                            year = parseInt(year) > 25 ? '19' + year : '20' + year;
+                        }
+                    }
                     return L.circleMarker(latlng, {
                         radius: 6,
-                        fillColor: getColor(feature.properties.severity, feature.properties.cause, feature.properties.country),
+                        fillColor: getColor(feature.properties.severity, feature.properties.cause, feature.properties.country, year),
                         color: "#fff",
                         weight: 1,
                         opacity: 1,
@@ -336,11 +344,11 @@
             }
         }
 
-        function getColor(s, cause, country) {
+        function getColor(s, cause, country, year) {
             const causeLower = cause ? cause.toLowerCase() : "";
             const countryLower = country ? country.toLowerCase() : "";
             
-            if (countryLower.includes('projection')) {
+            if (countryLower.includes('projection') || year === '2050' || parseInt(year) >= 2050) {
                 return '#00fafa'; // Cyan for Future Projections
             }
             if (causeLower.includes('deficit') || causeLower.includes('drought')) {
