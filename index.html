@@ -166,10 +166,15 @@
 
         function loadLiveAlerts() {
             // A. Fetch from IFRC GO (Gambia ID: 70)
-            fetch('https://goadmin.ifrc.org/api/v2/event/?countries__in=70&limit=5')
+            fetch('https://goadmin.ifrc.org/api/v2/event/?countries__in=70&limit=10')
                 .then(res => res.json())
                 .then(data => {
+                    const climateCategories = ['Flood', 'Pluvial/Flash Flood', 'Drought', 'Cyclone', 'Heat Wave', 'Cold Wave', 'Storm Surge', 'Wildfire', 'Storm', 'Fire'];
+                    
                     data.results.forEach(event => {
+                        // Filter: Only include climate-related alerts
+                        if (!climateCategories.includes(event.dtype.name)) return;
+
                         const date = new Date(event.disaster_start_date).toLocaleDateString();
                         const marker = L.circleMarker([13.45, -16.57], { // Default to Banjul for national alerts
                             radius: 12,
@@ -181,7 +186,7 @@
                             className: 'pulse-marker'
                         }).bindPopup(`
                             <div style="font-size: 14px; width: 200px;">
-                                <b style="color: red;">LIVE EMERGENCY (IFRC)</b><br>
+                                <b style="color: red;">LIVE CLIMATE EMERGENCY (IFRC)</b><br>
                                 <strong>${event.name}</strong><br>
                                 <b>Type:</b> ${event.dtype.name}<br>
                                 <b>Started:</b> ${date}<br>
