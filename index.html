@@ -168,10 +168,11 @@
                 <div class="legend-item"><div class="legend-dot" style="background:#fd8d3c"></div> Med-High Flood (1.5)</div>
                 <div class="legend-item"><div class="legend-dot" style="background:#feb24c"></div> Medium Flood (1)</div>
                 <div class="legend-item"><div class="legend-dot" style="background:#8c6d31"></div> Drought / Deficit</div>
+                <div class="legend-item"><div class="legend-dot" style="background:#fd8d3c"></div> Near-Term Projection (2026-2030)</div>
+                <div class="legend-item"><div class="legend-dot" style="background:#7b3294"></div> Future Projection (2050)</div>
                 <div class="legend-item"><div class="legend-dot" style="background:#d73027"></div> Bushfire</div>
                 <div class="legend-item"><div class="legend-dot" style="background:#7b3294"></div> Coastal Erosion</div>
                 <div class="legend-item"><div class="legend-dot" style="background:#969696"></div> Salinity / Saltwater</div>
-                <div class="legend-item"><div class="legend-dot" style="background:#00fafa"></div> <b>Future Projection (2050)</b></div>
                 <hr style="border: 0; border-top: 1px solid rgba(0,0,0,0.05); margin: 10px 0;">
                 <div class="legend-item"><i class="fa-solid fa-triangle-exclamation" style="color:#ffa500; margin-right:10px;"></i> Disaster Alert (GDACS)</div>
                 <div class="legend-item"><i class="fa-solid fa-water" style="color:#0078ff; margin-right:10px;"></i> River Forecast (GloFAS)</div>
@@ -199,6 +200,7 @@
         var map = L.map('map').setView([13.44, -15.45], 8); // Centered on Gambia
         var geojsonLayer;
         var liveLayer = L.layerGroup();
+        var droughtLayer = L.layerGroup();
         var allData;
 
         // 2. Define Base Layers
@@ -218,6 +220,7 @@
 
         satellite.addTo(map); // Default to Satellite
         liveLayer.addTo(map);
+        droughtLayer.addTo(map);
 
         // 3. Add Layer Control
         var baseMaps = {
@@ -227,7 +230,8 @@
         };
         var overlayMaps = {
             "Historical & Projections": L.layerGroup(), // Placeholder
-            "Regional Live Alerts (IFRC/GDACS/GloFAS)": liveLayer
+            "Drought Projections (Near & Future)": droughtLayer,
+            "Regional Live Alerts (GDACS/GloFAS)": liveLayer
         };
         var layerControl = L.control.layers(baseMaps, overlayMaps).addTo(map);
 
@@ -260,6 +264,7 @@
 
                 // Load live data after static data
                 loadLiveAlerts();
+                loadDroughtProjections();
             })
             .catch(error => {
                 console.error('Error loading the GeoJSON:', error);
@@ -375,6 +380,39 @@
                         liveLayer.addLayer(marker);
                     });
             });
+        }
+
+        function loadDroughtProjections() {
+            fetch('data/drought_projections.geojson')
+                .then(res => res.json())
+                .then(data => {
+                    L.geoJSON(data, {
+                        pointToLayer: (f, latlng) => {
+                            const type = f.properties.type;
+                            let color = '#8c6d31'; // Default brown
+                            if (type.includes("Future")) color = '#7b3294'; // Purple
+                            if (type.includes("Near-Term")) color = '#fd8d3c'; // Orange
+                            
+                            return L.circleMarker(latlng, {
+                                radius: 10,
+                                fillColor: color,
+                                color: "#fff",
+                                weight: 2,
+                                fillOpacity: 0.8
+                            });
+                        },
+                        onEachFeature: (f, layer) => {
+                            layer.bindPopup(`
+                                <div style="font-size: 14px; width: 220px;">
+                                    <b style="color:#8c6d31; display:block; margin-bottom:5px; border-bottom:1px solid #eee; padding-bottom:5px;">${f.properties.type.toUpperCase()}</b>
+                                    <strong>Period:</strong> ${f.properties.year}<br>
+                                    <strong style="display:block; margin-top:5px;">Impact:</strong>
+                                    <span style="color:#444;">${f.properties.impact}</span>
+                                </div>
+                            `);
+                        }
+                    }).addTo(droughtLayer);
+                });
         }
 
         function populateFilters(data) {
