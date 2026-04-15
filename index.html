@@ -152,16 +152,30 @@
             const causes = new Set();
 
             data.features.forEach(f => {
-                if (!f.properties || !f.properties.date) return;
-                const dateParts = f.properties.date.split('/');
-                if (dateParts.length === 3) {
-                    let year = dateParts[2];
-                    if (year.length === 2) {
-                        year = parseInt(year) > 25 ? '19' + year : '20' + year;
+                if (!f.properties) return;
+                
+                // Date normalization
+                if (f.properties.date) {
+                    const dateParts = f.properties.date.split('/');
+                    if (dateParts.length === 3) {
+                        let year = dateParts[2];
+                        if (year.length === 2) {
+                            year = parseInt(year) > 25 ? '19' + year : '20' + year;
+                        }
+                        years.add(year);
                     }
-                    years.add(year);
                 }
-                if (f.properties.country) countries.add(f.properties.country.trim());
+
+                // Country normalization for filtering
+                if (f.properties.country) {
+                    let c = f.properties.country.trim();
+                    if (c.toLowerCase().includes('gambia')) {
+                        countries.add('Gambia (All)');
+                    } else {
+                        countries.add(c);
+                    }
+                }
+                
                 if (f.properties.cause) causes.add(f.properties.cause.trim());
             });
 
@@ -227,7 +241,16 @@
                     const cause = (feature.properties.cause || "").trim();
                     
                     const yearMatch = selectedYear === 'all' || year === selectedYear;
-                    const countryMatch = selectedCountry === 'all' || country === selectedCountry;
+                    
+                    let countryMatch = selectedCountry === 'all';
+                    if (!countryMatch) {
+                        if (selectedCountry === 'Gambia (All)') {
+                            countryMatch = country.toLowerCase().includes('gambia');
+                        } else {
+                            countryMatch = country === selectedCountry;
+                        }
+                    }
+
                     const causeMatch = selectedCause === 'all' || cause === selectedCause;
                     return yearMatch && countryMatch && causeMatch;
                 },
