@@ -173,7 +173,6 @@
                 <div class="legend-item"><div class="legend-dot" style="background:#969696"></div> Salinity / Saltwater</div>
                 <div class="legend-item"><div class="legend-dot" style="background:#00fafa"></div> <b>Future Projection (2050)</b></div>
                 <hr style="border: 0; border-top: 1px solid rgba(0,0,0,0.05); margin: 10px 0;">
-                <div class="legend-item"><i class="fa-solid fa-circle-exclamation" style="color:#ff0000; margin-right:10px;"></i> Live Regional Alert (IFRC)</div>
                 <div class="legend-item"><i class="fa-solid fa-triangle-exclamation" style="color:#ffa500; margin-right:10px;"></i> Disaster Alert (GDACS)</div>
                 <div class="legend-item"><i class="fa-solid fa-water" style="color:#0078ff; margin-right:10px;"></i> River Forecast (GloFAS)</div>
                 <div class="legend-item"><div class="legend-dot" style="background:#0078ff; opacity: 0.6;"></div> Regional Report (ReliefWeb)</div>
@@ -183,7 +182,6 @@
         <div id="live-monitoring" style="margin-top: 25px; padding: 15px; background: rgba(0, 120, 255, 0.05); border-radius: 12px; font-size: 12px;">
             <strong style="display:block; margin-bottom: 8px;"><i class="fa-solid fa-tower-broadcast"></i> Data Sources</strong>
             <ul style="padding-left: 20px; margin: 0; color: #555;">
-                <li style="margin-bottom:4px;"><a href="https://go.ifrc.org/regions/0" target="_blank">IFRC GO Dashboard</a></li>
                 <li style="margin-bottom:4px;"><a href="https://www.gdacs.org/" target="_blank">GDACS Alerts</a></li>
                 <li><a href="https://reliefweb.int/updates?region=46" target="_blank">ReliefWeb West Africa</a></li>
             </ul>
@@ -269,49 +267,7 @@
             });
 
         function loadLiveAlerts() {
-            // A. Fetch from IFRC GO Correct IDs: 
-            // Gambia: 71, Senegal: 151, Mali: 113, Mauritania: 115, Guinea: 79, Guinea-Bissau: 80
-            fetch('https://goadmin.ifrc.org/api/v2/event/?countries__in=71,151,113,115,79,80&limit=15')
-                .then(res => res.json())
-                .then(data => {
-                    const climateCategories = ['Flood', 'Pluvial/Flash Flood', 'Drought', 'Cyclone', 'Heat Wave', 'Cold Wave', 'Storm Surge', 'Wildfire', 'Storm', 'Fire'];
-                    
-                    data.results.forEach(event => {
-                        if (!climateCategories.includes(event.dtype.name)) return;
-
-                        const date = new Date(event.disaster_start_date).toLocaleDateString();
-                        const countryName = event.countries.map(c => c.name).join(', ');
-                        
-                        const marker = L.circleMarker([13.45, -16.57], {
-                            radius: 12,
-                            fillColor: '#ff0000',
-                            color: '#fff',
-                            weight: 2,
-                            opacity: 1,
-                            fillOpacity: 0.6,
-                            className: 'pulse-marker'
-                        });
-
-                        // Randomize position within region if no specific lat/lng provided
-                        const latOffset = (Math.random() - 0.5) * 3;
-                        const lngOffset = (Math.random() - 0.5) * 5;
-                        marker.setLatLng([14.5 + latOffset, -14.5 + lngOffset]);
-
-                        marker.bindPopup(`
-                            <div style="font-size: 14px; width: 220px;">
-                                <b style="color: red;"><i class="fa-solid fa-circle-exclamation"></i> REGIONAL ALERT (IFRC)</b><br>
-                                <strong style="display:block; margin-top:5px;">${event.name}</strong>
-                                <b>Country:</b> ${countryName}<br>
-                                <b>Type:</b> ${event.dtype.name}<br>
-                                <b>Started:</b> ${date}<br>
-                                <a href="https://go.ifrc.org/emergencies/${event.id}" target="_blank" style="display:block; margin-top:10px; color:var(--accent-color); font-weight:600;">View on IFRC GO →</a>
-                            </div>
-                        `);
-                        liveLayer.addLayer(marker);
-                    });
-                });
-
-            // B. Fetch from GDACS (Global Disaster Alert and Coordination System)
+            // A. Fetch from GDACS (Global Disaster Alert and Coordination System)
             // Filtering for West Africa region roughly [10, -18] to [18, -10]
             fetch('https://www.gdacs.org/gdacsapi/api/events/geteventlist/SEARCH?eventlist=FL;DR;WF')
                 .then(res => res.json())
