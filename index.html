@@ -119,6 +119,16 @@
         }
         .pulse-marker { animation: pulse 1.5s infinite ease-in-out; }
         
+        .city-label {
+            background: none;
+            border: none;
+            box-shadow: none;
+            color: #fff;
+            font-weight: 700;
+            font-size: 11px;
+            text-shadow: 2px 2px 0px #000, -2px -2px 0px #000, 2px -2px 0px #000, -2px 2px 0px #000;
+        }
+        
         .btn-health {
             display: block;
             margin-top: 15px;
@@ -201,6 +211,7 @@
         var geojsonLayer;
         var liveLayer = L.layerGroup();
         var droughtLayer = L.layerGroup();
+        var citiesLayer = L.layerGroup();
         var allData;
 
         // 2. Define Base Layers
@@ -221,6 +232,7 @@
         satellite.addTo(map); // Default to Satellite
         liveLayer.addTo(map);
         droughtLayer.addTo(map);
+        citiesLayer.addTo(map);
 
         // 3. Add Layer Control
         var baseMaps = {
@@ -230,6 +242,7 @@
         };
         var overlayMaps = {
             "Historical & Projections": L.layerGroup(), // Placeholder
+            "Main Cities of Gambia": citiesLayer,
             "Drought Projections (Near & Future)": droughtLayer,
             "Regional Live Alerts (GDACS/GloFAS)": liveLayer
         };
@@ -265,6 +278,7 @@
                 // Load live data after static data
                 loadLiveAlerts();
                 loadDroughtProjections();
+                loadMainCities();
             })
             .catch(error => {
                 console.error('Error loading the GeoJSON:', error);
@@ -413,6 +427,36 @@
                         }
                     }).addTo(droughtLayer);
                 });
+        }
+
+        function loadMainCities() {
+            var cities = [
+                { name: "Banjul", coords: [13.4549, -16.5790] },
+                { name: "Serrekunda", coords: [13.4386, -16.6817] },
+                { name: "Brikama", coords: [13.2714, -16.6494] },
+                { name: "Bakau", coords: [13.4781, -16.6819] },
+                { name: "Farafenni", coords: [13.5667, -15.6000] },
+                { name: "Basse Santa Su", coords: [13.3100, -14.2137] },
+                { name: "Gunjur", coords: [13.2019, -16.7339] },
+                { name: "Soma", coords: [13.4333, -15.5333] },
+                { name: "Janjanbureh", coords: [13.5341, -14.7662] },
+                { name: "Kerewan", coords: [13.4898, -16.0888] }
+            ];
+
+            cities.forEach(city => {
+                L.circleMarker(city.coords, {
+                    radius: 5,
+                    fillColor: "#111",
+                    color: "#fff",
+                    weight: 2,
+                    fillOpacity: 1
+                }).bindTooltip(city.name, {
+                    permanent: true,
+                    direction: 'top',
+                    className: 'city-label',
+                    offset: [0, -5]
+                }).addTo(citiesLayer);
+            });
         }
 
         function populateFilters(data) {
