@@ -234,7 +234,7 @@
         var layerControl = L.control.layers(baseMaps, overlayMaps).addTo(map);
 
         // 4. Load the GeoJSON data
-        fetch('floods.geojson') // Removed cache-busting ?v=...
+        fetch('data/floods.geojson') // Removed cache-busting ?v=...
             .then(response => {
                 if (!response.ok) throw new Error("Network response was not ok");
                 return response.json();

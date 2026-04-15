@@ -229,7 +229,8 @@
         var layerControl = L.control.layers(baseMaps, overlayMaps, { position: 'topright' }).addTo(map);
 
         // Load Drought & Projections
-        fetch('drought_projections.geojson')
+        fetch('data/drought_projections.geojson')
+
             .then(res => res.json())
             .then(data => {
                 L.geoJSON(data, {
