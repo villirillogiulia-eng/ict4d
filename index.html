@@ -44,8 +44,7 @@
         <h2 style="margin:0; font-size: 20px;">Global Flood & Climate Archive</h2>
         <p style="margin:5px 0 0 0; font-size: 13px; color: #666;">Data: DFO (1985-2021) + Projections (2030-2050)</p>
         <p style="margin:5px 0 0 0; font-size: 11px; color: #0078ff;"><em>Switch backgrounds (Satellite/Terrain) using the icon on the right.</em></p>
-        
-        <!-- ... filter groups remain unchanged ... -->
+        <p id="status" style="margin:5px 0 0 0; font-size: 12px; color: orange;"><b>Loading Data...</b></p>
         
         <div class="filter-group">
             <label for="yearSelect">Filter by Year:</label>
@@ -84,7 +83,7 @@
             <strong>Live Warning & Reports:</strong><br>
             <ul style="padding-left: 15px; margin-top: 5px;">
                 <li><a href="https://go.ifrc.org/countries/73" target="_blank">IFRC GO Dashboard (Live)</a></li>
-                <li><a href="https://www.glofas.at/" target="_blank">GloFAS Flood Forecast</a></li>
+                <li><a href="https://www.globalfloods.eu/" target="_blank">GloFAS Flood Forecast</a></li>
                 <li><a href="https://reliefweb.int/country/gmb" target="_blank">ReliefWeb Updates</a></li>
             </ul>
         </div>
@@ -108,8 +107,8 @@
             attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         });
 
-        var satellite = L.tileLayer('https://tiles.maps.eox.at/wmts?layer=s2cloudless-2023&style=default&tilematrixset=googlemaps&Service=WMTS&Request=GetTile&Version=1.0.0&Format=image%2Fjpeg&TileMatrix={z}&TileCol={x}&TileRow={y}', {
-            attribution: '© <a href="https://s2maps.eu" target="_blank">EOX IT Services GmbH</a> (Contains modified Copernicus Sentinel data)'
+        var satellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+            attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EAP, and the GIS User Community'
         });
 
         var terrain = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
@@ -128,7 +127,24 @@
         };
         L.control.layers(baseMaps).addTo(map);
 
-        // ... existing Legend and fetch code ...
+        // 4. Load the GeoJSON data
+        fetch('floods.geojson?v=' + new Date().getTime())
+            .then(response => {
+                if (!response.ok) throw new Error("Network response was not ok");
+                return response.json();
+            })
+            .then(data => {
+                allData = data;
+                populateFilters(data);
+                updateMap();
+                document.getElementById('status').innerHTML = "<b>Data Loaded: " + data.features.length + " events</b>";
+                document.getElementById('status').style.color = "green";
+            })
+            .catch(error => {
+                console.error('Error loading the GeoJSON:', error);
+                document.getElementById('status').innerHTML = "<b>Error loading data! Check console.</b>";
+                document.getElementById('status').style.color = "red";
+            });
 
         function populateFilters(data) {
             const years = new Set();
@@ -136,6 +152,7 @@
             const causes = new Set();
 
             data.features.forEach(f => {
+                if (!f.properties || !f.properties.date) return;
                 const dateParts = f.properties.date.split('/');
                 if (dateParts.length === 3) {
                     let year = dateParts[2];
@@ -188,9 +205,16 @@
                 map.removeLayer(geojsonLayer);
             }
 
+            if (!allData || !allData.features) {
+                console.error("No data available for the map.");
+                return;
+            }
+
             geojsonLayer = L.geoJSON(allData, {
                 filter: function(feature) {
-                    const dateParts = feature.properties.date.split('/');
+                    if (!feature.properties) return false;
+                    
+                    const dateParts = (feature.properties.date || "").split('/');
                     let year = '';
                     if (dateParts.length === 3) {
                         year = dateParts[2];
@@ -199,9 +223,12 @@
                         }
                     }
                     
+                    const country = (feature.properties.country || "").trim();
+                    const cause = (feature.properties.cause || "").trim();
+                    
                     const yearMatch = selectedYear === 'all' || year === selectedYear;
-                    const countryMatch = selectedCountry === 'all' || feature.properties.country.trim() === selectedCountry;
-                    const causeMatch = selectedCause === 'all' || feature.properties.cause.trim() === selectedCause;
+                    const countryMatch = selectedCountry === 'all' || country === selectedCountry;
+                    const causeMatch = selectedCause === 'all' || cause === selectedCause;
                     return yearMatch && countryMatch && causeMatch;
                 },
                 pointToLayer: function (feature, latlng) {
@@ -217,14 +244,25 @@
                 onEachFeature: function (feature, layer) {
                     layer.bindPopup(`
                         <div style="font-size: 14px;">
-                            <strong>${feature.properties.country}</strong><br>
-                            <b>Date:</b> ${feature.properties.date}<br>
-                            <b>Cause:</b> ${feature.properties.cause}<br>
-                            <b>Severity:</b> ${feature.properties.severity}
+                            <strong>${feature.properties.country || "Unknown Country"}</strong><br>
+                            <b>Date:</b> ${feature.properties.date || "Unknown"}<br>
+                            <b>Cause:</b> ${feature.properties.cause || "Unknown"}<br>
+                            <b>Severity:</b> ${feature.properties.severity || "N/A"}
                         </div>
                     `);
                 }
             }).addTo(map);
+
+            // Automatically zoom to the markers if any exist
+            try {
+                if (geojsonLayer.getLayers().length > 0) {
+                    map.fitBounds(geojsonLayer.getBounds());
+                } else {
+                    console.warn("No features matched the current filters.");
+                }
+            } catch (e) {
+                console.warn("FitBounds failed:", e);
+            }
         }
 
         function getColor(s, cause, country) {
