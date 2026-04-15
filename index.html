@@ -78,15 +78,21 @@
             <span style="color:#d73027">●</span> Bushfire<br>
             <span style="color:#7b3294">●</span> Coastal Erosion<br>
             <span style="color:#969696">●</span> Salinity / Saltwater<br>
-            <span style="color:#00fafa">●</span> <strong>Future Projection (2050)</strong>
+            <span style="color:#00fafa">●</span> <strong>Future Projection (2050)</strong><br>
+            <hr style="border: 0; border-top: 1px solid #eee; margin: 5px 0;">
+            <span style="color:#ff0000; font-weight: bold;">◎</span> <strong>Live Regional Alert (IFRC)</strong><br>
+            <span style="color:#ffa500; font-weight: bold;">◎</span> <strong>Global Disaster Alert (GDACS)</strong><br>
+            <span style="color:#0000ff; font-weight: bold;">○</span> <strong>River Forecast (GloFAS)</strong><br>
+            <span style="color:#0078ff; font-weight: bold;">●</span> <strong>Regional Report (ReliefWeb)</strong>
         </div>
 
         <div id="live-monitoring" style="margin-top: 20px; padding: 10px; background: #eef; border-radius: 5px; font-size: 12px;">
-            <strong>Live Warning & Reports (Gambia):</strong><br>
+            <strong>Live Regional Warning & Reports:</strong><br>
             <ul style="padding-left: 15px; margin-top: 5px;">
-                <li><a href="https://go.ifrc.org/countries/73" target="_blank">IFRC GO Dashboard (Live)</a></li>
+                <li><a href="https://go.ifrc.org/countries/73" target="_blank">Gambia (IFRC GO)</a> | <a href="https://go.ifrc.org/regions/0" target="_blank">Regional</a></li>
+                <li><a href="https://www.gdacs.org/" target="_blank">GDACS (Disaster Alerts)</a></li>
+                <li><a href="https://reliefweb.int/updates?region=46" target="_blank">ReliefWeb (West Africa)</a></li>
                 <li><a href="https://www.globalfloods.eu/" target="_blank">GloFAS Flood Forecast</a></li>
-                <li><a href="https://reliefweb.int/country/gmb" target="_blank">ReliefWeb Updates</a></li>
             </ul>
         </div>
     </div>
@@ -129,8 +135,8 @@
             "Terrain (Topography)": terrain
         };
         var overlayMaps = {
-            "Historical & Projections": L.layerGroup(), // Placeholder, will be replaced by geojsonLayer
-            "Live Alerts (IFRC/Forecast)": liveLayer
+            "Historical & Projections": L.layerGroup(), // Placeholder
+            "Regional Live Alerts (IFRC/GDACS/GloFAS)": liveLayer
         };
         var layerControl = L.control.layers(baseMaps, overlayMaps).addTo(map);
 
@@ -165,18 +171,21 @@
             });
 
         function loadLiveAlerts() {
-            // A. Fetch from IFRC GO (Gambia ID: 70)
-            fetch('https://goadmin.ifrc.org/api/v2/event/?countries__in=70&limit=10')
+            // A. Fetch from IFRC GO (Gambia: 70, Senegal: 153, Mali: 111, Mauritania: 112, Guinea: 81, Guinea-Bissau: 82)
+            fetch('https://goadmin.ifrc.org/api/v2/event/?countries__in=70,153,111,112,81,82&limit=15')
                 .then(res => res.json())
                 .then(data => {
                     const climateCategories = ['Flood', 'Pluvial/Flash Flood', 'Drought', 'Cyclone', 'Heat Wave', 'Cold Wave', 'Storm Surge', 'Wildfire', 'Storm', 'Fire'];
                     
                     data.results.forEach(event => {
-                        // Filter: Only include climate-related alerts
                         if (!climateCategories.includes(event.dtype.name)) return;
 
                         const date = new Date(event.disaster_start_date).toLocaleDateString();
-                        const marker = L.circleMarker([13.45, -16.57], { // Default to Banjul for national alerts
+                        // Find the country name from countries array
+                        const countryName = event.countries.map(c => c.name).join(', ');
+                        
+                        // Use a slightly different icon for regional alerts
+                        const marker = L.circleMarker([13.45, -16.57], { // Default, ideally we'd have coords per country
                             radius: 12,
                             fillColor: '#ff0000',
                             color: '#fff',
@@ -184,10 +193,18 @@
                             opacity: 1,
                             fillOpacity: 0.6,
                             className: 'pulse-marker'
-                        }).bindPopup(`
-                            <div style="font-size: 14px; width: 200px;">
-                                <b style="color: red;">LIVE CLIMATE EMERGENCY (IFRC)</b><br>
+                        });
+
+                        // Attempt to offset markers if they are all in the same spot
+                        const latOffset = (Math.random() - 0.5) * 2;
+                        const lngOffset = (Math.random() - 0.5) * 4;
+                        marker.setLatLng([13.45 + latOffset, -14.5 + lngOffset]);
+
+                        marker.bindPopup(`
+                            <div style="font-size: 14px; width: 220px;">
+                                <b style="color: red;">REGIONAL ALERT (IFRC)</b><br>
                                 <strong>${event.name}</strong><br>
+                                <b>Country:</b> ${countryName}<br>
                                 <b>Type:</b> ${event.dtype.name}<br>
                                 <b>Started:</b> ${date}<br>
                                 <a href="https://go.ifrc.org/emergencies/${event.id}" target="_blank">View on IFRC GO</a>
@@ -197,7 +214,84 @@
                     });
                 });
 
-            // B. Fetch from Open-Meteo for River Points (Forecasting)
+            // B. Fetch from GDACS (Global Disaster Alert and Coordination System)
+            // Filtering for West Africa region roughly [10, -18] to [18, -10]
+            fetch('https://www.gdacs.org/gdacsapi/api/events/geteventlist/SEARCH?eventlist=FL;DR;WF')
+                .then(res => res.json())
+                .then(data => {
+                    if (data && data.features) {
+                        data.features.forEach(feature => {
+                            const props = feature.properties;
+                            const coords = feature.geometry.coordinates; // [lng, lat]
+                            
+                            // Simple bounding box check for West Africa/Sahel
+                            if (coords[0] > -20 && coords[0] < -5 && coords[1] > 10 && coords[1] < 20) {
+                                const marker = L.circleMarker([coords[1], coords[0]], {
+                                    radius: 15,
+                                    fillColor: '#ffa500',
+                                    color: '#000',
+                                    weight: 1,
+                                    opacity: 1,
+                                    fillOpacity: 0.7,
+                                    className: 'pulse-marker'
+                                }).bindPopup(`
+                                    <div style="font-size: 14px;">
+                                        <b style="color: orange;">GDACS DISASTER ALERT</b><br>
+                                        <strong>${props.eventname}</strong><br>
+                                        <b>Hazard:</b> ${props.eventtype}<br>
+                                        <b>Severity:</b> ${props.severitydata?.severity || 'Alert'}<br>
+                                        <a href="${props.url?.report}" target="_blank">Full GDACS Report</a>
+                                    </div>
+                                `);
+                                liveLayer.addLayer(marker);
+                            }
+                        });
+                    }
+                });
+
+            // C. Fetch from ReliefWeb (Recent Disasters in the Region)
+            const countries = ['The Gambia', 'Senegal', 'Mali', 'Mauritania'];
+            countries.forEach(country => {
+                fetch(`https://api.reliefweb.int/v1/disasters?appname=ict4d&filter[field]=country&filter[value]=${country}&limit=3&sort[]=date:desc`)
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data && data.data) {
+                            data.data.forEach(d => {
+                                // Add a blue marker for ReliefWeb reports (less urgent than alerts)
+                                const marker = L.circleMarker([14.5, -15.5], {
+                                    radius: 10,
+                                    fillColor: '#0078ff',
+                                    color: '#fff',
+                                    weight: 1,
+                                    opacity: 0.8,
+                                    fillOpacity: 0.4
+                                });
+
+                                // Randomize position around country center if we don't have exact coords
+                                const countryCoords = {
+                                    'The Gambia': [13.44, -15.45],
+                                    'Senegal': [14.49, -14.45],
+                                    'Mali': [17.57, -3.99],
+                                    'Mauritania': [21.0, -10.94]
+                                };
+                                const base = countryCoords[country] || [13.44, -15.45];
+                                marker.setLatLng([base[0] + (Math.random() - 0.5), base[1] + (Math.random() - 0.5)]);
+
+                                marker.bindPopup(`
+                                    <div style="font-size: 14px;">
+                                        <b style="color: blue;">RELIEFWEB REPORT</b><br>
+                                        <strong>${d.fields.name}</strong><br>
+                                        <b>Country:</b> ${country}<br>
+                                        <a href="${d.fields.url}" target="_blank">Full Report on ReliefWeb</a>
+                                    </div>
+                                `);
+                                liveLayer.addLayer(marker);
+                            });
+                        }
+                    });
+            });
+
+            // D. Fetch from Open-Meteo for River Points
             const riverPoints = [
                 { name: "Basse Santa Su", lat: 13.31, lon: -14.21 },
                 { name: "Janjanbureh", lat: 13.59, lon: -14.76 },
