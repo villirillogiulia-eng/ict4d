@@ -11,6 +11,11 @@ def csv_to_geojson(csv_file, geojson_file):
                 # Clean keys just in case there are hidden spaces
                 clean_row = {k.strip(): v for k, v in row.items()}
                 
+                # Only include Gambia records
+                country = clean_row.get('Country', 'Unknown')
+                if 'gambia' not in country.lower():
+                    continue
+
                 lon = float(clean_row['long'])
                 lat = float(clean_row['lat'])
                 

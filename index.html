@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Global Historical Flood Archive (1985-2024)</title>
+    <title>Gambia Flood & Climate Archive (1985-2024)</title>
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
@@ -41,8 +41,8 @@
 </head>
 <body>
     <div class="map-title">
-        <h2 style="margin:0; font-size: 20px;">Global Flood & Climate Archive</h2>
-        <p style="margin:5px 0 0 0; font-size: 13px; color: #666;">Data: DFO (1985-2021) + Projections (2030-2050)</p>
+        <h2 style="margin:0; font-size: 20px;">Gambia Flood & Climate Archive</h2>
+        <p style="margin:5px 0 0 0; font-size: 13px; color: #666;">Historical Events (1985-2024) + Climate Projections (2050)</p>
         <p style="margin:5px 0 0 0; font-size: 11px; color: #0078ff;"><em>Switch backgrounds (Satellite/Terrain) using the icon on the right.</em></p>
         <p id="status" style="margin:5px 0 0 0; font-size: 12px; color: orange;"><b>Loading Data...</b></p>
         
@@ -50,13 +50,6 @@
             <label for="yearSelect">Filter by Year:</label>
             <select id="yearSelect">
                 <option value="all">All Years</option>
-            </select>
-        </div>
-
-        <div class="filter-group">
-            <label for="countrySelect">Filter by Country:</label>
-            <select id="countrySelect">
-                <option value="all">All Countries</option>
             </select>
         </div>
 
@@ -80,7 +73,7 @@
         </div>
 
         <div id="live-monitoring" style="margin-top: 20px; padding: 10px; background: #eef; border-radius: 5px; font-size: 12px;">
-            <strong>Live Warning & Reports:</strong><br>
+            <strong>Live Warning & Reports (Gambia):</strong><br>
             <ul style="padding-left: 15px; margin-top: 5px;">
                 <li><a href="https://go.ifrc.org/countries/73" target="_blank">IFRC GO Dashboard (Live)</a></li>
                 <li><a href="https://www.globalfloods.eu/" target="_blank">GloFAS Flood Forecast</a></li>
@@ -97,7 +90,7 @@
 
     <script>
         // 1. Initialize the map
-        var map = L.map('map').setView([13.44, -15.45], 8); // Centered on entire Gambia
+        var map = L.map('map').setView([13.44, -15.45], 8); // Centered on Gambia
         var geojsonLayer;
         var allData;
 
@@ -139,16 +132,20 @@
                 updateMap();
                 document.getElementById('status').innerHTML = "<b>Data Loaded: " + data.features.length + " events</b>";
                 document.getElementById('status').style.color = "green";
+                
+                // Automatically zoom to fit all markers on load
+                if (geojsonLayer && geojsonLayer.getLayers().length > 0) {
+                    map.fitBounds(geojsonLayer.getBounds(), { padding: [50, 50] });
+                }
             })
             .catch(error => {
                 console.error('Error loading the GeoJSON:', error);
-                document.getElementById('status').innerHTML = "<b>Error loading data! Check console.</b>";
+                document.getElementById('status').innerHTML = "<b>Error loading data!</b>";
                 document.getElementById('status').style.color = "red";
             });
 
         function populateFilters(data) {
             const years = new Set();
-            const countries = new Set();
             const causes = new Set();
 
             data.features.forEach(f => {
@@ -166,16 +163,6 @@
                     }
                 }
 
-                // Country normalization for filtering
-                if (f.properties.country) {
-                    let c = f.properties.country.trim();
-                    if (c.toLowerCase().includes('gambia')) {
-                        countries.add('Gambia (All)');
-                    } else {
-                        countries.add(c);
-                    }
-                }
-                
                 if (f.properties.cause) causes.add(f.properties.cause.trim());
             });
 
@@ -185,14 +172,6 @@
                 opt.value = year;
                 opt.textContent = year;
                 yearSelect.appendChild(opt);
-            });
-
-            const countrySelect = document.getElementById('countrySelect');
-            Array.from(countries).sort().forEach(country => {
-                const opt = document.createElement('option');
-                opt.value = country;
-                opt.textContent = country;
-                countrySelect.appendChild(opt);
             });
 
             const causeSelect = document.getElementById('causeSelect');
@@ -206,23 +185,18 @@
             });
 
             yearSelect.addEventListener('change', updateMap);
-            countrySelect.addEventListener('change', updateMap);
             causeSelect.addEventListener('change', updateMap);
         }
 
         function updateMap() {
             const selectedYear = document.getElementById('yearSelect').value;
-            const selectedCountry = document.getElementById('countrySelect').value;
             const selectedCause = document.getElementById('causeSelect').value;
 
             if (geojsonLayer) {
                 map.removeLayer(geojsonLayer);
             }
 
-            if (!allData || !allData.features) {
-                console.error("No data available for the map.");
-                return;
-            }
+            if (!allData || !allData.features) return;
 
             geojsonLayer = L.geoJSON(allData, {
                 filter: function(feature) {
@@ -237,22 +211,10 @@
                         }
                     }
                     
-                    const country = (feature.properties.country || "").trim();
                     const cause = (feature.properties.cause || "").trim();
-                    
                     const yearMatch = selectedYear === 'all' || year === selectedYear;
-                    
-                    let countryMatch = selectedCountry === 'all';
-                    if (!countryMatch) {
-                        if (selectedCountry === 'Gambia (All)') {
-                            countryMatch = country.toLowerCase().includes('gambia');
-                        } else {
-                            countryMatch = country === selectedCountry;
-                        }
-                    }
-
                     const causeMatch = selectedCause === 'all' || cause === selectedCause;
-                    return yearMatch && countryMatch && causeMatch;
+                    return yearMatch && causeMatch;
                 },
                 pointToLayer: function (feature, latlng) {
                     return L.circleMarker(latlng, {
