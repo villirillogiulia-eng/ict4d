@@ -1,0 +1,3674 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.7191982,
+          13.4413418
+        ]
+      },
+      "properties": {
+        "amenity": "pharmacy",
+        "healthcare": "pharmacy",
+        "name": "Stop Step",
+        "osm_id": 619476507,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.7197496,
+          13.4422652
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "Lamtoro Clinic",
+        "osm_id": 1143756708,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.4242087,
+          13.6041234
+        ]
+      },
+      "properties": {
+        "amenity": "doctors",
+        "emergency": "yes",
+        "healthcare": "doctor",
+        "name": "Karang Poste Hospital",
+        "name:fr": "Poste de sant\u00e9",
+        "source": "Personal Experience",
+        "osm_id": 2182202259,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.0573991,
+          13.6603565
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "osm_id": 2487593830,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.3698877,
+          13.8788871
+        ]
+      },
+      "properties": {
+        "amenity": "pharmacy",
+        "dispensing": "no",
+        "healthcare": "pharmacy",
+        "name": "Pharmacie",
+        "osm_id": 2627653101,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.7274227,
+          13.4055818
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "emergency": "yes",
+        "healthcare": "hospital",
+        "name": "Africmed",
+        "osm_id": 3530428244,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.7963857,
+          13.3233339
+        ]
+      },
+      "properties": {
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "osm_id": 3686979501,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.7312999,
+          13.4058305
+        ]
+      },
+      "properties": {
+        "amenity": "pharmacy",
+        "healthcare": "pharmacy",
+        "osm_id": 3686979508,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.685899,
+          13.4604596
+        ]
+      },
+      "properties": {
+        "amenity": "pharmacy",
+        "healthcare": "pharmacy",
+        "name": "Malack Chemist",
+        "osm_id": 3741545793,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.5775604,
+          13.439618
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "Village Clinic",
+        "osm_id": 4197014592,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.4730752,
+          13.782382
+        ]
+      },
+      "properties": {
+        "amenity": "pharmacy",
+        "name": "Pharmacie Al Barakatou",
+        "source": "survey",
+        "osm_id": 4347300903,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -14.9734656,
+          13.7792479
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "name": "Njoben Wollof Health Post",
+        "operator": "Tamba Sabally",
+        "osm_id": 4494495240,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.6399673,
+          13.3902437
+        ]
+      },
+      "properties": {
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Lamin Heath center",
+        "osm_id": 4528583201,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -14.7790484,
+          13.3738598
+        ]
+      },
+      "properties": {
+        "amenity": "clinic",
+        "name": "Case de Sante de Touba Mboyenne",
+        "osm_id": 5202071821,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -14.7558176,
+          13.3132548
+        ]
+      },
+      "properties": {
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Poste de Sante de Niaming",
+        "osm_id": 5226804022,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.0879372,
+          13.4937539
+        ]
+      },
+      "properties": {
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Kerewan Health Center",
+        "osm_id": 5307044028,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.0854143,
+          13.4941303
+        ]
+      },
+      "properties": {
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Dembo Fula Clinic",
+        "osm_id": 5360996823,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.6052001,
+          13.5739072
+        ]
+      },
+      "properties": {
+        "amenity": "pharmacy",
+        "healthcare": "pharmacy",
+        "osm_id": 5426422922,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.7620789,
+          13.0970981
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "healthcare:speciality": "general",
+        "name": "Kartong Community Clinic",
+        "operator": "Community",
+        "osm_id": 5594772406,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.7611094,
+          13.0931284
+        ]
+      },
+      "properties": {
+        "amenity": "pharmacy",
+        "dispensing": "yes",
+        "healthcare": "pharmacy",
+        "name": "Kartong folonko clinic",
+        "opening_hours": "Fr-Sa 08:00-22:00",
+        "operator": "sakar touray",
+        "osm_id": 5596863989,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.088459,
+          13.4940671
+        ]
+      },
+      "properties": {
+        "amenity": "pharmacy",
+        "healthcare": "pharmacy",
+        "name": "Pharmacy",
+        "osm_id": 5732570023,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -14.5590937,
+          13.0615483
+        ]
+      },
+      "properties": {
+        "amenity": "doctors",
+        "healthcare": "doctor",
+        "name:en": "Fafacourou Health Post",
+        "name:fr": "Poste de Sant\u00e9 Fafacourou",
+        "osm_id": 5766775853,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -14.5991355,
+          13.0245945
+        ]
+      },
+      "properties": {
+        "amenity": "clinic",
+        "name": "Casse de Sant\u00e9 Sar\u00e9 Dickel",
+        "name:en": "Sar\u00e9 Dickel Health Hut",
+        "osm_id": 5795264955,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.6680257,
+          13.4129603
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "name": "fagikunda major hospital",
+        "osm_id": 5836379388,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.6712305,
+          13.4644285
+        ]
+      },
+      "properties": {
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "sharab",
+        "osm_id": 5836381290,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.5357845,
+          13.441984
+        ]
+      },
+      "properties": {
+        "amenity": "pharmacy",
+        "healthcare": "pharmacy",
+        "name": "Bismilah Drug Store",
+        "osm_id": 6024793787,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -14.9264552,
+          13.5348734
+        ]
+      },
+      "properties": {
+        "amenity": "pharmacy",
+        "healthcare": "pharmacy",
+        "name": "Brikama Ba drug store",
+        "phone": "2705406",
+        "osm_id": 6025072234,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -14.2103809,
+          13.3078323
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "Basse health centre",
+        "osm_id": 6027550386,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -13.6758038,
+          13.7652839
+        ]
+      },
+      "properties": {
+        "amenity": "pharmacy",
+        "contact:phone": "+221 339813207",
+        "dispensing": "yes",
+        "healthcare": "pharmacy",
+        "name": "Mame Diarra Bousso",
+        "osm_id": 6207591824,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -14.2096563,
+          13.3026243
+        ]
+      },
+      "properties": {
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Chinese Mango Clinic",
+        "osm_id": 6299152595,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -14.0158157,
+          13.4989026
+        ]
+      },
+      "properties": {
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Sutukoba Community Clinic",
+        "osm_id": 6402440670,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -14.3079493,
+          13.2437069
+        ]
+      },
+      "properties": {
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Lupitane",
+        "osm_id": 6434314785,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -14.3089373,
+          13.2438996
+        ]
+      },
+      "properties": {
+        "amenity": "pharmacy",
+        "healthcare": "pharmacy",
+        "name": "Pharamacy #2",
+        "osm_id": 6436269786,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -14.8045109,
+          13.9812964
+        ]
+      },
+      "properties": {
+        "amenity": "pharmacy",
+        "healthcare": "pharmacy",
+        "name:en": "Pharmacy",
+        "osm_id": 6466609085,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.5991706,
+          13.5734391
+        ]
+      },
+      "properties": {
+        "amenity": "pharmacy",
+        "healthcare": "pharmacy",
+        "name": "Babu Salam Drugstore",
+        "opening_hours": "Mo-Su 07:00-00:00",
+        "phone": "7000288",
+        "osm_id": 6518229985,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.6532258,
+          13.2801278
+        ]
+      },
+      "properties": {
+        "amenity": "pharmacy",
+        "healthcare": "pharmacy",
+        "name": "Manding Drug Store",
+        "opening_hours": "Mo-Su 08:30-00:00",
+        "osm_id": 6576673185,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5917307,
+          13.2810093
+        ]
+      },
+      "properties": {
+        "amenity": "pharmacy",
+        "healthcare": "pharmacy",
+        "name": "Ma Jawara Drug Store",
+        "opening_hours": "Mo-Su 09:00-21:00",
+        "osm_id": 6576674985,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -13.6786674,
+          13.7739037
+        ]
+      },
+      "properties": {
+        "amenity": "pharmacy",
+        "name": "Ma\u00efmouna",
+        "source": "survey",
+        "osm_id": 6784956927,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -13.6772601,
+          13.7724839
+        ]
+      },
+      "properties": {
+        "amenity": "pharmacy",
+        "name": "Alhamdoulillahi",
+        "source": "survey",
+        "osm_id": 6784956928,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.6817602,
+          13.4208141
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "name": "Bundung Maternal & Child Health Hospital",
+        "osm_id": 6945375788,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.9018678,
+          13.7616242
+        ]
+      },
+      "properties": {
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "INFIRMERIE PRIVEE",
+        "osm_id": 6970486434,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.9050569,
+          13.7636016
+        ]
+      },
+      "properties": {
+        "amenity": "pharmacy",
+        "healthcare": "pharmacy",
+        "name": "PHARMACIE M L NIASSE",
+        "osm_id": 6970486439,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.6754314,
+          13.444103
+        ]
+      },
+      "properties": {
+        "amenity": "pharmacy",
+        "healthcare": "pharmacy",
+        "name": "Stop Step Pharmacy Westfield",
+        "osm_id": 6988066185,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.6471298,
+          13.2744702
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "Brikama Hospital",
+        "osm_id": 7025887086,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.7454379,
+          13.3966989
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "stop step pharmacy",
+        "osm_id": 7151547934,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.7304957,
+          13.4065119
+        ]
+      },
+      "properties": {
+        "amenity": "pharmacy",
+        "healthcare": "pharmacy",
+        "name": "Stop Step pharmacy",
+        "osm_id": 7214638986,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.6753685,
+          13.4608025
+        ]
+      },
+      "properties": {
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "ophthalmology",
+        "name": "Sheikh Zayed Regional Eye Care Centre",
+        "phone": "+220 9967049; +220 2088707",
+        "osm_id": 7231778551,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.6742075,
+          13.3810539
+        ]
+      },
+      "properties": {
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Fatou Gaye",
+        "osm_id": 7720650590,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.7755584,
+          13.7500692
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "beds": "44",
+        "electricity": "grid",
+        "emergency": "yes",
+        "healthcare": "Ultrasound,X-Ray,Operating,Theater,Laboratory,Imaging Equipment,Intensive Care Unit,Emergency Department",
+        "name": "Centre de Sant\u00e9 de Nioro du Rip",
+        "operational_status": "operational",
+        "operator": "MINISTERE DE LA SANTE",
+        "operator:type": "public",
+        "source": "#senegal #covid-19 #emergency-health-data #healthsites",
+        "water_source": "water works",
+        "wheelchair": "yes",
+        "osm_id": 8132683957,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.4003947,
+          13.6228066
+        ]
+      },
+      "properties": {
+        "addr:full": "Route de cass\u00e9te",
+        "amenity": "doctors",
+        "beds": "8",
+        "building": "hospital",
+        "electricity": "grid",
+        "emergency": "no",
+        "healthcare": "Ultrasound,Laboratory,Imaging Equipment",
+        "name": "Poste de sant\u00e9 Sirmang",
+        "operational_status": "operational",
+        "operator": "Moustapha faye",
+        "operator:type": "Public",
+        "source": "#senegal #covid-19 #emergency-health-data #healthsites",
+        "water_source": "Water works",
+        "wheelchair": "yes",
+        "osm_id": 8132683968,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -14.7919726,
+          13.981676
+        ]
+      },
+      "properties": {
+        "addr:full": "N1",
+        "amenity": "hospital",
+        "beds": "60",
+        "building": "yes",
+        "electricity": "grid",
+        "emergency": "yes",
+        "healthcare": "Ultrasound,X-Ray,Operating,Theater,Laboratory,Imaging Equipment,Intensive Care Unit,Emergency Department",
+        "name": "Centre de Sant\u00e9 de Koungheul",
+        "operational_status": "operational",
+        "operator": "Etat du S\u00e9n\u00e9gal",
+        "operator:type": "public",
+        "source": "#senegal #covid-19 #emergency-health-data #healthsites",
+        "water_source": "powered pump",
+        "wheelchair": "yes",
+        "osm_id": 8132683981,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.3721484,
+          13.8786251
+        ]
+      },
+      "properties": {
+        "addr:full": "Sokone, quartier M\u00e9dine Commune Sokone",
+        "amenity": "doctors",
+        "electricity": "grid",
+        "emergency": "no",
+        "name": "Centre de Sant\u00e9, de Promotion et de R\u00e9insertion Sociale de Sokone",
+        "operational_status": "operational",
+        "operator": "Minist\u00e8re de la Sant\u00e9 et de l'Action Sociale",
+        "operator:type": "Government",
+        "source": "#senegal #covid-19 #emergency-health-data #healthsites",
+        "water_source": "Water works",
+        "wheelchair": "yes",
+        "osm_id": 8132683982,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -13.6704073,
+          13.7625328
+        ]
+      },
+      "properties": {
+        "addr:street": "N7",
+        "amenity": "pharmacy",
+        "name": "Pharmacie orientale",
+        "osm_id": 8165186615,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.0088333,
+          13.3315885
+        ]
+      },
+      "properties": {
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "osm_id": 8390261117,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.0088549,
+          13.3313997
+        ]
+      },
+      "properties": {
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "MRCG Keneba Programmer Office",
+        "osm_id": 8390371817,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.7054762,
+          13.4168646
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "Sukuta health center",
+        "osm_id": 8415821817,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -13.5824065,
+          13.8047815
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "Poste de Sant\u00e9 de BOTOU",
+        "osm_id": 8933099797,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.7561307,
+          13.1792612
+        ]
+      },
+      "properties": {
+        "addr:lga": "Brikama",
+        "amenity": "hospital",
+        "capacity:beds": "23",
+        "emergency": "yes",
+        "healthcare": "hospital",
+        "name": "Gunjur Mino Health Center",
+        "opening_hours": "24/7",
+        "operational_status": "operational",
+        "operator": "Haddy Fadera",
+        "operator:type": "public",
+        "phone": "+2207633671",
+        "power_supply:source": "power_grid",
+        "staff_count:doctors": "1",
+        "staff_count:nurses": "35",
+        "wheelchair": "yes",
+        "osm_id": 9001340425,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.2284667,
+          13.2324849
+        ]
+      },
+      "properties": {
+        "addr:lga": "Foni",
+        "amenity": "clinic",
+        "capacity:beds": "8",
+        "emergency": "no",
+        "name": "Kassagne Health Post",
+        "opening_hours": "24/7",
+        "operational_status": "operational",
+        "operator": "Momodou Sumareh",
+        "operator:type": "government",
+        "phone": "+2203227079",
+        "power_supply:source": "power_grid",
+        "staff_count:nurses": "2",
+        "wheelchair": "no",
+        "osm_id": 9001340426,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.4575757,
+          13.1964421
+        ]
+      },
+      "properties": {
+        "addr:lga": "Foni",
+        "addr:street": "Mbula",
+        "amenity": "hospital",
+        "capacity:beds": "5",
+        "emergency": "yes",
+        "name": "Medics for Health Kafuta Health Center",
+        "opening_hours": "24/7",
+        "operational_status": "operational",
+        "operator": "Sarjo Camara",
+        "operator:type": "public",
+        "phone": "+2203936887",
+        "power_supply:source": "power_grid",
+        "staff_count:nurses": "7",
+        "wheelchair": "yes",
+        "osm_id": 9001340427,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.7748499,
+          13.207109
+        ]
+      },
+      "properties": {
+        "addr:lga": "Brikama",
+        "addr:street": "Ice land",
+        "amenity": "clinic",
+        "capacity:beds": "5",
+        "emergency": "yes",
+        "name": "Sambuyan Community Clinic",
+        "opening_hours": "Mo-Fr 08:00 -18:00",
+        "operational_status": "operational",
+        "operator": "Faburama Jambang",
+        "operator:type": "public",
+        "phone": "+2207241986",
+        "power_supply:source": "solar",
+        "staff_count:nurses": "3",
+        "wheelchair": "yes",
+        "osm_id": 9001340428,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.7890942,
+          13.3489571
+        ]
+      },
+      "properties": {
+        "addr:lga": "Brikama",
+        "addr:street": "Satehbakono Bojang Kunda",
+        "amenity": "clinic",
+        "capacity:beds": "8",
+        "emergency": "yes",
+        "healthcare": "clinic",
+        "name": "Tanji Premier Health Care",
+        "opening_hours": "09:00 - 18:30",
+        "operational_status": "operational",
+        "operator": "Sankung Minteh",
+        "operator:type": "private",
+        "phone": "+2203168707",
+        "power_supply:source": "power_grid",
+        "staff_count:doctors": "2",
+        "staff_count:nurses": "7",
+        "wheelchair": "yes",
+        "osm_id": 9001340429,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.6437694,
+          13.2606484
+        ]
+      },
+      "properties": {
+        "amenity": "doctors",
+        "healthcare": "doctor",
+        "name": "Mara Gambia",
+        "osm_id": 9076961218,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -14.568209,
+          13.9739757
+        ]
+      },
+      "properties": {
+        "amenity": "clinic",
+        "name": "PRESTAVET",
+        "osm_id": 10230883317,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -14.9482165,
+          13.4400816
+        ]
+      },
+      "properties": {
+        "addr:street": "kolda-pata",
+        "amenity": "clinic",
+        "osm_id": 10230883417,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.6733028,
+          13.5798709
+        ]
+      },
+      "properties": {
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "nurses_and_public_health_officers",
+        "name": "RCH site",
+        "opening_hours": "first tuesday of every month",
+        "operator": "immunization, antenatal services",
+        "operator:type": "government",
+        "osm_id": 10759160780,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.6390037,
+          13.574654
+        ]
+      },
+      "properties": {
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "nurse;community;community_health_nurse;lab",
+        "name": "RCH",
+        "opening_hours": "first tuesday of every month",
+        "osm_id": 10787211671,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.6352372,
+          13.5383107
+        ]
+      },
+      "properties": {
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Kubandar clinic",
+        "osm_id": 10787244198,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.6070017,
+          13.4932196
+        ]
+      },
+      "properties": {
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Ballinghor RCH",
+        "osm_id": 10787344789,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.6733673,
+          13.4207947
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "emergency": "yes",
+        "healthcare": "hospital",
+        "name": "Ahmadiyya Hospital",
+        "osm_id": 10997434543,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.7502858,
+          13.5647056
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "name": "Illiassa Minor Health Clinic",
+        "osm_id": 11085308005,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.3936723,
+          13.4665709
+        ]
+      },
+      "properties": {
+        "amenity": "clinic",
+        "osm_id": 11099939906,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.0499598,
+          13.519698
+        ]
+      },
+      "properties": {
+        "amenity": "clinic",
+        "osm_id": 11100041005,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.0500546,
+          13.5196064
+        ]
+      },
+      "properties": {
+        "amenity": "clinic",
+        "name": "Saaba village clinic",
+        "osm_id": 11100043805,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.9325135,
+          13.918543
+        ]
+      },
+      "properties": {
+        "amenity": "doctors",
+        "name": "Poste de sant\u00e9 Darou Salam",
+        "osm_id": 11238540499,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.9247506,
+          13.9193854
+        ]
+      },
+      "properties": {
+        "amenity": "doctors",
+        "name": "Centre de sant\u00e9 Ndoffane",
+        "osm_id": 11238651645,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.6494077,
+          13.955478
+        ]
+      },
+      "properties": {
+        "amenity": "doctors",
+        "name": "Poste de sant\u00e9 Mound\u00e9",
+        "opening_hours": "Mo-Fr 09:00-17:00",
+        "wheelchair": "limited",
+        "osm_id": 11452321847,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5926519,
+          13.9244596
+        ]
+      },
+      "properties": {
+        "amenity": "health_post",
+        "name": "Dispensaire de Bassoul",
+        "osm_id": 11452597443,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.6097293,
+          13.9211059
+        ]
+      },
+      "properties": {
+        "amenity": "pharmacy",
+        "healthcare": "pharmacy",
+        "name": "Pharmacie Bassoul",
+        "osm_id": 11452639761,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.6075392,
+          13.9797527
+        ]
+      },
+      "properties": {
+        "amenity": "pharmacy",
+        "name": "D\u00e9p\u00f4t pharmacie Djirnda",
+        "osm_id": 11452834434,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.6791402,
+          13.9188986
+        ]
+      },
+      "properties": {
+        "amenity": "doctors",
+        "name": "Poste de sant\u00e9 de Falia",
+        "osm_id": 11452854524,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.6093595,
+          13.9207623
+        ]
+      },
+      "properties": {
+        "amenity": "doctors",
+        "name": "Dispensaire de Bassar",
+        "osm_id": 11452990769,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.6096001,
+          13.9780738
+        ]
+      },
+      "properties": {
+        "amenity": "doctors",
+        "name": "Maternit\u00e9 de Djirnda",
+        "osm_id": 11462703148,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.6094331,
+          13.9783897
+        ]
+      },
+      "properties": {
+        "amenity": "clinic",
+        "name": "Dispensaire Djirnda",
+        "osm_id": 11462752131,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.6244642,
+          13.9287465
+        ]
+      },
+      "properties": {
+        "amenity": "doctors",
+        "name": "Case de Sant\u00e9 feu Adama Senghor de Thialane",
+        "osm_id": 11462776967,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5960533,
+          13.9959929
+        ]
+      },
+      "properties": {
+        "amenity": "doctors",
+        "name": "Case de Sant\u00e9 Fambine",
+        "osm_id": 11462781416,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.7314644,
+          13.8885692
+        ]
+      },
+      "properties": {
+        "amenity": "doctors",
+        "name": "Poste de sant\u00e9 de dionewar",
+        "osm_id": 11462837452,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.6554223,
+          13.9090913
+        ]
+      },
+      "properties": {
+        "amenity": "doctors",
+        "name": "Case de Sante de Siwo",
+        "osm_id": 11494398340,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.7632862,
+          13.9355947
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "name": "District sanitaire",
+        "osm_id": 11508306367,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.7632699,
+          13.9360602
+        ]
+      },
+      "properties": {
+        "amenity": "pharmacy",
+        "name": "Pharmacie",
+        "osm_id": 11508333719,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.7224334,
+          13.8566742
+        ]
+      },
+      "properties": {
+        "amenity": "pharmacy",
+        "name": "Pharmacie Niodior",
+        "osm_id": 11508356353,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.7315428,
+          13.8882069
+        ]
+      },
+      "properties": {
+        "amenity": "pharmacy",
+        "name": "Pharmacie",
+        "osm_id": 11508363864,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.7228895,
+          13.8571521
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "name": "Centre de sant\u00e9 de Niodior",
+        "osm_id": 11508365457,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.679159,
+          13.9189278
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "name": "Case de sant\u00e9 de Falia",
+        "osm_id": 11508399127,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.6660875,
+          13.4595108
+        ]
+      },
+      "properties": {
+        "addr:city": "Kanifing",
+        "addr:street": "Old Jeshwang ward",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "healthcare:speciality": "general",
+        "name": "Old Jeshwang health Center",
+        "osm_id": 12025753816,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.7227262,
+          13.3546801
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "healthcare:speciality": "general",
+        "name": "Labakoreh Clinic",
+        "operator": "Private",
+        "operator:type": "community",
+        "osm_id": 12025761232,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.7291671,
+          13.3488787
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "healthcare:speciality": "general",
+        "name": "Youna Clinic",
+        "operator": "Community",
+        "operator:type": "community",
+        "osm_id": 12025767906,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.7284933,
+          13.3662669
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "Salam Clinic",
+        "operator": "health workers",
+        "operator:type": "private",
+        "osm_id": 12041324368,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.4737067,
+          13.7860758
+        ]
+      },
+      "properties": {
+        "amenity": "pharmacy",
+        "osm_id": 12789833696,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.474073,
+          13.7859846
+        ]
+      },
+      "properties": {
+        "amenity": "health_post",
+        "name": "Maternit\u00e9",
+        "osm_id": 12789837454,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -14.2251155,
+          13.315901
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "osm_id": 12863623522,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -14.2099491,
+          13.3040724
+        ]
+      },
+      "properties": {
+        "addr:street": "Basse",
+        "amenity": "hospital",
+        "emergency": "yes",
+        "healthcare": "hospital",
+        "name": "Basse District clinice",
+        "operator": "Dr . Muhammed Danjo",
+        "operator:type": "private_non_profit",
+        "osm_id": 12863623525,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.0767903,
+          13.2318305
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "Bwiam General Hospital",
+        "name:tr": "Bwiam Genel Hastanesi",
+        "wikidata": "Q2364301",
+        "osm_id": 125548270,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.585651,
+          13.7689093
+        ]
+      },
+      "properties": {
+        "amenity": "doctors",
+        "building": "yes",
+        "name": "Poste de Sant\u00e9 de kayemor",
+        "osm_id": 214331522,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -14.6660297,
+          13.4449473
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "Bansang Hospital",
+        "osm_id": 243107254,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.4576115,
+          13.1955856
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "Kafuta Health Center",
+        "osm_id": 244899882,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.0802737,
+          13.2335615
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "Gambia Family Planning Clinic/Office",
+        "osm_id": 247124195,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5772271,
+          13.457523
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "contact:phone": "+220 4228 223",
+        "contact:website": "http://www.rvth.org/",
+        "emergency": "yes",
+        "healthcare": "hospital",
+        "name": "Edward Francis Small Teaching Hospital",
+        "old_name": "Royal Victoria Teaching Hospi (RVTH)",
+        "short_name": "EFSTH",
+        "wheelchair": "yes",
+        "wikidata": "Q2171145",
+        "wikipedia": "en:Edward Francis Small Teaching Hospital",
+        "osm_id": 249740590,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -14.9682118,
+          13.5444905
+        ]
+      },
+      "properties": {
+        "amenity": "clinic",
+        "barrier": "wall",
+        "description": "Das Jahaly Health Centre (auch \"Buschklinik Hattingen\" oder kurz \"Buschklinik\"). Er\u00f6ffnung: 04.05.1991. Jahaly-Madina Kindergarten mit Vorschule, Er\u00f6ffnung: 19.09.2004 er\u00f6ffnet. Finanziert von Projekthilfe Gambia e.V./Hattingen",
+        "education": "kindergarten",
+        "email": "info@buschklinik.de",
+        "emergency": "yes",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general;dentistry;gynaecology",
+        "image": "https://buschklinik.de/wp-content/uploads/2017/03/2017-Titelfoto-Homepage-Startseit-Buschklinik-blaues-Schild_IMG_1755-klein.jpg",
+        "name": "Jahaly Health Centre / Jahaly-Madina Kindergarten",
+        "opening_hours": "24/7",
+        "operator": "Project Aid The Gambia / Projekthilfe Gambia e.V.",
+        "operator:type": "private_non_profit",
+        "source": "local knowledge",
+        "start_date": "04.05.1991 / 19.09.2004",
+        "osm_id": 255585110,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -14.7647392,
+          13.5421936
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "emergency": "no",
+        "healthcare": "hospital",
+        "name": "Janjanbureh Health Clinic",
+        "osm_id": 255596695,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.7616421,
+          13.0984901
+        ]
+      },
+      "properties": {
+        "amenity": "clinic",
+        "building": "yes",
+        "healthcare": "clinic",
+        "osm_id": 255657240,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5856633,
+          13.4563761
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "Psychiatric Hospital",
+        "osm_id": 255706212,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.6471424,
+          13.2744721
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "Brikama Hospital",
+        "osm_id": 255951399,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.4417807,
+          13.5941081
+        ]
+      },
+      "properties": {
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Ngayen Sanjal Clinic",
+        "osm_id": 327976701,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -14.0810655,
+          13.3997925
+        ]
+      },
+      "properties": {
+        "amenity": "clinic",
+        "building": "yes",
+        "healthcare": "clinic",
+        "osm_id": 327988167,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.3688407,
+          13.8787905
+        ]
+      },
+      "properties": {
+        "addr:full": "Sokone",
+        "amenity": "hospital",
+        "beds": "96",
+        "electricity": "grid",
+        "emergency": "yes",
+        "healthcare": "hospital",
+        "name": "Centre de Sant\u00e9 de Sokone",
+        "operational_status": "operational",
+        "operator": "Minist\u00e8re de la Sant\u00e9 et de l'Action Sociale",
+        "operator:type": "government",
+        "operator:wikidata": "Q30285491",
+        "source": "#senegal #covid-19 #emergency-health-data #healthsites",
+        "water_source": "water works",
+        "wheelchair": "limited",
+        "osm_id": 338327821,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.7996298,
+          13.4034269
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "name": "Kwinella Health Center",
+        "osm_id": 353255670,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.5745849,
+          13.4347189
+        ]
+      },
+      "properties": {
+        "amenity": "clinic",
+        "building": "yes",
+        "osm_id": 353258779,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.077419,
+          13.5738192
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "name": "Njawara Clinic",
+        "osm_id": 353262890,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.0774837,
+          13.5738921
+        ]
+      },
+      "properties": {
+        "amenity": "clinic",
+        "building": "yes",
+        "osm_id": 353262891,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.903731,
+          13.7630373
+        ]
+      },
+      "properties": {
+        "alt_name": "Maternit\u00e9",
+        "amenity": "clinic",
+        "building": "yes",
+        "healthcare": "clinic",
+        "name": "Sage-femme",
+        "osm_id": 359373409,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.9051034,
+          13.7636719
+        ]
+      },
+      "properties": {
+        "amenity": "pharmacy",
+        "building": "yes",
+        "healthcare": "pharmacy",
+        "osm_id": 359373411,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.9035501,
+          13.7616167
+        ]
+      },
+      "properties": {
+        "amenity": "pharmacy",
+        "building": "yes",
+        "healthcare": "pharmacy",
+        "osm_id": 359606181,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.8661853,
+          13.6228855
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "barrier": "wall",
+        "name": "H\u00f4pital de Keur Moussa Fronti\u00e8re",
+        "osm_id": 368155287,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.3977333,
+          13.6647588
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "name": "Ballangharr Clinic",
+        "osm_id": 370001116,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.9134835,
+          13.557834
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "Njaba Kunda Health Clinic",
+        "osm_id": 370001560,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.3239203,
+          13.5724636
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "emergency": "no",
+        "healthcare": "hospital",
+        "name": "Dankunku Clinic",
+        "osm_id": 370003892,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.6884533,
+          13.4737262
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "Medical Research Council",
+        "wikidata": "Q30280323",
+        "osm_id": 370186566,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.6746118,
+          13.4593917
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "Serekunda General Hospital",
+        "osm_id": 370203144,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.2580252,
+          13.6952589
+        ]
+      },
+      "properties": {
+        "amenity": "clinic",
+        "building": "yes",
+        "healthcare": "clinic",
+        "osm_id": 370209342,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.6700815,
+          13.4270147
+        ]
+      },
+      "properties": {
+        "amenity": "pharmacy",
+        "building": "yes",
+        "healthcare": "pharmacy",
+        "osm_id": 370427364,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.6068655,
+          13.5749769
+        ]
+      },
+      "properties": {
+        "addr:city": "Farfeni",
+        "addr:country": "GM",
+        "addr:street": "North Bank Road",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "Farafenni Hospital",
+        "osm_id": 370438583,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.5405127,
+          13.4500656
+        ]
+      },
+      "properties": {
+        "addr:city": "Soma",
+        "addr:street": "Pipeline",
+        "amenity": "hospital",
+        "description": "This is the Soma District Hospital the biggest Health Centre in Lower River Region",
+        "emergency": "yes",
+        "healthcare": "hospital",
+        "healthcare:speciality": "general",
+        "name": "Soma Major Health Center",
+        "operator": "Government",
+        "operator:type": "government",
+        "osm_id": 371247166,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -14.0793928,
+          13.8596889
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "surface": "dirt",
+        "osm_id": 372016821,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.0296167,
+          13.1616921
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "osm_id": 374492438,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -14.2103811,
+          13.3078292
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "Basse health centre",
+        "osm_id": 384017358,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.3033321,
+          13.2035783
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "name": "Somita Clinic",
+        "osm_id": 385775093,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.7018721,
+          13.5584754
+        ]
+      },
+      "properties": {
+        "amenity": "clinic",
+        "building": "yes",
+        "osm_id": 388436769,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -14.3623872,
+          13.0106725
+        ]
+      },
+      "properties": {
+        "amenity": "doctors",
+        "healthcare": "doctor",
+        "name": "Case de Sant\u00e9 de Diankankounda Ogel",
+        "osm_id": 392128443,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -13.8491269,
+          13.3782494
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "Song Kunda Health Center",
+        "osm_id": 406596106,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.4147856,
+          13.5366832
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "name": "Clinic",
+        "osm_id": 410271253,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -13.6736563,
+          13.7788515
+        ]
+      },
+      "properties": {
+        "addr:city": "Tambacounda",
+        "addr:full": "Libert\u00e9",
+        "amenity": "hospital",
+        "beds": "28",
+        "electricity": "grid",
+        "emergency": "yes",
+        "healthcare": "X-Ray,Laboratory",
+        "name": "Centre de sant\u00e9 de Tambacounda",
+        "operational_status": "operational",
+        "operator": "ministere de la sant\u00e9 du senegal",
+        "operator:type": "Public",
+        "source": "#senegal #covid-19 #emergency-health-data #healthsites",
+        "water_source": "water works",
+        "wheelchair": "limited",
+        "osm_id": 422397104,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -13.6586313,
+          13.7051047
+        ]
+      },
+      "properties": {
+        "amenity": "doctors",
+        "name": "Djinkore Poste de Sant\u00e9",
+        "osm_id": 438460684,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -13.6586867,
+          13.7049821
+        ]
+      },
+      "properties": {
+        "amenity": "doctors",
+        "name": "Djinkore Peul Poste de Sant\u00e9",
+        "osm_id": 439503025,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -13.6588187,
+          13.7050279
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "osm_id": 439517325,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -14.8568719,
+          13.7888906
+        ]
+      },
+      "properties": {
+        "amenity": "clinic",
+        "building": "yes",
+        "name": "Health Sub Center",
+        "osm_id": 445394344,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -14.7121095,
+          13.291302
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "osm_id": 449693178,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -14.4022739,
+          13.3869222
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "Diabugu Batapa Health Center",
+        "osm_id": 452700829,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.7268517,
+          13.4218629
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "Bijilo Medical Center",
+        "osm_id": 477742482,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -14.5213234,
+          13.4179331
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "description": "Health Post treats basic medical needs :consultations antenatal check ups, birthing, simple sutures, malaria testing and treatment, BP reading, etc. Complex cases will be referred to Bansang Hospital, 23K away",
+        "healthcare": "hospital",
+        "name": "Sare Soffie Health Post",
+        "operator": "1 Midwife, 1 Nurse and 1 Nurse assistant",
+        "smoking": "no",
+        "osm_id": 488031046,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.0133664,
+          13.7194591
+        ]
+      },
+      "properties": {
+        "amenity": "clinic",
+        "name": "Jailan Bakadaji Health Center",
+        "osm_id": 497865724,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -13.6726093,
+          13.7532785
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "name": "H\u00f4pital R\u00e9gional de Tambacounda",
+        "osm_id": 584069506,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.8640938,
+          13.21572
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "Wassadu clinic",
+        "osm_id": 624734295,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.6490344,
+          13.2712531
+        ]
+      },
+      "properties": {
+        "amenity": "pharmacy",
+        "building": "yes",
+        "dispensing": "yes",
+        "healthcare": "pharmacy",
+        "name": "EMJ Pharmacy Retail",
+        "osm_id": 644780591,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -13.6697476,
+          13.7625712
+        ]
+      },
+      "properties": {
+        "addr:full": "Quartier abattoir lot num\u00e9ro 3 route h\u00f4tel Asta k\u00e9b\u00e9",
+        "amenity": "hospital",
+        "electricity": "grid",
+        "emergency": "yes",
+        "healthcare": "Ultrasound,X-Ray,Operating,Theater,Laboratory",
+        "name": "Plateau m\u00e9dical Fama",
+        "operational_status": "operational",
+        "operator": "Dr mamadou thiongane",
+        "operator:type": "Private",
+        "source": "#senegal #covid-19 #emergency-health-data #healthsites",
+        "water_source": "water works",
+        "wheelchair": "yes",
+        "osm_id": 645478408,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -13.6672623,
+          13.7622313
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "Clinique Milogo",
+        "osm_id": 661000238,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -13.6701669,
+          13.7617251
+        ]
+      },
+      "properties": {
+        "amenity": "clinic",
+        "denomination": "catholic",
+        "name": "Dispensaire Saint Joseph",
+        "religion": "christian",
+        "osm_id": 661000239,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.2934489,
+          13.3837989
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "healthcare:speciality": "general;community",
+        "name": "Dongoro Ba Community Health Clinic",
+        "source": "local knowledge;aerial imagery",
+        "osm_id": 678374463,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.5360992,
+          13.3833281
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "Sare Musa Health Clinic",
+        "osm_id": 683088414,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.4196382,
+          13.4260009
+        ]
+      },
+      "properties": {
+        "amenity": "clinic",
+        "building": "yes",
+        "healthcare": "clinic",
+        "osm_id": 684961358,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -14.0528451,
+          13.4829867
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "Baja Kunda Health Center",
+        "osm_id": 731911809,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -14.1138216,
+          13.3333022
+        ]
+      },
+      "properties": {
+        "amenity": "clinic",
+        "building": "yes",
+        "healthcare": "clinic",
+        "name": "Kundam Mafatty RCH Clinic\\",
+        "osm_id": 753872255,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.6848383,
+          13.2781632
+        ]
+      },
+      "properties": {
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Jalambang Health Center",
+        "osm_id": 761432538,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.674123,
+          13.4617584
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "mbowen clinic",
+        "osm_id": 772877949,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.7196971,
+          13.4421048
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "Lamtoro Clinic",
+        "osm_id": 784162066,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.0574977,
+          13.660379
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "osm_id": 784166546,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.6754324,
+          13.4445502
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "Westfield Clinic",
+        "osm_id": 784166815,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.727559,
+          13.4055503
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "Africmed",
+        "osm_id": 784166946,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.5775711,
+          13.4396207
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "Village Clinic",
+        "osm_id": 784167157,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -14.9734059,
+          13.7792714
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "Njoben Wollof Health Post",
+        "osm_id": 784167461,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.7621266,
+          13.0970092
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "Kartong Community Clinic",
+        "osm_id": 784167686,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.6678828,
+          13.412889
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "fagikunda major hospital",
+        "osm_id": 784168408,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -14.2019768,
+          13.3013965
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "Medical Research Council",
+        "osm_id": 784172543,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.6815381,
+          13.4207412
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "Bundung Maternal & Child Health Hospital",
+        "osm_id": 784172640,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.7453227,
+          13.3966657
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "osm_id": 784173159,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.7453227,
+          13.3966657
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "stop step pharmacy",
+        "osm_id": 784173160,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.4741945,
+          13.7865551
+        ]
+      },
+      "properties": {
+        "addr:full": "TOUBACOUTA",
+        "amenity": "hospital",
+        "beds": "4",
+        "check_date": "2025-04-26",
+        "electricity": "grid",
+        "emergency": "no",
+        "healthcare": "hospital",
+        "name": "Poste de sant\u00e9 Toubacouta",
+        "operational_status": "operational",
+        "operator": "Ministere de sant\u00e9 et de l'action sociale",
+        "operator:type": "Public",
+        "source": "#senegal #covid-19 #emergency-health-data #healthsites",
+        "water_source": "well",
+        "wheelchair": "no",
+        "osm_id": 789979690,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.5870039,
+          13.7690599
+        ]
+      },
+      "properties": {
+        "amenity": "clinic",
+        "name": "Maternit\u00e9 de Kaymor",
+        "osm_id": 806018822,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.877776,
+          13.5891678
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "emergency": "no",
+        "healthcare": "hospital",
+        "name": "Old Kerr Katim Clinic",
+        "osm_id": 806023818,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.6684432,
+          13.9160926
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "osm_id": 806030328,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -14.6401756,
+          13.0376313
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "Case de Sant\u00e9 Sar\u00e9 Dickel",
+        "name:en": "Sar\u00e9 Dickel Health Hut",
+        "osm_id": 814626445,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -13.6724519,
+          13.7217102
+        ]
+      },
+      "properties": {
+        "amenity": "doctors",
+        "beds": "9",
+        "electricity": "grid",
+        "emergency": "yes",
+        "health_amenity:type": "Birthing center",
+        "name": "Poste de sant\u00e9 Djinkor\u00e9",
+        "operational_status": "operational",
+        "operator": "Fatoumata kankou Diarra",
+        "source": "#senegal #covid-19 #emergency-health-data #healthsites",
+        "water_source": "groundwater",
+        "wheelchair": "yes",
+        "osm_id": 819225139,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.4747951,
+          13.4828038
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "description": "Das Health Center Buniadu wird betrieben von project Aid The Gambia im Auftrag von Riverboat Doctors International e.V. in Ganderkesee / Deutschland",
+        "email": "projectaid@work.gm",
+        "emergency": "yes",
+        "healthcare": "hospital",
+        "healthcare:speciality": "general",
+        "image": "https://buschklinik.de/wp-content/uploads/2019/10/P1033674-klein.jpg",
+        "name": "Health Center Buniadu",
+        "opening_hours": "24/7",
+        "operator": "Project Aid The Gambia / Riverboat Doctors International e.V.",
+        "operator:type": "private_non_profit",
+        "solar": "yes",
+        "osm_id": 828908614,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.7845739,
+          13.3510808
+        ]
+      },
+      "properties": {
+        "amenity": "doctors",
+        "building": "yes",
+        "healthcare": "doctor",
+        "osm_id": 936252174,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.7847639,
+          13.3512633
+        ]
+      },
+      "properties": {
+        "amenity": "doctors",
+        "building": "yes",
+        "healthcare": "doctor",
+        "osm_id": 936252175,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.7846347,
+          13.3512723
+        ]
+      },
+      "properties": {
+        "amenity": "doctors",
+        "building": "yes",
+        "healthcare": "doctor",
+        "osm_id": 936252176,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.82999,
+          13.2921795
+        ]
+      },
+      "properties": {
+        "amenity": "clinic",
+        "building": "clinic",
+        "healthcare": "clinic",
+        "name": "Nioro Jattaba Community Clinic",
+        "operator": "Community",
+        "operator:type": "community",
+        "osm_id": 940312956,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.7590271,
+          13.269336
+        ]
+      },
+      "properties": {
+        "addr:city": "Sanyang",
+        "amenity": "hospital",
+        "emergency": "yes",
+        "healthcare": "hospital",
+        "name": "Sanyang Village Health Center",
+        "operator": "Ministry of Health (GoTG)",
+        "operator:type": "public",
+        "osm_id": 1150424292,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -13.5824254,
+          13.8047976
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "osm_id": 1175609797,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.9684109,
+          13.4869765
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "Salikenne Hospital",
+        "osm_id": 1299963427,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.7306923,
+          13.4064389
+        ]
+      },
+      "properties": {
+        "amenity": "clinic",
+        "building": "yes",
+        "healthcare": "clinic",
+        "name": "Medicare",
+        "osm_id": 1416289462,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.7304942,
+          13.4065395
+        ]
+      },
+      "properties": {
+        "amenity": "pharmacy",
+        "building": "yes",
+        "healthcare": "pharmacy",
+        "osm_id": 1416289463,
+        "proximity_group": "clustered",
+        "has_neighbor_within_1km": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.721961,
+          13.391392
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "barrier": "wall",
+        "healthcare": "hospital",
+        "name": "Tanka Tanka",
+        "osm_id": 1484077335,
+        "proximity_group": "isolated",
+        "has_neighbor_within_1km": false
+      }
+    }
+  ]
+}

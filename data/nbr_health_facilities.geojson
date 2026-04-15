@@ -1,0 +1,731 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.4242087,
+          13.6041234
+        ]
+      },
+      "properties": {
+        "amenity": "doctors",
+        "emergency": "yes",
+        "healthcare": "doctor",
+        "name": "Karang Poste Hospital",
+        "name:fr": "Poste de sant\u00e9",
+        "source": "Personal Experience",
+        "osm_id": 2182202259,
+        "flood_risk": "low",
+        "nearest_flood_distance_km": 9.761,
+        "region": "North Bank"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.0573991,
+          13.6603565
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "osm_id": 2487593830,
+        "flood_risk": "low",
+        "nearest_flood_distance_km": 9.038,
+        "region": "North Bank"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.0879372,
+          13.4937539
+        ]
+      },
+      "properties": {
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Kerewan Health Center",
+        "osm_id": 5307044028,
+        "flood_risk": "low",
+        "nearest_flood_distance_km": 7.564,
+        "region": "North Bank"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.0854143,
+          13.4941303
+        ]
+      },
+      "properties": {
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Dembo Fula Clinic",
+        "osm_id": 5360996823,
+        "flood_risk": "low",
+        "nearest_flood_distance_km": 7.29,
+        "region": "North Bank"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.6052001,
+          13.5739072
+        ]
+      },
+      "properties": {
+        "amenity": "pharmacy",
+        "healthcare": "pharmacy",
+        "osm_id": 5426422922,
+        "flood_risk": "low",
+        "nearest_flood_distance_km": 2.717,
+        "region": "North Bank"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.088459,
+          13.4940671
+        ]
+      },
+      "properties": {
+        "amenity": "pharmacy",
+        "healthcare": "pharmacy",
+        "name": "Pharmacy",
+        "osm_id": 5732570023,
+        "flood_risk": "low",
+        "nearest_flood_distance_km": 7.611,
+        "region": "North Bank"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -14.9264552,
+          13.5348734
+        ]
+      },
+      "properties": {
+        "amenity": "pharmacy",
+        "healthcare": "pharmacy",
+        "name": "Brikama Ba drug store",
+        "phone": "2705406",
+        "osm_id": 6025072234,
+        "flood_risk": "low",
+        "nearest_flood_distance_km": 16.308,
+        "region": "North Bank"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.5991706,
+          13.5734391
+        ]
+      },
+      "properties": {
+        "amenity": "pharmacy",
+        "healthcare": "pharmacy",
+        "name": "Babu Salam Drugstore",
+        "opening_hours": "Mo-Su 07:00-00:00",
+        "phone": "7000288",
+        "osm_id": 6518229985,
+        "flood_risk": "low",
+        "nearest_flood_distance_km": 2.608,
+        "region": "North Bank"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.4003947,
+          13.6228066
+        ]
+      },
+      "properties": {
+        "addr:full": "Route de cass\u00e9te",
+        "amenity": "doctors",
+        "beds": "8",
+        "building": "hospital",
+        "electricity": "grid",
+        "emergency": "no",
+        "healthcare": "Ultrasound,Laboratory,Imaging Equipment",
+        "name": "Poste de sant\u00e9 Sirmang",
+        "operational_status": "operational",
+        "operator": "Moustapha faye",
+        "operator:type": "Public",
+        "source": "#senegal #covid-19 #emergency-health-data #healthsites",
+        "water_source": "Water works",
+        "wheelchair": "yes",
+        "osm_id": 8132683968,
+        "flood_risk": "low",
+        "nearest_flood_distance_km": 12.627,
+        "region": "North Bank"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.6733028,
+          13.5798709
+        ]
+      },
+      "properties": {
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "nurses_and_public_health_officers",
+        "name": "RCH site",
+        "opening_hours": "first tuesday of every month",
+        "operator": "immunization, antenatal services",
+        "operator:type": "government",
+        "osm_id": 10759160780,
+        "flood_risk": "low",
+        "nearest_flood_distance_km": 8.592,
+        "region": "North Bank"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.6390037,
+          13.574654
+        ]
+      },
+      "properties": {
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "healthcare:speciality": "nurse;community;community_health_nurse;lab",
+        "name": "RCH",
+        "opening_hours": "first tuesday of every month",
+        "osm_id": 10787211671,
+        "flood_risk": "low",
+        "nearest_flood_distance_km": 5.029,
+        "region": "North Bank"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.6352372,
+          13.5383107
+        ]
+      },
+      "properties": {
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Kubandar clinic",
+        "osm_id": 10787244198,
+        "flood_risk": "low",
+        "nearest_flood_distance_km": 4.025,
+        "region": "North Bank"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.6070017,
+          13.4932196
+        ]
+      },
+      "properties": {
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Ballinghor RCH",
+        "osm_id": 10787344789,
+        "flood_risk": "low",
+        "nearest_flood_distance_km": 6.359,
+        "region": "North Bank"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.7502858,
+          13.5647056
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "name": "Illiassa Minor Health Clinic",
+        "osm_id": 11085308005,
+        "flood_risk": "low",
+        "nearest_flood_distance_km": 5.617,
+        "region": "North Bank"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.3936723,
+          13.4665709
+        ]
+      },
+      "properties": {
+        "amenity": "clinic",
+        "osm_id": 11099939906,
+        "flood_risk": "low",
+        "nearest_flood_distance_km": 6.754,
+        "region": "North Bank"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.0499598,
+          13.519698
+        ]
+      },
+      "properties": {
+        "amenity": "clinic",
+        "osm_id": 11100041005,
+        "flood_risk": "low",
+        "nearest_flood_distance_km": 3.414,
+        "region": "North Bank"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.0500546,
+          13.5196064
+        ]
+      },
+      "properties": {
+        "amenity": "clinic",
+        "name": "Saaba village clinic",
+        "osm_id": 11100043805,
+        "flood_risk": "low",
+        "nearest_flood_distance_km": 3.42,
+        "region": "North Bank"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -14.9682118,
+          13.5444905
+        ]
+      },
+      "properties": {
+        "amenity": "clinic",
+        "barrier": "wall",
+        "description": "Das Jahaly Health Centre (auch \"Buschklinik Hattingen\" oder kurz \"Buschklinik\"). Er\u00f6ffnung: 04.05.1991. Jahaly-Madina Kindergarten mit Vorschule, Er\u00f6ffnung: 19.09.2004 er\u00f6ffnet. Finanziert von Projekthilfe Gambia e.V./Hattingen",
+        "education": "kindergarten",
+        "email": "info@buschklinik.de",
+        "emergency": "yes",
+        "healthcare": "clinic",
+        "healthcare:speciality": "general;dentistry;gynaecology",
+        "image": "https://buschklinik.de/wp-content/uploads/2017/03/2017-Titelfoto-Homepage-Startseit-Buschklinik-blaues-Schild_IMG_1755-klein.jpg",
+        "name": "Jahaly Health Centre / Jahaly-Madina Kindergarten",
+        "opening_hours": "24/7",
+        "operator": "Project Aid The Gambia / Projekthilfe Gambia e.V.",
+        "operator:type": "private_non_profit",
+        "source": "local knowledge",
+        "start_date": "04.05.1991 / 19.09.2004",
+        "osm_id": 255585110,
+        "flood_risk": "low",
+        "nearest_flood_distance_km": 11.69,
+        "region": "North Bank"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -14.7647392,
+          13.5421936
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "emergency": "no",
+        "healthcare": "hospital",
+        "name": "Janjanbureh Health Clinic",
+        "osm_id": 255596695,
+        "flood_risk": "low",
+        "nearest_flood_distance_km": 33.264,
+        "region": "North Bank"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.4417807,
+          13.5941081
+        ]
+      },
+      "properties": {
+        "amenity": "clinic",
+        "healthcare": "clinic",
+        "name": "Ngayen Sanjal Clinic",
+        "osm_id": 327976701,
+        "flood_risk": "low",
+        "nearest_flood_distance_km": 8.869,
+        "region": "North Bank"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.077419,
+          13.5738192
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "name": "Njawara Clinic",
+        "osm_id": 353262890,
+        "flood_risk": "low",
+        "nearest_flood_distance_km": 9.428,
+        "region": "North Bank"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.0774837,
+          13.5738921
+        ]
+      },
+      "properties": {
+        "amenity": "clinic",
+        "building": "yes",
+        "osm_id": 353262891,
+        "flood_risk": "low",
+        "nearest_flood_distance_km": 9.439,
+        "region": "North Bank"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.8661853,
+          13.6228855
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "barrier": "wall",
+        "name": "H\u00f4pital de Keur Moussa Fronti\u00e8re",
+        "osm_id": 368155287,
+        "flood_risk": "low",
+        "nearest_flood_distance_km": 5.079,
+        "region": "North Bank"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.3977333,
+          13.6647588
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "name": "Ballangharr Clinic",
+        "osm_id": 370001116,
+        "flood_risk": "low",
+        "nearest_flood_distance_km": 16.9,
+        "region": "North Bank"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.9134835,
+          13.557834
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "Njaba Kunda Health Clinic",
+        "osm_id": 370001560,
+        "flood_risk": "low",
+        "nearest_flood_distance_km": 1.698,
+        "region": "North Bank"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.3239203,
+          13.5724636
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "emergency": "no",
+        "healthcare": "hospital",
+        "name": "Dankunku Clinic",
+        "osm_id": 370003892,
+        "flood_risk": "low",
+        "nearest_flood_distance_km": 21.196,
+        "region": "North Bank"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.2580252,
+          13.6952589
+        ]
+      },
+      "properties": {
+        "amenity": "clinic",
+        "building": "yes",
+        "healthcare": "clinic",
+        "osm_id": 370209342,
+        "flood_risk": "low",
+        "nearest_flood_distance_km": 24.022,
+        "region": "North Bank"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.6068655,
+          13.5749769
+        ]
+      },
+      "properties": {
+        "addr:city": "Farfeni",
+        "addr:country": "GM",
+        "addr:street": "North Bank Road",
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "Farafenni Hospital",
+        "osm_id": 370438583,
+        "flood_risk": "low",
+        "nearest_flood_distance_km": 2.875,
+        "region": "North Bank"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.5405127,
+          13.4500656
+        ]
+      },
+      "properties": {
+        "addr:city": "Soma",
+        "addr:street": "Pipeline",
+        "amenity": "hospital",
+        "description": "This is the Soma District Hospital the biggest Health Centre in Lower River Region",
+        "emergency": "yes",
+        "healthcare": "hospital",
+        "healthcare:speciality": "general",
+        "name": "Soma Major Health Center",
+        "operator": "Government",
+        "operator:type": "government",
+        "osm_id": 371247166,
+        "flood_risk": "low",
+        "nearest_flood_distance_km": 12.839,
+        "region": "North Bank"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.7018721,
+          13.5584754
+        ]
+      },
+      "properties": {
+        "amenity": "clinic",
+        "building": "yes",
+        "osm_id": 388436769,
+        "flood_risk": "low",
+        "nearest_flood_distance_km": 10.649,
+        "region": "North Bank"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.4147856,
+          13.5366832
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "name": "Clinic",
+        "osm_id": 410271253,
+        "flood_risk": "low",
+        "nearest_flood_distance_km": 11.962,
+        "region": "North Bank"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.0133664,
+          13.7194591
+        ]
+      },
+      "properties": {
+        "amenity": "clinic",
+        "name": "Jailan Bakadaji Health Center",
+        "osm_id": 497865724,
+        "flood_risk": "low",
+        "nearest_flood_distance_km": 16.671,
+        "region": "North Bank"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.0574977,
+          13.660379
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "osm_id": 784166546,
+        "flood_risk": "low",
+        "nearest_flood_distance_km": 9.039,
+        "region": "North Bank"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.877776,
+          13.5891678
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "emergency": "no",
+        "healthcare": "hospital",
+        "name": "Old Kerr Katim Clinic",
+        "osm_id": 806023818,
+        "flood_risk": "low",
+        "nearest_flood_distance_km": 3.171,
+        "region": "North Bank"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.4747951,
+          13.4828038
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "description": "Das Health Center Buniadu wird betrieben von project Aid The Gambia im Auftrag von Riverboat Doctors International e.V. in Ganderkesee / Deutschland",
+        "email": "projectaid@work.gm",
+        "emergency": "yes",
+        "healthcare": "hospital",
+        "healthcare:speciality": "general",
+        "image": "https://buschklinik.de/wp-content/uploads/2019/10/P1033674-klein.jpg",
+        "name": "Health Center Buniadu",
+        "opening_hours": "24/7",
+        "operator": "Project Aid The Gambia / Riverboat Doctors International e.V.",
+        "operator:type": "private_non_profit",
+        "solar": "yes",
+        "osm_id": 828908614,
+        "flood_risk": "high",
+        "nearest_flood_distance_km": 0.978,
+        "region": "North Bank"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.9684109,
+          13.4869765
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "Salikenne Hospital",
+        "osm_id": 1299963427,
+        "flood_risk": "low",
+        "nearest_flood_distance_km": 3.71,
+        "region": "North Bank"
+      }
+    }
+  ]
+}

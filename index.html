@@ -4,95 +4,188 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gambia Flood & Climate Archive (1985-2024)</title>
+    <!-- Google Fonts & Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
      crossorigin=""/>
     <style>
-        body { margin: 0; padding: 0; font-family: sans-serif; }
-        #map { height: 100vh; width: 100%; }
-        .map-title {
-            position: absolute;
-            top: 10px;
-            left: 50px;
-            z-index: 1000;
-            background: rgba(255, 255, 255, 0.9);
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.2);
-            width: 300px;
+        :root {
+            --sidebar-bg: rgba(255, 255, 255, 0.85);
+            --accent-color: #0078ff;
+            --text-color: #2c3e50;
         }
+        body { margin: 0; padding: 0; font-family: 'Poppins', sans-serif; color: var(--text-color); }
+        #map { height: 100vh; width: 100%; z-index: 1; }
+        
+        /* Modern Sidebar (Glassmorphism) */
+        .map-sidebar {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            background: var(--sidebar-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            width: 340px;
+            max-height: calc(100vh - 80px);
+            overflow-y: auto;
+            border: 1px solid rgba(255,255,255,0.3);
+            transition: transform 0.3s ease;
+        }
+        h2 { margin: 0; font-size: 20px; font-weight: 600; color: #1a1a1a; }
+        p { margin: 8px 0; font-size: 13px; line-height: 1.5; }
+        
         .filter-group {
-            margin-top: 15px;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(0,0,0,0.05);
         }
         .filter-group label {
             display: block;
-            font-weight: bold;
-            margin-bottom: 5px;
-            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #7f8c8d;
         }
         .filter-group select {
             width: 100%;
-            padding: 5px;
-            border-radius: 4px;
-            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            background: white;
+            font-family: inherit;
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.2s;
         }
+        .filter-group select:focus { border-color: var(--accent-color); }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            font-size: 13px;
+        }
+        .legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 12px;
+            flex-shrink: 0;
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+
+        /* Loading Spinner */
+        #loader {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid var(--accent-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+        /* Custom Popup Styling */
+        .leaflet-popup-content-wrapper {
+            border-radius: 12px;
+            padding: 5px;
+        }
+        .leaflet-popup-content b { color: var(--accent-color); }
+
         /* Pulsing animation for live markers */
         @keyframes pulse {
             0% { transform: scale(1); opacity: 1; }
             50% { transform: scale(1.1); opacity: 0.7; }
             100% { transform: scale(1); opacity: 1; }
         }
-        .pulse-marker {
-            animation: pulse 1.5s infinite ease-in-out;
+        .pulse-marker { animation: pulse 1.5s infinite ease-in-out; }
+        
+        .btn-health {
+            display: block;
+            margin-top: 15px;
+            padding: 10px;
+            background: #2ca25f;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 13px;
+            font-weight: 600;
+            transition: background 0.2s;
         }
+        .btn-health:hover { background: #23814c; }
     </style>
 </head>
 <body>
-    <div class="map-title">
-        <h2 style="margin:0; font-size: 20px;">Gambia & Regional Climate Risk</h2>
-        <p style="margin:5px 0 0 0; font-size: 13px; color: #666;">Historical Hazards & Future Risks (1985-2050)</p>
-        <p style="margin:5px 0 0 0; font-size: 11px; color: #0078ff;"><em>Includes neighboring risks in Senegal, Mali, and Mauritania.</em></p>
-        <p id="status" style="margin:5px 0 0 0; font-size: 12px; color: orange;"><b>Loading Data...</b></p>
+    <div id="loader">
+        <div class="spinner"></div>
+        <p style="margin-top: 15px; font-weight: 600;">Loading Climate Data...</p>
+    </div>
+
+    <div class="map-sidebar">
+        <h2><i class="fa-solid fa-cloud-showers-heavy"></i> Gambia Climate Risk</h2>
+        <p style="color: #666;">Historical Hazards & Live Alerts (1985-2050)</p>
         
-        <div class="filter-group">
-            <label for="yearSelect">Filter by Year:</label>
-            <select id="yearSelect">
-                <option value="all">All Years</option>
-            </select>
+        <a href="health_map.html" class="btn-health"><i class="fa-solid fa-notes-medical"></i> Switch to Health & Risk Map</a>
+
+        <div id="status-badge" style="margin-top: 15px; display:inline-block; padding: 4px 10px; border-radius: 20px; font-size: 11px; font-weight: 600; background: #ffeaa7; color: #d35400;">
+            <i class="fa-solid fa-sync fa-spin"></i> Initializing...
         </div>
 
         <div class="filter-group">
-            <label for="causeSelect">Filter by Cause:</label>
-            <select id="causeSelect">
-                <option value="all">All Causes</option>
-            </select>
+            <label for="yearSelect">Time Period</label>
+            <select id="yearSelect"><option value="all">All Historical Data</option></select>
         </div>
 
-        <div id="legend" style="margin-top: 15px; font-size: 12px;">
-            <strong>Legend:</strong><br>
-            <span style="color:#e31a1c">●</span> High Severity Flood (2)<br>
-            <span style="color:#fd8d3c">●</span> Med-High Flood (1.5)<br>
-            <span style="color:#feb24c">●</span> Medium Flood (1)<br>
-            <span style="color:#8c6d31">●</span> Drought / Deficit<br>
-            <span style="color:#d73027">●</span> Bushfire<br>
-            <span style="color:#7b3294">●</span> Coastal Erosion<br>
-            <span style="color:#969696">●</span> Salinity / Saltwater<br>
-            <span style="color:#00fafa">●</span> <strong>Future Projection (2050)</strong><br>
-            <hr style="border: 0; border-top: 1px solid #eee; margin: 5px 0;">
-            <span style="color:#ff0000; font-weight: bold;">◎</span> <strong>Live Regional Alert (IFRC)</strong><br>
-            <span style="color:#ffa500; font-weight: bold;">◎</span> <strong>Global Disaster Alert (GDACS)</strong><br>
-            <span style="color:#0000ff; font-weight: bold;">○</span> <strong>River Forecast (GloFAS)</strong><br>
-            <span style="color:#0078ff; font-weight: bold;">●</span> <strong>Regional Report (ReliefWeb)</strong>
+        <div class="filter-group">
+            <label for="causeSelect">Hazard Type</label>
+            <select id="causeSelect"><option value="all">All Climate Hazards</option></select>
         </div>
 
-        <div id="live-monitoring" style="margin-top: 20px; padding: 10px; background: #eef; border-radius: 5px; font-size: 12px;">
-            <strong>Live Regional Warning & Reports:</strong><br>
-            <ul style="padding-left: 15px; margin-top: 5px;">
-                <li><a href="https://go.ifrc.org/countries/73" target="_blank">Gambia (IFRC GO)</a> | <a href="https://go.ifrc.org/regions/0" target="_blank">Regional</a></li>
-                <li><a href="https://www.gdacs.org/" target="_blank">GDACS (Disaster Alerts)</a></li>
-                <li><a href="https://reliefweb.int/updates?region=46" target="_blank">ReliefWeb (West Africa)</a></li>
-                <li><a href="https://www.globalfloods.eu/" target="_blank">GloFAS Flood Forecast</a></li>
+        <div style="margin-top: 25px;">
+            <label style="font-weight: 600; font-size: 12px; color: #7f8c8d; text-transform: uppercase;">Legend</label>
+            <div style="margin-top: 10px;">
+                <div class="legend-item"><div class="legend-dot" style="background:#e31a1c"></div> High Severity Flood (2)</div>
+                <div class="legend-item"><div class="legend-dot" style="background:#fd8d3c"></div> Med-High Flood (1.5)</div>
+                <div class="legend-item"><div class="legend-dot" style="background:#feb24c"></div> Medium Flood (1)</div>
+                <div class="legend-item"><div class="legend-dot" style="background:#8c6d31"></div> Drought / Deficit</div>
+                <div class="legend-item"><div class="legend-dot" style="background:#d73027"></div> Bushfire</div>
+                <div class="legend-item"><div class="legend-dot" style="background:#7b3294"></div> Coastal Erosion</div>
+                <div class="legend-item"><div class="legend-dot" style="background:#969696"></div> Salinity / Saltwater</div>
+                <div class="legend-item"><div class="legend-dot" style="background:#00fafa"></div> <b>Future Projection (2050)</b></div>
+                <hr style="border: 0; border-top: 1px solid rgba(0,0,0,0.05); margin: 10px 0;">
+                <div class="legend-item"><i class="fa-solid fa-circle-exclamation" style="color:#ff0000; margin-right:10px;"></i> Live Regional Alert (IFRC)</div>
+                <div class="legend-item"><i class="fa-solid fa-triangle-exclamation" style="color:#ffa500; margin-right:10px;"></i> Disaster Alert (GDACS)</div>
+                <div class="legend-item"><i class="fa-solid fa-water" style="color:#0078ff; margin-right:10px;"></i> River Forecast (GloFAS)</div>
+                <div class="legend-item"><div class="legend-dot" style="background:#0078ff; opacity: 0.6;"></div> Regional Report (ReliefWeb)</div>
+            </div>
+        </div>
+
+        <div id="live-monitoring" style="margin-top: 25px; padding: 15px; background: rgba(0, 120, 255, 0.05); border-radius: 12px; font-size: 12px;">
+            <strong style="display:block; margin-bottom: 8px;"><i class="fa-solid fa-tower-broadcast"></i> Data Sources</strong>
+            <ul style="padding-left: 20px; margin: 0; color: #555;">
+                <li style="margin-bottom:4px;"><a href="https://go.ifrc.org/regions/0" target="_blank">IFRC GO Dashboard</a></li>
+                <li style="margin-bottom:4px;"><a href="https://www.gdacs.org/" target="_blank">GDACS Alerts</a></li>
+                <li><a href="https://reliefweb.int/updates?region=46" target="_blank">ReliefWeb West Africa</a></li>
             </ul>
         </div>
     </div>
@@ -125,13 +218,13 @@
             attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a>'
         });
 
-        osm.addTo(map);
+        satellite.addTo(map); // Default to Satellite
         liveLayer.addTo(map);
 
         // 3. Add Layer Control
         var baseMaps = {
-            "OpenStreetMap": osm,
             "Satellite (Esri)": satellite,
+            "OpenStreetMap": osm,
             "Terrain (Topography)": terrain
         };
         var overlayMaps = {
@@ -141,7 +234,7 @@
         var layerControl = L.control.layers(baseMaps, overlayMaps).addTo(map);
 
         // 4. Load the GeoJSON data
-        fetch('floods.geojson?v=' + new Date().getTime())
+        fetch('floods.geojson') // Removed cache-busting ?v=...
             .then(response => {
                 if (!response.ok) throw new Error("Network response was not ok");
                 return response.json();
@@ -150,10 +243,16 @@
                 allData = data;
                 populateFilters(data);
                 updateMap();
-                document.getElementById('status').innerHTML = "<b>Data Loaded: " + data.features.length + " events</b>";
-                document.getElementById('status').style.color = "green";
-                
+
+                // Update UI state
+                document.getElementById('loader').style.display = 'none';
+                const badge = document.getElementById('status-badge');
+                badge.innerHTML = `<i class="fa-solid fa-check-circle"></i> ${data.features.length} Events Loaded`;
+                badge.style.background = '#c8e6c9';
+                badge.style.color = '#2e7d32';
+
                 // Add the historical layer to the control correctly
+
                 layerControl.addOverlay(geojsonLayer, "Historical & Projections");
 
                 // Automatically zoom to fit all markers on load
@@ -166,13 +265,13 @@
             })
             .catch(error => {
                 console.error('Error loading the GeoJSON:', error);
-                document.getElementById('status').innerHTML = "<b>Error loading data!</b>";
-                document.getElementById('status').style.color = "red";
+                document.getElementById('loader').innerHTML = '<p style="color:red; font-weight:600;">Error Loading Data</p>';
             });
 
         function loadLiveAlerts() {
-            // A. Fetch from IFRC GO (Gambia: 70, Senegal: 153, Mali: 111, Mauritania: 112, Guinea: 81, Guinea-Bissau: 82)
-            fetch('https://goadmin.ifrc.org/api/v2/event/?countries__in=70,153,111,112,81,82&limit=15')
+            // A. Fetch from IFRC GO Correct IDs: 
+            // Gambia: 71, Senegal: 151, Mali: 113, Mauritania: 115, Guinea: 79, Guinea-Bissau: 80
+            fetch('https://goadmin.ifrc.org/api/v2/event/?countries__in=71,151,113,115,79,80&limit=15')
                 .then(res => res.json())
                 .then(data => {
                     const climateCategories = ['Flood', 'Pluvial/Flash Flood', 'Drought', 'Cyclone', 'Heat Wave', 'Cold Wave', 'Storm Surge', 'Wildfire', 'Storm', 'Fire'];
@@ -181,11 +280,9 @@
                         if (!climateCategories.includes(event.dtype.name)) return;
 
                         const date = new Date(event.disaster_start_date).toLocaleDateString();
-                        // Find the country name from countries array
                         const countryName = event.countries.map(c => c.name).join(', ');
                         
-                        // Use a slightly different icon for regional alerts
-                        const marker = L.circleMarker([13.45, -16.57], { // Default, ideally we'd have coords per country
+                        const marker = L.circleMarker([13.45, -16.57], {
                             radius: 12,
                             fillColor: '#ff0000',
                             color: '#fff',
@@ -195,19 +292,19 @@
                             className: 'pulse-marker'
                         });
 
-                        // Attempt to offset markers if they are all in the same spot
-                        const latOffset = (Math.random() - 0.5) * 2;
-                        const lngOffset = (Math.random() - 0.5) * 4;
-                        marker.setLatLng([13.45 + latOffset, -14.5 + lngOffset]);
+                        // Randomize position within region if no specific lat/lng provided
+                        const latOffset = (Math.random() - 0.5) * 3;
+                        const lngOffset = (Math.random() - 0.5) * 5;
+                        marker.setLatLng([14.5 + latOffset, -14.5 + lngOffset]);
 
                         marker.bindPopup(`
                             <div style="font-size: 14px; width: 220px;">
-                                <b style="color: red;">REGIONAL ALERT (IFRC)</b><br>
-                                <strong>${event.name}</strong><br>
+                                <b style="color: red;"><i class="fa-solid fa-circle-exclamation"></i> REGIONAL ALERT (IFRC)</b><br>
+                                <strong style="display:block; margin-top:5px;">${event.name}</strong>
                                 <b>Country:</b> ${countryName}<br>
                                 <b>Type:</b> ${event.dtype.name}<br>
                                 <b>Started:</b> ${date}<br>
-                                <a href="https://go.ifrc.org/emergencies/${event.id}" target="_blank">View on IFRC GO</a>
+                                <a href="https://go.ifrc.org/emergencies/${event.id}" target="_blank" style="display:block; margin-top:10px; color:var(--accent-color); font-weight:600;">View on IFRC GO →</a>
                             </div>
                         `);
                         liveLayer.addLayer(marker);

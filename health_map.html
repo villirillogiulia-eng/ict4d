@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gambia Health Infrastructure & Flood Risk</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+    <style>
+        body { 
+            margin: 0; 
+            padding: 0; 
+            font-family: 'Inter', sans-serif; 
+            color: #333;
+        }
+        #map { height: 100vh; width: 100%; }
+        
+        /* Modern Glassmorphism Panel */
+        .map-title {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            width: 320px;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        
+        .map-title h2 {
+            margin: 0 0 5px 0; 
+            font-size: 22px; 
+            font-weight: 700;
+            color: #111;
+        }
+        
+        .map-title p.subtitle {
+            margin: 0 0 15px 0; 
+            font-size: 13px; 
+            color: #555;
+        }
+
+        .btn-back {
+            display: block; 
+            text-align: center;
+            padding: 10px 15px; 
+            background: #0078ff; 
+            color: white; 
+            text-decoration: none; 
+            border-radius: 6px; 
+            font-size: 13px; 
+            font-weight: 600;
+            transition: background 0.2s ease;
+        }
+        .btn-back:hover {
+            background: #005bb5;
+        }
+
+        .filter-group {
+            margin-top: 20px;
+            background: #f8f9fa;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #e9ecef;
+        }
+        
+        .filter-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 13px;
+            color: #444;
+        }
+        
+        .filter-group select {
+            width: 100%;
+            padding: 8px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            background-color: white;
+            outline: none;
+        }
+        .filter-group select:focus {
+            border-color: #0078ff;
+            box-shadow: 0 0 0 2px rgba(0, 120, 255, 0.2);
+        }
+
+        #legend {
+            margin-top: 20px; 
+            font-size: 13px;
+            line-height: 1.6;
+        }
+        #legend strong {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: #222;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 4px;
+        }
+        
+        .legend-color {
+            font-size: 16px;
+            margin-right: 8px;
+        }
+
+        #status {
+            margin: 15px 0 0 0; 
+            font-size: 13px; 
+            font-weight: 600;
+            padding: 8px;
+            border-radius: 6px;
+            text-align: center;
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        /* Pulsing animation for live markers */
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.7; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .pulse-marker {
+            animation: pulse 1.5s infinite ease-in-out;
+        }
+        
+        .city-label {
+            background: none;
+            border: none;
+            box-shadow: none;
+            color: #111;
+            font-weight: 700;
+            font-size: 12px;
+            text-shadow: 2px 2px 0px #fff, -2px -2px 0px #fff, 2px -2px 0px #fff, -2px 2px 0px #fff;
+        }
+        
+        /* Customizing Leaflet popups */
+        .leaflet-popup-content-wrapper {
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+        .leaflet-popup-content {
+            font-family: 'Inter', sans-serif;
+            margin: 15px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="map-title">
+        <h2>North Bank Region</h2>
+        <p class="subtitle">Health, Flood & Drought Risks</p>
+        
+        <div>
+            <a href="index.html" class="btn-back">➜ Back to Climate Map</a>
+        </div>
+
+        <div class="filter-group">
+            <label for="riskSelect">Filter NBR Sites (36):</label>
+            <select id="riskSelect">
+                <option value="all">All NBR Health Sites</option>
+                <option value="high">High Risk Only (Kerewan HC)</option>
+            </select>
+        </div>
+
+        <div id="legend">
+            <strong>Legend</strong>
+            <div class="legend-item"><span class="legend-color" style="color:#e31a1c">●</span> High Risk Facility</div>
+            <div class="legend-item"><span class="legend-color" style="color:#2ca25f">●</span> Lower Risk Facility</div>
+            <div class="legend-item"><span class="legend-color" style="color:#8c6d31">●</span> Historical Drought (Past 10y)</div>
+            <div class="legend-item"><span class="legend-color" style="color:#fd8d3c">●</span> Near-Term Drought (2026-2030)</div>
+            <div class="legend-item"><span class="legend-color" style="color:#7b3294">●</span> Future Drought (2050)</div>
+            <hr style="border: 0; border-top: 1px solid #ddd; margin: 10px 0;">
+            <div class="legend-item"><span class="legend-color" style="color:#ff0000; font-weight: bold;">◎</span> <strong>Live Regional Alert</strong></div>
+            <div class="legend-item"><span class="legend-color" style="color:#ffa500; font-weight: bold;">◎</span> <strong>Disaster Alert (GDACS)</strong></div>
+        </div>
+
+        <p id="status">Loading Data...</p>
+    </div>
+    <div id="map"></div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+
+    <script>
+        var map = L.map('map', { zoomControl: false }).setView([13.6, -15.5], 9);
+        L.control.zoom({ position: 'topright' }).addTo(map);
+
+        var healthLayer;
+        var liveLayer = L.layerGroup();
+        var citiesLayer = L.layerGroup();
+        var droughtLayer = L.layerGroup();
+        var allHealthData;
+
+        // Base Layers
+        var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '&copy; OSM' });
+        var satellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', { attribution: 'Esri' });
+        var terrain = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', { attribution: 'Topo' });
+
+        osm.addTo(map);
+        liveLayer.addTo(map);
+        citiesLayer.addTo(map);
+        droughtLayer.addTo(map);
+
+        var baseMaps = { "OpenStreetMap": osm, "Satellite": satellite, "Terrain": terrain };
+        var overlayMaps = { 
+            "Health Facilities": L.layerGroup(), 
+            "Main Cities (NBR)": citiesLayer,
+            "Drought & Projections": droughtLayer,
+            "Live Alerts": liveLayer 
+        };
+        var layerControl = L.control.layers(baseMaps, overlayMaps, { position: 'topright' }).addTo(map);
+
+        // Load Drought & Projections
+        fetch('drought_projections.geojson')
+            .then(res => res.json())
+            .then(data => {
+                L.geoJSON(data, {
+                    pointToLayer: (f, latlng) => {
+                        const type = f.properties.type;
+                        let color = '#8c6d31'; // Default brown
+                        if (type.includes("Future")) color = '#7b3294'; // Purple
+                        if (type.includes("Near-Term")) color = '#fd8d3c'; // Orange
+                        
+                        return L.circleMarker(latlng, {
+                            radius: 12,
+                            fillColor: color,
+                            color: "#fff", weight: 2, fillOpacity: 0.7
+                        });
+                    },
+                    onEachFeature: (f, layer) => {
+                        let colorStr = '#8c6d31';
+                        if (f.properties.type.includes("Future")) colorStr = '#7b3294';
+                        if (f.properties.type.includes("Near-Term")) colorStr = '#fd8d3c';
+                        
+                        layer.bindPopup(`
+                            <div style="font-size: 14px; width: 220px;">
+                                <b style="color:${colorStr}; display:block; margin-bottom:5px; border-bottom:1px solid #eee; padding-bottom:5px;">${f.properties.type.toUpperCase()}</b>
+                                <strong>Period:</strong> ${f.properties.year}<br>
+                                <strong style="display:block; margin-top:5px;">Impact:</strong>
+                                <span style="color:#444;">${f.properties.impact}</span>
+                            </div>
+                        `);
+                    }
+                }).addTo(droughtLayer);
+            });
+
+        // Main Cities
+        var nbrCities = [
+            { name: "Farafenni", coords: [13.56, -15.60] },
+            { name: "Kerewan", coords: [13.49, -16.09] },
+            { name: "Barra", coords: [13.48, -16.54] },
+            { name: "Njaba Kunda", coords: [13.54, -15.91] },
+            { name: "Essau", coords: [13.48, -16.53] }
+        ];
+        nbrCities.forEach(city => {
+            L.circleMarker(city.coords, { radius: 5, fillColor: "#111", color: "#fff", weight: 2, fillOpacity: 1 })
+             .bindTooltip(city.name, { permanent: true, direction: 'top', className: 'city-label', offset: [0, -5] })
+             .addTo(citiesLayer);
+        });
+
+        // Load NBR Health
+        fetch('data/nbr_health_facilities.geojson')
+            .then(res => res.json())
+            .then(data => {
+                allHealthData = data;
+                updateMap();
+                const statusEl = document.getElementById('status');
+                statusEl.innerHTML = "✔ Data Successfully Loaded";
+                statusEl.style.background = "#d4edda";
+                statusEl.style.color = "#155724";
+                layerControl.addOverlay(healthLayer, "NBR Health Facilities");
+                loadLiveAlerts();
+            })
+            .catch(err => {
+                const statusEl = document.getElementById('status');
+                statusEl.innerHTML = "✖ Error Loading Data";
+                statusEl.style.background = "#f8d7da";
+                statusEl.style.color = "#721c24";
+            });
+
+        function updateMap() {
+            const selectedRisk = document.getElementById('riskSelect').value;
+            if (healthLayer) map.removeLayer(healthLayer);
+            healthLayer = L.geoJSON(allHealthData, {
+                filter: f => selectedRisk === 'all' || f.properties.flood_risk === selectedRisk,
+                pointToLayer: (f, latlng) => {
+                    const isHigh = f.properties.flood_risk === 'high';
+                    return L.circleMarker(latlng, {
+                        radius: isHigh ? 10 : 6,
+                        fillColor: isHigh ? '#e31a1c' : '#2ca25f',
+                        color: "#fff", weight: 2, opacity: 1, fillOpacity: 0.9
+                    });
+                },
+                onEachFeature: (f, layer) => {
+                    const isHigh = f.properties.flood_risk === 'high';
+                    layer.bindPopup(`
+                        <div style="font-size: 14px; width: 200px;">
+                            <strong style="font-size:16px; color:#111; display:block; margin-bottom:5px;">${f.properties.name || "Unnamed Facility"}</strong>
+                            <b>Type:</b> <span style="color:#555;">${f.properties.amenity || "N/A"}</span><br>
+                            <b>Risk Level:</b> <span style="color:${isHigh ? '#e31a1c' : '#2ca25f'}; font-weight:bold;">${f.properties.flood_risk.toUpperCase()}</span><br>
+                            <b style="display:block; margin-top:5px;">Nearest Flood Event:</b> 
+                            <span style="color:#555;">${f.properties.nearest_flood_distance_km} km away</span>
+                        </div>
+                    `);
+                }
+            }).addTo(map);
+        }
+
+        document.getElementById('riskSelect').addEventListener('change', updateMap);
+
+        function loadLiveAlerts() {
+            fetch('https://www.gdacs.org/gdacsapi/api/events/geteventlist/SEARCH?eventlist=FL;DR;WF')
+                .then(res => res.json())
+                .then(data => {
+                    if (data && data.features) {
+                        data.features.forEach(feature => {
+                            const coords = feature.geometry.coordinates;
+                            if (coords[0] > -20 && coords[0] < -5 && coords[1] > 10 && coords[1] < 20) {
+                                L.circleMarker([coords[1], coords[0]], {
+                                    radius: 12, fillColor: '#ffa500', color: '#000', weight: 2, fillOpacity: 0.8, className: 'pulse-marker'
+                                }).bindPopup(`
+                                    <div style="font-size: 14px;">
+                                        <b style="color:#ffa500; display:block; border-bottom:1px solid #eee; padding-bottom:5px; margin-bottom:5px;">GDACS LIVE ALERT</b>
+                                        <strong>${feature.properties.eventname}</strong>
+                                    </div>
+                                `).addTo(liveLayer);
+                            }
+                        });
+                    }
+                });
+        }
+    </script>
+</body>
+</html>

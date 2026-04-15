@@ -1,0 +1,76 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5772271,
+          13.457523
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "contact:phone": "+220 4228 223",
+        "contact:website": "http://www.rvth.org/",
+        "emergency": "yes",
+        "healthcare": "hospital",
+        "name": "Edward Francis Small Teaching Hospital",
+        "old_name": "Royal Victoria Teaching Hospi (RVTH)",
+        "short_name": "EFSTH",
+        "wheelchair": "yes",
+        "wikidata": "Q2171145",
+        "wikipedia": "en:Edward Francis Small Teaching Hospital",
+        "osm_id": 249740590,
+        "flood_risk": "high",
+        "nearest_flood_distance_km": 0.349
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5856633,
+          13.4563761
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "healthcare": "hospital",
+        "name": "Psychiatric Hospital",
+        "osm_id": 255706212,
+        "flood_risk": "high",
+        "nearest_flood_distance_km": 0.739
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.4747951,
+          13.4828038
+        ]
+      },
+      "properties": {
+        "amenity": "hospital",
+        "description": "Das Health Center Buniadu wird betrieben von project Aid The Gambia im Auftrag von Riverboat Doctors International e.V. in Ganderkesee / Deutschland",
+        "email": "projectaid@work.gm",
+        "emergency": "yes",
+        "healthcare": "hospital",
+        "healthcare:speciality": "general",
+        "image": "https://buschklinik.de/wp-content/uploads/2019/10/P1033674-klein.jpg",
+        "name": "Health Center Buniadu",
+        "opening_hours": "24/7",
+        "operator": "Project Aid The Gambia / Riverboat Doctors International e.V.",
+        "operator:type": "private_non_profit",
+        "solar": "yes",
+        "osm_id": 828908614,
+        "flood_risk": "high",
+        "nearest_flood_distance_km": 0.978
+      }
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-15.60, 13.56] },
+      "properties": {
+        "type": "Historical Drought",
+        "year": "2014-2020",
+        "impact": "Severe agricultural drought; 50% crop reduction in North Bank hub.",
+        "region": "North Bank"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-15.91, 13.54] },
+      "properties": {
+        "type": "Near-Term Projection (2026-2030)",
+        "year": "2026-2030",
+        "impact": "Consecutive dry days projected to hit 160/year. Groundnut production losses reaching 8%.",
+        "risk": "Increasing"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-15.50, 13.65] },
+      "properties": {
+        "type": "Future Projection (2050)",
+        "year": "2050",
+        "impact": "Temperature rise +2.1°C; Rainfall decline -25%. Drought duration doubling from 2 to 4 months.",
+        "risk": "Very High"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-16.09, 13.49] },
+      "properties": {
+        "type": "Historical Drought",
+        "year": "2018",
+        "impact": "National food security emergency affecting regional administrative centers.",
+        "region": "North Bank"
+      }
+    }
+  ]
+}
