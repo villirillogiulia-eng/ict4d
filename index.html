@@ -1,739 +1,371 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gambia Climate & Disaster Risk Dashboard</title>
-    <!-- Google Fonts & Font Awesome -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Leaflet CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-     crossorigin=""/>
-    <style>
-        :root {
-            --sidebar-bg: rgba(255, 255, 255, 0.82);
-            --accent-color: #0078ff;
-            --text-color: #1e293b;
-            --sidebar-width: 380px;
-            --shadow: 0 10px 40px rgba(0,0,0,0.12);
-            --border: 1px solid rgba(255,255,255,0.4);
-        }
-        body { margin: 0; padding: 0; font-family: 'Poppins', sans-serif; color: var(--text-color); overflow: hidden; }
-        #map { height: 100vh; width: 100%; z-index: 1; background: #0f172a; }
-        
-        /* Glassmorphism Sidebar 2.0 */
-        .map-sidebar {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            bottom: 20px;
-            z-index: 1000;
-            background: var(--sidebar-bg);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            padding: 30px;
-            border-radius: 24px;
-            box-shadow: var(--shadow);
-            width: var(--sidebar-width);
-            overflow-y: auto;
-            border: var(--border);
-            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            scrollbar-width: thin;
-            scrollbar-color: #cbd5e1 transparent;
-        }
-        .map-sidebar::-webkit-scrollbar { width: 4px; }
-        .map-sidebar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
-        
-        .map-sidebar.collapsed { transform: translateX(calc(-100% - 40px)); }
-        
-        .sidebar-toggle {
-            position: absolute;
-            top: 30px;
-            left: calc(var(--sidebar-width) + 40px);
-            z-index: 1000;
-            background: white;
-            border: none;
-            width: 44px;
-            height: 44px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
-            color: var(--accent-color);
-            transition: all 0.3s ease;
-        }
-        .sidebar-toggle.collapsed { left: 20px; }
-        .sidebar-toggle:hover { transform: scale(1.05); background: var(--accent-color); color: white; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gambia Disaster Preparedness Project</title>
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary: #1a1f2e;
+      --secondary: #242b3d;
+      --accent: #d4a853;
+      --text-main: #1f2937;
+      --text-muted: #6b7280;
+      --bg: #f9fafb;
+      --card-bg: #ffffff;
+      --border: #e5e7eb;
+    }
 
-        /* Toggle Slider CSS */
-        .switch input:checked + .slider { background-color: var(--accent-color); }
-        .switch .slider:before {
-            position: absolute; content: ""; height: 14px; width: 14px; left: 3px; bottom: 3px;
-            background-color: white; transition: .4s; border-radius: 50%;
-        }
-        .switch input:checked + .slider:before { transform: translateX(14px); }
-        
-        h2 { margin: 0; font-size: 22px; font-weight: 700; letter-spacing: -0.5px; display: flex; align-items: center; gap: 12px; }
-        .subtitle { margin: 6px 0 20px 0; font-size: 14px; color: #64748b; font-weight: 400; }
-        
-        .btn-health {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 25px;
-            padding: 12px;
-            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-            color: white;
-            text-decoration: none;
-            border-radius: 14px;
-            font-size: 14px;
-            font-weight: 600;
-            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
-            transition: all 0.2s ease;
-        }
-        .btn-health:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(16, 185, 129, 0.3); }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        .filter-section { margin-top: 25px; display: flex; flex-direction: column; gap: 15px; }
-        .filter-group label {
-            display: block;
-            font-weight: 600;
-            margin-bottom: 8px;
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #94a3b8;
-        }
-        .filter-group select {
-            width: 100%;
-            padding: 12px;
-            border-radius: 12px;
-            border: 1px solid #e2e8f0;
-            background: white;
-            font-family: inherit;
-            font-size: 14px;
-            font-weight: 500;
-            outline: none;
-            transition: all 0.2s;
-            cursor: pointer;
-        }
-        .filter-group select:hover { border-color: var(--accent-color); }
-        .filter-group select:focus { border-color: var(--accent-color); box-shadow: 0 0 0 3px rgba(0, 120, 255, 0.1); }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
 
-        /* Icon-Based Markers */
-        .custom-pin {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: white;
-            border-radius: 50%;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-            border: 2px solid white;
-            transition: transform 0.2s ease;
-        }
-        .custom-pin:hover { transform: scale(1.2) translateY(-5px); z-index: 1000 !important; }
-        .custom-pin i { font-size: 14px; }
+    /* Navigation */
+    nav {
+      background: var(--primary);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
 
-        .legend-section { margin-top: 35px; }
-        .legend-title { font-weight: 700; font-size: 11px; color: #94a3b8; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 15px; }
-        .legend-grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
-        .legend-item { display: flex; align-items: center; gap: 12px; font-size: 13px; font-weight: 500; color: #475569; }
-        .legend-icon { width: 20px; text-align: center; font-size: 16px; }
+    .nav-logo {
+      color: white;
+      font-weight: 700;
+      font-size: 1.25rem;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
 
-        /* Badge Styles */
-        .badge {
-            display: inline-block;
-            padding: 4px 10px;
-            border-radius: 8px;
-            font-size: 10px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        .badge-high { background: #fee2e2; color: #dc2626; }
-        .badge-med { background: #ffedd5; color: #ea580c; }
-        .badge-low { background: #fef9c3; color: #ca8a04; }
+    .nav-logo i { color: var(--accent); }
 
-        /* Loading UI 2.0 */
-        #loader {
-            position: fixed;
-            inset: 0;
-            z-index: 2000;
-            background: #0f172a;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            transition: opacity 0.5s ease;
-        }
-        .pulse-container {
-            width: 120px;
-            height: 120px;
-            position: relative;
-        }
-        .pulse-ring {
-            position: absolute;
-            inset: 0;
-            border: 4px solid var(--accent-color);
-            border-radius: 50%;
-            animation: pulse-ring 2s infinite ease-out;
-        }
-        .pulse-core {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 40px;
-            height: 40px;
-            background: var(--accent-color);
-            border-radius: 50%;
-            box-shadow: 0 0 20px var(--accent-color);
-        }
-        @keyframes pulse-ring { 0% { transform: scale(0.3); opacity: 0.8; } 80%, 100% { transform: scale(1.5); opacity: 0; } }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
 
-        /* Popup Redesign */
-        .leaflet-popup-content-wrapper { border-radius: 18px; padding: 0; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
-        .leaflet-popup-content { margin: 0; min-width: 260px; }
-        .popup-header { background: #f8fafc; padding: 15px 20px; border-bottom: 1px solid #f1f5f9; display: flex; align-items: center; justify-content: space-between; }
-        .popup-body { padding: 20px; }
-        .popup-title { font-size: 16px; font-weight: 700; color: #1e293b; display: block; margin-bottom: 10px; }
-        .popup-row { display: flex; gap: 8px; font-size: 13px; margin-bottom: 8px; color: #64748b; }
-        .popup-label { font-weight: 600; color: #475569; min-width: 80px; }
-        .popup-footer { padding: 12px 20px; background: #f8fafc; text-align: center; border-top: 1px solid #f1f5f9; }
-        .popup-link { color: var(--accent-color); text-decoration: none; font-weight: 600; font-size: 13px; }
-        
-        .city-label {
-            background: none;
-            border: none;
-            box-shadow: none;
-            color: #fff;
-            font-weight: 700;
-            font-size: 11px;
-            text-shadow: 2px 2px 0px #000, -2px -2px 0px #000, 2px -2px 0px #000, -2px 2px 0px #000;
-        }
-    </style>
+    .nav-links a {
+      color: #9ca3af;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.875rem;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: white; }
+
+    .nav-links a.active { color: var(--accent); }
+
+    /* Header */
+    header {
+      padding: 5rem 2rem;
+      text-align: center;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      color: white;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      letter-spacing: -0.025em;
+    }
+
+    header p {
+      max-width: 600px;
+      margin: 0 auto;
+      font-size: 1.125rem;
+      color: #9ca3af;
+    }
+
+    /* Main Content */
+    main {
+      max-width: 1100px;
+      margin: -3rem auto 4rem;
+      padding: 0 2rem;
+    }
+
+    /* Quick Links Cards */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+
+    .feature-card {
+      background: var(--card-bg);
+      padding: 2.5rem;
+      border-radius: 16px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+      border: 1px solid var(--border);
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      border-color: var(--accent);
+    }
+
+    .feature-icon {
+      width: 56px;
+      height: 56px;
+      background: #f3f4f6;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      font-size: 1.5rem;
+      color: var(--primary);
+    }
+
+    .feature-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+      font-weight: 700;
+    }
+
+    .feature-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* Data Section */
+    .section-header {
+      margin-bottom: 2rem;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-header h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .data-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .data-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    @media (min-width: 768px) {
+      .data-card {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+
+    .data-info h4 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+
+    .data-info p {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+
+    .data-meta {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .meta-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .meta-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+    }
+
+    .meta-value {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 4rem 2rem;
+      background: #f3f4f6;
+      color: var(--text-muted);
+      font-size: 0.875rem;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      background: #e5e7eb;
+      color: #374151;
+      margin-left: 8px;
+    }
+  </style>
 </head>
 <body>
-    <div id="loader">
-        <div class="pulse-container"><div class="pulse-ring"></div><div class="pulse-core"></div></div>
-        <p style="margin-top: 30px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; font-size: 12px; opacity: 0.8;">Analyzing Gambia Climate Records...</p>
+
+  <nav>
+    <a href="#" class="nav-logo"><i class="fa-solid fa-shield-halved"></i> ict4d_gambia</a>
+    <div class="nav-links">
+      <a href="risk_dashboard.html">Risk Map</a>
+      <a href="charts.html">Analytics</a>
+      <a href="visualizer/index.html">CSV Upload</a>
+    </div>
+  </nav>
+
+  <header>
+    <h1>Gambia Disaster Preparedness</h1>
+    <p>Enhancing community resilience through data-driven risk assessment and health infrastructure monitoring in the North Bank Region.</p>
+  </header>
+
+  <main>
+    <!-- Feature Links -->
+    <div class="feature-grid">
+      <a href="risk_dashboard.html" class="feature-card">
+        <div class="feature-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+        <h3>Interactive Risk Map</h3>
+        <p>Assess flood and drought risks for health facilities in the North Bank Region.</p>
+      </a>
+      <a href="charts.html" class="feature-card">
+        <div class="feature-icon"><i class="fa-solid fa-chart-pie"></i></div>
+        <h3>Hazard Analytics</h3>
+        <p>Visualize historical flood frequencies and impact data from the Global Flood Archive.</p>
+      </a>
+      <a href="visualizer/index.html" class="feature-card">
+        <div class="feature-icon"><i class="fa-solid fa-upload"></i></div>
+        <h3>CSV Data Visualizer</h3>
+        <p>Instantly map and analyze your own climate datasets with our web visualizer.</p>
+      </a>
     </div>
 
-    <button class="sidebar-toggle" id="sidebarToggle" title="Toggle Sidebar">
-        <i class="fa-solid fa-chevron-left" id="toggleIcon"></i>
-    </button>
-
-    <div class="map-sidebar" id="sidebar">
-        <h2><i class="fa-solid fa-shield-halved" style="color:var(--accent-color)"></i> Gambia Risk Panel</h2>
-        <p class="subtitle">Real-time Environmental Hazards & Future Projections</p>
-        
-        <a href="health_map.html" class="btn-health"><i class="fa-solid fa-hospital-user"></i> Infrastructure & Health Risk</a>
-
-        <div id="status-badge" style="display:inline-flex; align-items:center; gap:8px; padding: 6px 12px; border-radius: 10px; font-size: 12px; font-weight: 600; background: #fef9c3; color: #854d0e; margin-bottom: 10px;">
-            <i class="fa-solid fa-circle-nodes fa-spin"></i> Map Syncing...
+    <!-- Datasets Section -->
+    <section>
+      <div class="section-header">
+        <i class="fa-solid fa-database" style="color:var(--accent)"></i>
+        <h2>Dataset Documentation</h2>
+      </div>
+      
+      <div class="data-grid">
+        <!-- Dataset 1 -->
+        <div class="data-card">
+          <div class="data-info">
+            <h4>Health Facilities (NBR)</h4>
+            <p>Locations and metadata of hospitals, clinics, and pharmacies in the North Bank Region.</p>
+          </div>
+          <div class="data-meta">
+            <div class="meta-item">
+              <span class="meta-label">Source</span>
+              <span class="meta-value">OpenStreetMap (OSM)</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Format</span>
+              <span class="meta-value">GeoJSON</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Date Retrieved</span>
+              <span class="meta-value">April 16, 2026</span>
+            </div>
+          </div>
         </div>
 
-        <div class="filter-section">
-            <div class="filter-group">
-                <label for="yearSelect">Temporal Scope</label>
-                <select id="yearSelect"><option value="all">Full Historical Record</option></select>
+        <!-- Dataset 2 -->
+        <div class="data-card">
+          <div class="data-info">
+            <h4>Global Flood Archive</h4>
+            <p>Historical records of flood events, including severity, displacement, and mortality stats.</p>
+          </div>
+          <div class="data-meta">
+            <div class="meta-item">
+              <span class="meta-label">Source</span>
+              <span class="meta-value">Dartmouth Flood Observatory</span>
             </div>
-
-            <div class="filter-group">
-                <label for="causeSelect">Hazard Category</label>
-                <select id="causeSelect"><option value="all">All Climate Threats</option></select>
+            <div class="meta-item">
+              <span class="meta-label">Format</span>
+              <span class="meta-value">CSV / GeoJSON</span>
             </div>
+            <div class="meta-item">
+              <span class="meta-label">Date Retrieved</span>
+              <span class="meta-value">April 16, 2026</span>
+            </div>
+          </div>
         </div>
 
-        <div id="weather-nbr" style="margin: 20px 0; padding: 20px; background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(5, 150, 105, 0.1) 100%); border-radius: 20px; font-size: 13px; border: 1px solid rgba(16, 185, 129, 0.2);">
-            <strong style="display:flex; align-items:center; gap:8px; margin-bottom: 12px; color: #065f46;"><i class="fa-solid fa-cloud-sun"></i> NBR Weather Forecast</strong>
-            <div id="weather-content" style="color: #475569;">
-                <i class="fa-solid fa-spinner fa-spin"></i> Loading forecast...
+        <!-- Dataset 3 -->
+        <div class="data-card">
+          <div class="data-info">
+            <h4>Climate Risk Projections</h4>
+            <p>Projections for drought and extreme heat for the 2026-2030 and 2050 periods.</p>
+          </div>
+          <div class="data-meta">
+            <div class="meta-item">
+              <span class="meta-label">Source</span>
+              <span class="meta-value">CLI Projections</span>
             </div>
+            <div class="meta-item">
+              <span class="meta-label">Format</span>
+              <span class="meta-value">GeoJSON</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Date Retrieved</span>
+              <span class="meta-value">April 16, 2026</span>
+            </div>
+          </div>
         </div>
 
-        <div id="radar-control" style="margin: 20px 0; padding: 20px; background: rgba(15, 23, 42, 0.05); border-radius: 20px; font-size: 13px; border: 1px solid rgba(0,0,0,0.05);">
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 12px;">
-                <strong style="display:flex; align-items:center; gap:8px;"><i class="fa-solid fa-satellite-dish"></i> Live Weather Radar</strong>
-                <label class="switch" style="position:relative; display:inline-block; width:34px; height:20px;">
-                    <input type="checkbox" id="radarToggle" style="opacity:0; width:0; height:0;">
-                    <span class="slider" style="position:absolute; cursor:pointer; top:0; left:0; right:0; bottom:0; background-color:#ccc; transition:.4s; border-radius:34px;"></span>
-                </label>
-            </div>
-            <div id="radar-status" style="color:#64748b; font-size:11px; margin-bottom:10px;">Enable to see moving precipitation</div>
-            <div id="radar-playback" style="display:none; align-items:center; gap:10px;">
-                <button id="radarPlay" style="background:var(--accent-color); color:white; border:none; border-radius:8px; padding:5px 12px; cursor:pointer; font-size:12px;"><i class="fa-solid fa-play"></i> Play</button>
-                <span id="radarTime" style="font-family:monospace; font-weight:600; color:var(--accent-color);">--:--</span>
-            </div>
-        </div>
+      </div>
+    </section>
+  </main>
 
-        <div class="legend-section">
-            <label class="legend-title">Hazard Legend</label>
-            <div class="legend-grid">
-                <div class="legend-item"><span class="legend-icon" style="color:#e31a1c"><i class="fa-solid fa-triangle-exclamation"></i></span> High Severity Flood (2)</div>
-                <div class="legend-item"><span class="legend-icon" style="color:#fd8d3c"><i class="fa-solid fa-circle-exclamation"></i></span> Moderate Flood (1.5)</div>
-                <div class="legend-item"><span class="legend-icon" style="color:#feb24c"><i class="fa-solid fa-circle-info"></i></span> Standard Flood (1)</div>
-                <div class="legend-item"><span class="legend-icon" style="color:#8c6d31"><i class="fa-solid fa-wheat-awn-circle-exclamation"></i></span> Drought / Deficit</div>
-                <div class="legend-item"><span class="legend-icon" style="color:#fd8d3c"><i class="fa-solid fa-calendar-check"></i></span> Near-Term (2026-30)</div>
-                <div class="legend-item"><span class="legend-icon" style="color:#7b3294"><i class="fa-solid fa-hourglass-end"></i></span> Future Projection (2050)</div>
-                <div class="legend-item"><span class="legend-icon" style="color:#d73027"><i class="fa-solid fa-fire"></i></span> Bushfire Activity</div>
-                <div class="legend-item"><span class="legend-icon" style="color:#7b3294"><i class="fa-solid fa-water"></i></span> Coastal Erosion</div>
-                <div class="legend-item"><span class="legend-icon" style="color:#94a3b8"><i class="fa-solid fa-droplet-slash"></i></span> Salinity Intrusion</div>
-                <hr style="border: 0; border-top: 1px solid rgba(0,0,0,0.05); margin: 5px 0;">
-                <div class="legend-item"><span class="legend-icon" style="color:#ffa500"><i class="fa-solid fa-earth-africa"></i></span> GDACS Disaster Alert</div>
-                <div class="legend-item"><span class="legend-icon" style="color:#0078ff"><i class="fa-solid fa-wave-square"></i></span> River Forecast (GloFAS)</div>
-                <div class="legend-item"><span class="legend-icon" style="color:#0078ff; opacity:0.6;"><i class="fa-solid fa-file-contract"></i></span> Regional Report (RW)</div>
-            </div>
-        </div>
+  <footer>
+    <p>&copy; 2026 ict4d Gambia Disaster Preparedness Project</p>
+    <p style="margin-top: 10px; opacity: 0.6;">A Civic Literacy Initiative (CLI) Data Initiative</p>
+  </footer>
 
-        <div id="live-monitoring" style="margin-top: 35px; padding: 20px; background: rgba(0, 120, 255, 0.08); border-radius: 20px; font-size: 13px;">
-            <strong style="display:flex; align-items:center; gap:8px; margin-bottom: 12px;"><i class="fa-solid fa-tower-observation"></i> Regional Feeds</strong>
-            <ul style="padding-left: 20px; margin: 0; color: #475569; display: flex; flex-direction: column; gap: 8px;">
-                <li><a href="https://www.gdacs.org/" target="_blank" style="color:var(--accent-color); text-decoration:none; font-weight:600;">GDACS Global Alerts →</a></li>
-                <li><a href="https://reliefweb.int/updates?region=46" target="_blank" style="color:var(--accent-color); text-decoration:none; font-weight:600;">ReliefWeb West Africa →</a></li>
-            </ul>
-        </div>
-    </div>
-    <div id="map"></div>
-
-    <!-- Leaflet JS -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-     crossorigin=""></script>
-
-    <script>
-        // 1. Initialize the map
-        var map = L.map('map', { zoomControl: false }).setView([13.44, -15.45], 8); 
-        L.control.zoom({ position: 'bottomright' }).addTo(map);
-
-        var geojsonLayer;
-        var liveLayer = L.layerGroup();
-        var droughtLayer = L.layerGroup();
-        var citiesLayer = L.layerGroup();
-        var allData;
-
-        // 2. Define Base Layers
-        var satellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-            attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EAP, and the GIS User Community'
-        });
-
-        var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 18,
-            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-        });
-
-        var terrain = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
-            maxZoom: 17,
-            attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a>'
-        });
-
-        satellite.addTo(map); 
-        liveLayer.addTo(map);
-        droughtLayer.addTo(map);
-        citiesLayer.addTo(map);
-
-        // 3. Add Layer Control
-        var baseMaps = { "Satellite View": satellite, "Street Map": osm, "Topography": terrain };
-        var overlayMaps = {
-            "Historical Records": L.layerGroup(),
-            "Main Cities": citiesLayer,
-            "Drought Projections": droughtLayer,
-            "Live Alerts": liveLayer
-        };
-        var layerControl = L.control.layers(baseMaps, overlayMaps, { position: 'topright' }).addTo(map);
-
-        // Sidebar Toggle Logic
-        const sidebar = document.getElementById('sidebar');
-        const sidebarToggle = document.getElementById('sidebarToggle');
-        const toggleIcon = document.getElementById('toggleIcon');
-
-        sidebarToggle.addEventListener('click', () => {
-            sidebar.classList.toggle('collapsed');
-            sidebarToggle.classList.toggle('collapsed');
-            toggleIcon.classList.toggle('fa-chevron-left');
-            toggleIcon.classList.toggle('fa-chevron-right');
-        });
-
-        // 4. Load the GeoJSON data
-        fetch('data/floods.geojson')
-            .then(response => {
-                if (!response.ok) throw new Error("Network response was not ok");
-                return response.json();
-            })
-            .then(data => {
-                allData = data;
-                populateFilters(data);
-                updateMap();
-
-                document.getElementById('loader').style.opacity = '0';
-                setTimeout(() => document.getElementById('loader').style.display = 'none', 500);
-                
-                const badge = document.getElementById('status-badge');
-                badge.innerHTML = `<i class="fa-solid fa-circle-check" style="color:#10b981"></i> ${data.features.length} Events Synced`;
-                badge.style.background = '#dcfce7';
-                badge.style.color = '#166534';
-
-                layerControl.addOverlay(geojsonLayer, "Historical Records");
-
-                if (geojsonLayer && geojsonLayer.getLayers().length > 0) {
-                    map.fitBounds(geojsonLayer.getBounds(), { padding: [50, 50] });
-                }
-
-                loadLiveAlerts();
-                loadNBRWeather();
-                loadRadar();
-                loadDroughtProjections();
-                loadMainCities();
-            })
-            .catch(error => {
-                console.error('Error loading the GeoJSON:', error);
-                document.getElementById('loader').innerHTML = '<p style="color:red; font-weight:600;">DATABASE SYNC ERROR</p>';
-            });
-
-        function loadNBRWeather() {
-            // Centered on Kerewan, North Bank Region
-            const lat = 13.50;
-            const lon = -16.09;
-            const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true&daily=temperature_2m_max,temperature_2m_min,precipitation_sum,weathercode&timezone=auto`;
-
-            fetch(url)
-                .then(res => res.json())
-                .then(data => {
-                    const current = data.current_weather;
-                    const daily = data.daily;
-                    const weatherContent = document.getElementById('weather-content');
-                    
-                    // Simple weather code mapping
-                    const weatherCodes = {
-                        0: "Clear Sky", 1: "Mainly Clear", 2: "Partly Cloudy", 3: "Overcast",
-                        45: "Fog", 48: "Depositing Rime Fog",
-                        51: "Light Drizzle", 53: "Moderate Drizzle", 55: "Dense Drizzle",
-                        61: "Slight Rain", 63: "Moderate Rain", 65: "Heavy Rain",
-                        80: "Slight Rain Showers", 81: "Moderate Rain Showers", 82: "Violent Rain Showers",
-                        95: "Thunderstorm"
-                    };
-                    const condition = weatherCodes[current.weathercode] || "Conditions Normal";
-
-                    weatherContent.innerHTML = `
-                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
-                            <span style="font-size:24px; font-weight:700; color:var(--text-color);">${Math.round(current.temperature)}°C</span>
-                            <span style="font-weight:600; color:var(--accent-color);">${condition}</span>
-                        </div>
-                        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px; border-top:1px solid rgba(0,0,0,0.05); pt:10px; margin-top:5px;">
-                            <div><span style="font-size:10px; text-transform:uppercase; display:block; color:#94a3b8;">High / Low</span> <strong>${Math.round(daily.temperature_2m_max[0])}° / ${Math.round(daily.temperature_2m_min[0])}°</strong></div>
-                            <div><span style="font-size:10px; text-transform:uppercase; display:block; color:#94a3b8;">Precipitation</span> <strong>${daily.precipitation_sum[0]}mm</strong></div>
-                        </div>
-                    `;
-                })
-                .catch(err => {
-                    document.getElementById('weather-content').innerHTML = "Weather data unavailable.";
-                });
-        }
-
-        function loadLiveAlerts() {
-            fetch('https://www.gdacs.org/gdacsapi/api/events/geteventlist/SEARCH?eventlist=FL;DR;WF')
-                .then(res => res.json())
-                .then(data => {
-                    if (data && data.features) {
-                        data.features.forEach(feature => {
-                            const props = feature.properties;
-                            const coords = feature.geometry.coordinates;
-                            if (coords[0] > -20 && coords[0] < -5 && coords[1] > 10 && coords[1] < 20) {
-                                const marker = L.circleMarker([coords[1], coords[0]], {
-                                    radius: 12, fillColor: '#ffa500', color: '#fff', weight: 2, fillOpacity: 0.7, className: 'pulse-marker'
-                                }).bindPopup(createPopupContent('GDACS DISASTER ALERT', props.eventname, [
-                                    ['Hazard', props.eventtype],
-                                    ['Severity', props.severitydata?.severity || 'Alert']
-                                ], props.url?.report, 'orange'));
-                                liveLayer.addLayer(marker);
-                            }
-                        });
-                    }
-                });
-
-            const rwCountries = ['The Gambia', 'Senegal', 'Mali', 'Mauritania'];
-            rwCountries.forEach(country => {
-                fetch(`https://api.reliefweb.int/v1/disasters?appname=ict4d&filter[field]=country&filter[value]=${country}&limit=3&sort[]=date:desc`)
-                    .then(res => res.json())
-                    .then(data => {
-                        if (data && data.data) {
-                            data.data.forEach(d => {
-                                const marker = L.circleMarker([14.5, -15.5], {
-                                    radius: 8, fillColor: '#0078ff', color: '#fff', weight: 2, fillOpacity: 0.4
-                                });
-                                const countryCoords = { 'The Gambia': [13.44, -15.45], 'Senegal': [14.49, -14.45], 'Mali': [17.57, -3.99], 'Mauritania': [21.0, -10.94] };
-                                const base = countryCoords[country] || [13.44, -15.45];
-                                marker.setLatLng([base[0] + (Math.random() - 0.5), base[1] + (Math.random() - 0.5)]);
-                                marker.bindPopup(createPopupContent('RELIEFWEB REPORT', d.fields.name, [['Country', country]], d.fields.url, 'blue'));
-                                liveLayer.addLayer(marker);
-                            });
-                        }
-                    });
-            });
-
-            const riverPoints = [
-                { name: "Basse Santa Su", lat: 13.31, lon: -14.21 },
-                { name: "Janjanbureh", lat: 13.59, lon: -14.76 },
-                { name: "Mansa Konko", lat: 13.46, lon: -15.54 },
-                { name: "Banjul", lat: 13.45, lon: -16.57 }
-            ];
-            riverPoints.forEach(point => {
-                fetch(`https://flood-api.open-meteo.com/v1/flood?latitude=${point.lat}&longitude=${point.lon}&daily=river_discharge&forecast_days=1`)
-                    .then(res => res.json())
-                    .then(data => {
-                        const discharge = data.daily.river_discharge[0];
-                        const marker = L.circleMarker([point.lat, point.lon], {
-                            radius: 10, fillColor: discharge > 1000 ? '#ec4899' : '#3b82f6', color: '#fff', weight: 2, fillOpacity: 0.6
-                        }).bindPopup(createPopupContent('RIVER FORECAST', point.name, [
-                            ['Discharge', discharge + ' m³/s'],
-                            ['Model', 'GloFAS v4']
-                        ], null, 'blue'));
-                        liveLayer.addLayer(marker);
-                    });
-            });
-        }
-
-        // --- RainViewer Radar Logic ---
-        let radarLayers = [];
-        let radarTimeStamps = [];
-        let currentRadarIndex = 0;
-        let radarInterval = null;
-
-        function loadRadar() {
-            fetch('https://api.rainviewer.com/public/weather-maps.json')
-                .then(res => res.json())
-                .then(data => {
-                    radarTimeStamps = data.radar.past;
-                    const host = data.host;
-                    
-                    // Pre-load the last 5 frames for animation
-                    const lastFrames = radarTimeStamps.slice(-5);
-                    lastFrames.forEach((ts, index) => {
-                        const layer = L.tileLayer(`${host}/v2/radar/${ts}/256/{z}/{x}/{y}/2/1_1.png`, {
-                            tileSize: 256, opacity: 0, zIndex: 500
-                        });
-                        radarLayers.push({ ts: ts, layer: layer });
-                    });
-                    
-                    document.getElementById('radarToggle').addEventListener('change', function(e) {
-                        if (this.checked) {
-                            showRadar();
-                            document.getElementById('radar-playback').style.display = 'flex';
-                            document.getElementById('radar-status').innerText = 'Displaying past 1hr movement';
-                        } else {
-                            hideRadar();
-                            document.getElementById('radar-playback').style.display = 'none';
-                            document.getElementById('radar-status').innerText = 'Enable to see moving precipitation';
-                        }
-                    });
-
-                    document.getElementById('radarPlay').addEventListener('click', function() {
-                        if (radarInterval) {
-                            stopAnimation();
-                            this.innerHTML = '<i class="fa-solid fa-play"></i> Play';
-                        } else {
-                            startAnimation();
-                            this.innerHTML = '<i class="fa-solid fa-pause"></i> Pause';
-                        }
-                    });
-                });
-        }
-
-        function showRadar() {
-            if (radarLayers.length === 0) {
-                document.getElementById('radar-status').innerText = 'Loading radar data...';
-                return;
-            }
-            radarLayers.forEach(obj => obj.layer.addTo(map));
-            updateRadarFrame(radarLayers.length - 1); // Show latest first
-        }
-
-        function hideRadar() {
-            stopAnimation();
-            radarLayers.forEach(obj => map.removeLayer(obj.layer));
-            document.getElementById('radarPlay').innerHTML = '<i class="fa-solid fa-play"></i> Play';
-        }
-
-        function updateRadarFrame(index) {
-            if (!radarLayers[index] || !radarLayers[index].ts) return;
-            
-            radarLayers.forEach((obj, i) => {
-                obj.layer.setOpacity(i === index ? 0.7 : 0);
-            });
-            
-            // Ensure timestamp is a number
-            const ts = parseInt(radarLayers[index].ts);
-            if (isNaN(ts)) {
-                document.getElementById('radarTime').innerText = "Live";
-                return;
-            }
-
-            const date = new Date(ts * 1000);
-            document.getElementById('radarTime').innerText = date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-            currentRadarIndex = index;
-        }
-
-        function startAnimation() {
-            if (radarInterval) clearInterval(radarInterval);
-            radarInterval = setInterval(() => {
-                let nextIndex = (currentRadarIndex + 1) % radarLayers.length;
-                updateRadarFrame(nextIndex);
-            }, 800);
-        }
-
-        function stopAnimation() {
-            clearInterval(radarInterval);
-            radarInterval = null;
-        }
-
-        function loadDroughtProjections() {
-            fetch('data/drought_projections.geojson')
-                .then(res => res.json())
-                .then(data => {
-                    L.geoJSON(data, {
-                        pointToLayer: (f, latlng) => {
-                            const type = f.properties.type;
-                            let color = '#8c6d31';
-                            if (type.includes("Future")) color = '#7b3294';
-                            if (type.includes("Near-Term")) color = '#fd8d3c';
-                            return L.circleMarker(latlng, { radius: 10, fillColor: color, color: "#fff", weight: 2, fillOpacity: 0.8 });
-                        },
-                        onEachFeature: (f, layer) => {
-                            layer.bindPopup(createPopupContent(f.properties.type.toUpperCase(), `Period: ${f.properties.year}`, [
-                                ['Impact', f.properties.impact]
-                            ], null, '#8c6d31'));
-                        }
-                    }).addTo(droughtLayer);
-                });
-        }
-
-        function loadMainCities() {
-            var cities = [
-                { name: "Banjul", coords: [13.4549, -16.5790] },
-                { name: "Serrekunda", coords: [13.4386, -16.6817] },
-                { name: "Brikama", coords: [13.2714, -16.6494] },
-                { name: "Bakau", coords: [13.4781, -16.6819] },
-                { name: "Farafenni", coords: [13.5667, -15.6000] },
-                { name: "Basse Santa Su", coords: [13.3100, -14.2137] },
-                { name: "Gunjur", coords: [13.2019, -16.7339] },
-                { name: "Soma", coords: [13.4333, -15.5333] },
-                { name: "Janjanbureh", coords: [13.5341, -14.7662] },
-                { name: "Kerewan", coords: [13.4898, -16.0888] }
-            ];
-            cities.forEach(city => {
-                L.circleMarker(city.coords, { radius: 5, fillColor: "#1e293b", color: "#fff", weight: 2, fillOpacity: 1 })
-                 .bindTooltip(city.name, { permanent: true, direction: 'top', className: 'city-label', offset: [0, -5] })
-                 .addTo(citiesLayer);
-            });
-        }
-
-        function createPopupContent(header, title, rows, link, color) {
-            let rowHtml = rows.map(r => `<div class="popup-row"><span class="popup-label">${r[0]}:</span><span>${r[1]}</span></div>`).join('');
-            let footer = link ? `<div class="popup-footer"><a href="${link}" target="_blank" class="popup-link">Detailed Analytics →</a></div>` : '';
-            return `
-                <div class="popup-header" style="border-left: 4px solid ${color};">
-                    <span class="badge" style="background:${color}20; color:${color};">${header}</span>
-                </div>
-                <div class="popup-body">
-                    <span class="popup-title">${title}</span>
-                    ${rowHtml}
-                </div>
-                ${footer}
-            `;
-        }
-
-        function populateFilters(data) {
-            const years = new Set();
-            const causes = new Set();
-            data.features.forEach(f => {
-                if (f.properties.date) {
-                    const parts = f.properties.date.split('/');
-                    if (parts.length === 3) {
-                        let year = parts[2];
-                        year = parseInt(year) > 25 ? '19' + year : '20' + year;
-                        years.add(year);
-                    }
-                }
-                if (f.properties.cause) causes.add(f.properties.cause.trim());
-            });
-            const yearSelect = document.getElementById('yearSelect');
-            Array.from(years).sort().reverse().forEach(year => {
-                const opt = document.createElement('option');
-                opt.value = year; opt.textContent = year;
-                yearSelect.appendChild(opt);
-            });
-            const causeSelect = document.getElementById('causeSelect');
-            Array.from(causes).sort().forEach(cause => {
-                if (cause) {
-                    const opt = document.createElement('option');
-                    opt.value = cause; opt.textContent = cause;
-                    causeSelect.appendChild(opt);
-                }
-            });
-            yearSelect.addEventListener('change', updateMap);
-            causeSelect.addEventListener('change', updateMap);
-        }
-
-        function updateMap() {
-            const selectedYear = document.getElementById('yearSelect').value;
-            const selectedCause = document.getElementById('causeSelect').value;
-            if (geojsonLayer) map.removeLayer(geojsonLayer);
-            if (!allData || !allData.features) return;
-
-            geojsonLayer = L.geoJSON(allData, {
-                filter: function(f) {
-                    const parts = (f.properties.date || "").split('/');
-                    let year = parts.length === 3 ? (parseInt(parts[2]) > 25 ? '19' + parts[2] : '20' + parts[2]) : '';
-                    const cause = (f.properties.cause || "").trim();
-                    return (selectedYear === 'all' || year === selectedYear) && (selectedCause === 'all' || cause === selectedCause);
-                },
-                pointToLayer: function (f, latlng) {
-                    const parts = (f.properties.date || "").split('/');
-                    let year = parts.length === 3 ? (parseInt(parts[2]) > 25 ? '19' + parts[2] : '20' + parts[2]) : '';
-                    const color = getColor(f.properties.severity, f.properties.cause, f.properties.country, year);
-                    
-                    // Custom Icon Mapping
-                    let icon = 'fa-water';
-                    const cause = (f.properties.cause || "").toLowerCase();
-                    if (cause.includes('fire')) icon = 'fa-fire';
-                    if (cause.includes('drought') || cause.includes('deficit')) icon = 'fa-wheat-awn-circle-exclamation';
-                    if (cause.includes('erosion')) icon = 'fa-mountain-sun';
-                    if (cause.includes('salinity')) icon = 'fa-droplet-slash';
-
-                    const divIcon = L.divIcon({
-                        className: 'custom-pin-wrapper',
-                        html: `<div class="custom-pin" style="background:${color}; color:white;"><i class="fa-solid ${icon}"></i></div>`,
-                        iconSize: [30, 30],
-                        iconAnchor: [15, 15]
-                    });
-                    return L.marker(latlng, { icon: divIcon });
-                },
-                onEachFeature: function (f, layer) {
-                    layer.bindPopup(createPopupContent('HISTORICAL RECORD', f.properties.country, [
-                        ['Date', f.properties.date],
-                        ['Cause', f.properties.cause],
-                        ['Severity', f.properties.severity]
-                    ], null, getColor(f.properties.severity, f.properties.cause, f.properties.country)));
-                }
-            }).addTo(map);
-        }
-
-        function getColor(s, cause, country, year) {
-            const causeLower = (cause || "").toLowerCase();
-            const countryLower = (country || "").toLowerCase();
-            if (countryLower.includes('projection') || year === '2050') return '#7b3294';
-            if (causeLower.includes('deficit') || causeLower.includes('drought')) return '#8c6d31';
-            if (causeLower.includes('fire')) return '#d73027';
-            if (causeLower.includes('erosion')) return '#7b3294';
-            if (causeLower.includes('salinity')) return '#94a3b8';
-            return s == '2' ? '#e31a1c' : s == '1.5' ? '#fd8d3c' : '#feb24c';
-        }
-    </script>
 </body>
 </html>
