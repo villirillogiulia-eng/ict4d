@@ -1,0 +1,62 @@
+ID,GlideNumber,Country,Other Country,Country Category,long,lat,Area,Began,Ended,Year started,Year ended,Validation,Dead,Displaced,Main Cause,Severity,category,Rain Indicator
+1093,0,CANADA,0,single country,1174.59.59,158.02.00,52912.34.00,7/19/96,7/22/96,1996,1996,News,10,12000,Heavy rain,1,,rain
+2369,0,CANADA,0,single country,382.59.59,132.43.00,70921.02.00,10/17/03,10/26/03,2003,2003,News,4,4000,Heavy rain,2,Heavy rain,rain
+2666,0,CANADA,0,single country,443212.59.59,190.37.00,86681.01.00,6/7/05,7/1/05,2005,2005,News,4,5000,Heavy rain,2,,rain
+4068,,CANADA,,single country,68.59.59,91.34.00,307926.47.00,6/20/13,6/27/13,2013,2013,News,3,100000,Heavy rain,2,,rain
+1330,0,CANADA,0,single country,89.59.59,122.09.00,283522.15.00,3/28/98,4/6/98,1998,1998,News,2,3463,Snowmelt,1,,snow
+2198,0,CANADA,0,single country,710.59.59,46.45.00,13530.48.00,3/31/03,4/3/03,2003,2003,News,2,170,Rain and Snow Melt,1,,rain
+2548,0,CANADA,0,single country,13375.59.59,97.18.00,1449.03.00,8/13/04,8/15/04,2004,2004,News,1,0,Heavy rain,1,,rain
+2868,0,CANADA,0,single country,260470.59.59,71.36.00,69157.08.00,5/20/06,5/28/06,2006,2006,News,1,400,Rain and snowmelt,1,,rain
+3155,0,CANADA,0,single country,40946.59.59,207.09.00,446.19.00,8/8/07,8/12/07,2007,2007,News,1,140,Heavy rain,1.5,,rain
+3940,,CANADA,,single country,23516.59.59,195.06.00,213387.37.00,6/20/12,6/26/12,2012,2012,News,1,700,Heavy Rain and Snowmelt,1.5,,rain
+4744,,CANADA,,single country,36525.59.59,52.06.00,28713.07.00,4/19/19,4/23/19,2019,2019,International Charter,1,1500,Heavy Rain and Ice Melt,1.5,,rain
+91,0,CANADA,0,single country,28719.59.59,160.31.00,46913.5,7/18/86,7/22/86,1986,1986,News,0,1000,Heavy rain,2,,rain
+197,0,CANADA,0,single country,1930.59.59,123.07.00,1964.38.00,7/5/88,7/7/88,1988,1988,News,0,2500,Heavy rain,1,,rain
+626,0,CANADA,0,single country,90431.59.59,132.47.00,7997.05.00,2/27/92,2/29/92,1992,1992,News,0,4000,Ice jam/break-up,1,,snow
+633,0,CANADA,0,single country,53884.59.59,118.52.00,396.05.00,3/14/92,3/14/92,1992,1992,News,0,53,Torrential Rain,2,,rain
+643,0,CANADA,0,single country,14729.59.59,150.19.00,1537.3,4/24/92,4/26/92,1992,1992,News,0,100,Ice jam/break-up,1,,snow
+648,0,CANADA,0,single country,71645.59.59,154.49.00,88075.01.00,5/17/92,5/18/92,1992,1992,News,0,800,Ice jam/break-up,1,,snow
+970,0,CANADA,0,single country,50608.59.59,193.41.00,184529.16.00,7/5/95,7/12/95,1995,1995,News,0,5000,Heavy rain,1,,rain
+1034,0,CANADA,0,single country,11552.59.59,190.01.00,31440.12.00,11/29/95,12/7/95,1995,1995,News,0,0,Rain and snowmelt,2,,rain
+1048,0,CANADA,0,single country,18896.59.59,103.25.00,1270.17.00,1/19/96,1/25/96,1996,1996,News,0,12000,Ice jam/break-up,1,,snow
+1115,0,CANADA,0,single country,117.59.59,85.09.00,47106.25.00,9/15/96,9/18/96,1996,1996,News,0,0,Tropical cyclone,2,,storm
+1664,0,CANADA,0,single country,3036.59.59,151.45.00,7561.32.00,11/8/00,11/10/00,2000,2000,News,0,0,Heavy rain,1,,rain
+1963,0,CANADA,0,single country,20154.59.59,190.07.00,5527.39.00,6/9/02,6/12/02,2002,2002,News,0,0,Heavy rain,1,,rain
+2086,0,CANADA,0,single country,7741.59.59,181.57.00,4327.32.00,11/14/02,11/17/02,2002,2002,News,0,0,Heavy rain,1,,rain
+2157,0,CANADA,0,single country,404.59.59,64.23.00,1015.26.00,2/15/03,2/21/03,2003,2003,News,0,1100,Ice Jams,1,,snow
+2306,0,CANADA,0,single country,8222.59.59,59.47.00,1992.49.00,8/4/03,8/5/03,2003,2003,News,0,400,Brief torrential rain,1,,rain
+2391,0,CANADA,0,single country,8243.59.59,76.31.00,1045.19.00,11/24/03,12/2/03,2003,2003,News,0,15,Heavy rain,1,,rain
+2452,0,CANADA,0,single country,153.59.59,101.07.00,190.17.00,3/6/04,3/8/04,2004,2004,News,0,38,Ice jam/break-up,2,,snow
+2523,0,CANADA,0,single country,18008.59.59,95.25.00,511.24.00,7/15/04,7/17/04,2004,2004,News,0,250,Brief torrential rain,2,,rain
+2741,0,CANADA,0,single country,11553.59.59,143.13.00,340.03.00,9/27/05,9/29/05,2005,2005,News,0,200,Heavy rain,1,,rain
+2771,0,CANADA,0,single country,217.59.59,191.55.00,1835.11.00,12/5/05,12/16/05,2005,2005,News,0,56,Ice jam/break-up,2,,snow
+2841,0,CANADA,0,single country,126.59.59,190.33.00,9215.51.00,4/11/06,5/9/06,2006,2006,News,0,40,Rain and snowmelt,1,Heavy rain and snowmelt,rain
+2845,0,CANADA,0,single country,29217.59.59,61.56.00,63265.46.00,4/12/06,4/24/06,2006,2006,News,0,1000,Heavy rain,2,,rain
+2849,0,CANADA,0,single country,83387.59.59,168.57.00,728.31.00,4/18/06,4/24/06,2006,2006,News,0,200,Heavy rain,1,,rain
+2852,0,CANADA,0,single country,179.59.59,140.56.00,7029.42.00,4/22/06,5/31/06,2006,2006,News,0,2000,Snowmelt,2,,snow
+2880,0,CANADA,0,single country,36.59.59,222.45.00,3213.02.00,5/26/06,6/2/06,2006,2006,News,0,300,Snowmelt,1,,snow
+2977,0,CANADA,0,single country,7562.59.59,180.28.00,16766.17.00,10/21/06,10/24/06,2006,2006,News,0,500,Heavy rain,1,,rain
+3048,0,CANADA,0,single country,189.59.59,115.58.00,94680.09.00,4/10/07,5/8/07,2007,2007,News,0,700,Snowmelt,1.5,,snow
+3092,0,CANADA,0,single country,168580.59.59,83.49.00,204993.53.00,6/6/07,6/14/07,2007,2007,News,0,500,Snowmelt,1.5,Snowmelt,snow
+3147,0,CANADA,0,single country,2435.59.59,74.16.00,628.31.00,8/1/07,8/3/07,2007,2007,News,0,0,Heavy rain,1.5,,rain
+3292,0,CANADA,0,single country,8961.59.59,121.01.00,22896.35.00,4/10/08,4/24/08,2008,2008,News,0,400,Snowmelt,1.5,,snow
+3298,0,CANADA,0,single country,1007.59.59,54.33.00,3178.36.00,4/26/08,5/1/08,2008,2008,News,0,2000,Ice jam/break-up,1,,snow
+3341,0,CANADA,0,single country,91.59.59,212.25.00,160128.06.00,7/30/08,7/31/08,2008,2008,News,0,0,Torrential Rain,2,,rain
+3346,FF-2008-000123-PAK,CANADA,0,single country,533930.59.59,154.06.00,9314.57.00,8/3/08,8/4/08,2008,2008,News,0,0,Torrential Rain,2,,rain
+3470,0,CANADA,0,single country,663.59.59,73.11.00,20494.07.00,4/6/09,4/9/09,2009,2009,News,0,1000,Heavy rain,2,,rain
+3655,0,CANADA,0,single country,25183.59.59,194.57.00,25788.39.00,5/29/10,5/31/10,2010,2010,0,0,0,Heavy rain,1,Heavy rain,rain
+3673,0,CANADA,0,single country,61.59.59,195.17.00,86590.22.00,7/2/10,7/6/10,2010,2010,0,0,0,Heavy rain,1.5,Heavy rain,rain
+3720,0,CANADA,0,single country,6726.59.59,200.15.00,45780.38.00,9/25/10,9/28/10,2010,2010,News,0,720,Heavy rain,2,,rain
+3761,0,CANADA,,single country,23547.59.59,91.38.00,19018.8,12/14/10,12/20/10,2010,2010,News,0,1000,Torrential Rain,1.5,,rain
+3812,,CANADA,USA,multi-country,619.59.59,149.24.00,5274.09.00,5/4/11,6/9/11,2011,2011,News,0,1300,Heavy rain,2,Heavy rain,rain
+3819,,CANADA,,single country,263934.59.59,94.38.00,5634.34.00,6/1/11,7/6/11,2011,2011,News,0,700,Heavy rain,1,,rain
+3913,,CANADA,,single country,598.59.59,145.54.00,5440.53.00,3/25/12,3/30/12,2012,2012,News,0,500,Snowmelt,1.5,,snow
+3933,,CANADA,,single country,6519.59.59,131.28.00,673741.48.00,6/6/12,6/12/12,2012,2012,News,0,0,Heavy rain,1,,rain
+3998,,CANADA,,single country,554.59.59,106.33.00,1592.26.00,10/25/12,10/29/12,2012,2012,News,0,700,Heavy rain,1.5,,rain
+4362,,CANADA,,single country,163438.59.59,106.44.00,176099.51.00,6/14/16,6/21/16,2016,2016,News,0,300,Heavy rain,1,,rain
+4400,,CANADA,,single country,139834.59.59,139.39.00,17109.11.00,10/11/16,10/12/16,2016,2016,News,0,0,Heavy rain,1,,rain
+4470,,CANADA,,single country,51513.59.59,140.48.00,79149.2,5/5/17,5/15/17,2017,2017,News,0,3641,Heavy Rain and Snowmelt,1.5,,rain
+4612,,CANADA,USA,multi-country,9356.59.59,109.39.00,78669.36.00,5/10/18,5/14/18,2018,2018,FloodList,0,4000,Heavy Rain and Snowmelt,1,Heavy rain,rain
+4661,,CANADA,,single country,56965.59.59,199.45.00,4707.54.00,8/7/18,8/9/18,2018,2018,FloodList,0,0,Torrential Rain,1,,rain
+4910,,CANADA,,single country,8300.59.59,103.26.00,169211,4/25/20,4/27/20,2020,2020,FloodList,0,0,Ice Jam,1,,snow
+4936,,CANADA,,single country,59427.59.59,87.21.00,78874.8,7/1/20,7/5/20,2020,2020,FloodList,0,240,Heavy rain,1.5,,rain
