@@ -147,38 +147,6 @@
       color: var(--text-primary);
     }
 
-    /* Weather Widget */
-    .weather-widget {
-      background: linear-gradient(135deg, rgba(212, 168, 83, 0.1) 0%, rgba(26, 31, 46, 0.5) 100%);
-      border: 1px solid rgba(212, 168, 83, 0.2);
-    }
-
-    .weather-main {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 12px;
-    }
-
-    .weather-temp {
-      font-size: 2rem;
-      font-weight: 700;
-    }
-
-    .weather-desc {
-      font-weight: 600;
-      color: var(--accent);
-    }
-
-    .weather-details {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8px;
-      font-size: 0.8rem;
-      border-top: 1px solid rgba(255,255,255,0.05);
-      padding-top: 10px;
-    }
-
     /* Filters */
     .filter-group {
       margin-bottom: 16px;
@@ -435,17 +403,6 @@
           </div>
         </div>
 
-        <!-- Weather Section -->
-        <div class="section-title"><i class="fa-solid fa-cloud-sun"></i> Live Weather (NBR)</div>
-        <div class="card weather-widget">
-          <div id="weather-content">
-            <div class="weather-main">
-              <span class="weather-temp">--°C</span>
-              <span class="weather-desc">Loading...</span>
-            </div>
-          </div>
-        </div>
-
         <!-- Filters -->
         <div class="section-title"><i class="fa-solid fa-filter"></i> Analysis Filters</div>
         <div class="filter-group">
@@ -685,28 +642,6 @@
       document.getElementById('stat-risk').textContent = highRisk;
     }
 
-    // Weather Logic
-    async function loadWeather() {
-      const lat = 13.50, lon = -16.09;
-      const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true&timezone=auto`;
-      try {
-        const res = await fetch(url).then(r => r.json());
-        const cur = res.current_weather;
-        const weatherCodes = { 0: "Clear", 1: "Mainly Clear", 2: "Partly Cloudy", 3: "Overcast", 95: "Storm" };
-        
-        document.getElementById('weather-content').innerHTML = `
-          <div class="weather-main">
-            <span class="weather-temp">${Math.round(cur.temperature)}°C</span>
-            <span class="weather-desc">${weatherCodes[cur.weathercode] || 'Condition Normal'}</span>
-          </div>
-          <div class="weather-details">
-            <div><span style="color:var(--text-secondary)">WIND</span> ${cur.windspeed} km/h</div>
-            <div><span style="color:var(--text-secondary)">DIR</span> ${cur.winddirection}°</div>
-          </div>
-        `;
-      } catch (e) { console.error("Weather error", e); }
-    }
-
     // RainViewer Radar Logic
     let radarLayers = [], radarTimestamps = [], currentRadarIndex = 0, radarInterval = null;
 
@@ -762,7 +697,6 @@
     document.addEventListener('DOMContentLoaded', () => {
       initMap();
       loadAllData();
-      loadWeather();
       initRadar();
 
       document.getElementById('hazard-toggle').addEventListener('change', (e) => {
