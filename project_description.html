@@ -73,7 +73,7 @@
 
     /* Main Content */
     .content-container {
-      max-width: 800px;
+      max-width: 900px;
       margin: 4rem auto;
       padding: 0 2rem;
       background: white;
@@ -104,15 +104,25 @@
     h2 {
       font-size: 1.5rem;
       font-weight: 700;
-      margin-top: 3rem;
-      margin-bottom: 1rem;
+      margin-top: 3.5rem;
+      margin-bottom: 1.25rem;
       color: var(--primary);
       display: flex;
       align-items: center;
       gap: 12px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.5rem;
     }
 
     h2 i { color: var(--accent); font-size: 1.25rem; }
+
+    h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      color: var(--secondary);
+    }
 
     p {
       margin-bottom: 1.5rem;
@@ -128,6 +138,29 @@
       margin-bottom: 0.75rem;
     }
 
+    .visual-placeholder {
+      background: #f3f4f6;
+      border: 2px dashed #d1d5db;
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+      margin: 1.5rem 0;
+      color: var(--text-muted);
+    }
+
+    .visual-placeholder i {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .visual-label {
+      font-weight: 700;
+      color: var(--primary);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
     .highlight-box {
       background: #fdfaf3;
       border-left: 4px solid var(--accent);
@@ -137,8 +170,28 @@
     }
 
     .highlight-box h3 {
-      font-size: 1.1rem;
-      font-weight: 700;
+      margin-top: 0;
+    }
+
+    .roadmap-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .roadmap-item {
+      padding: 1.5rem;
+      background: #f9fafb;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+      border: 1px solid var(--border);
+    }
+
+    .roadmap-phase {
+      font-weight: 800;
+      color: var(--accent);
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      display: block;
       margin-bottom: 0.5rem;
     }
 
@@ -166,51 +219,107 @@
   <main class="content-container">
     <a href="index.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to Dashboard</a>
     
-    <h1>Project Description</h1>
-    <p class="lead" style="font-size: 1.25rem; color: var(--text-muted); margin-bottom: 3rem;">
-      Strengthening community-level disaster preparedness in The Gambia's North Bank Region through the NBR Resilience Sentinel.
+    <h1>NBR Resilience Sentinel: Strategic Proposal</h1>
+    
+    <!-- 1. The Vision -->
+    <h2><i class="fa-solid fa-eye"></i> 1. The Vision: Empowering Local Heart with Digital Eyes</h2>
+    <p>
+      The Civic Literacy Initiative (CLI) is defined by its "feet on the ground"—field staff with deep expertise in climate-vulnerable regions. However, climate-related disasters like droughts disproportionately affect communities with limited access to health and transport infrastructure. Our proposal provides the technical capacity to systematically complement that expertise with modern data tools.
     </p>
 
-    <h2><i class="fa-solid fa-eye"></i> Our Vision</h2>
+    <!-- 2. The Dashboard -->
+    <h2><i class="fa-solid fa-desktop"></i> 2. The Dashboard: Your Mission Control Center</h2>
     <p>
-      The <strong>NBR Resilience Sentinel</strong> was born from a simple but urgent realization: national-level climate data is often too broad to be useful for local action. While national reports might predict a drought for the entire country, our field teams need to know exactly which villages in the North Bank Region will be hardest hit and which health facilities are most vulnerable.
-    </p>
-    <p>
-      Our vision is to transform CLI’s field operations into a data-empowered "Mission Control" where local expertise is amplified by high-resolution geospatial intelligence.
+      The center of our proposal is a custom-built, user-friendly Geospatial Dashboard. This living map of the NBR translates complex technical streams into three clear, actionable "Views" for your staff:
     </p>
 
-    <h2><i class="fa-solid fa-gears"></i> Methodology</h2>
+    <h3>The Community Pulse Map</h3>
     <p>
-      Our approach is built on three main pillars of analysis:
+      A high-resolution visualization monitoring every village in real-time to detect early signs of drought exposure.
     </p>
-    <ul>
-      <li><strong>Infrastructure Vulnerability Mapping:</strong> We use OpenStreetMap data to map every health facility in the NBR and calculate its specific risk profile based on proximity to historical flood zones.</li>
-      <li><strong>Historical Hazard Analysis:</strong> By processing decades of data from the Global Flood Archive, we identify recurring hazard patterns that simple forecasts often miss.</li>
-      <li><strong>Future Climate Projections:</strong> We integrate 2026-2030 and 2050 climate models to ensure that today's preparedness plans remain effective decades into the future.</li>
-    </ul>
-
-    <div class="highlight-box">
-      <h3>The AI Difference</h3>
-      <p>
-        The Sentinel utilizes AI-driven automated monitoring to scan satellite feeds and climate data at a scale that would be impossible for manual analysis. This allows CLI to shift from reactive disaster response to <strong>proactive resilience building</strong>.
-      </p>
+    <div class="visual-placeholder">
+      <i class="fa-solid fa-map-location-dot"></i>
+      <span class="visual-label">[Visual 1: The Regional 'Mission Control' View]</span>
+      A digital mock-up showing a color-coded heat map of the North Bank Region. Areas of high drought risk are highlighted in red, with a sidebar ranking districts by vulnerability scores.
     </div>
 
-    <h2><i class="fa-solid fa-earth-africa"></i> Strategic Impact</h2>
+    <h3>The Infrastructure Gap Overlay</h3>
     <p>
-      The North Bank Region is our proving ground. By successfully bridging the granularity gap here, we are creating a blueprint for climate-resilient development that can be scaled across the entire Gambia and the broader West African region.
+      A tool that layers population density over known locations of boreholes and clinics to identify coverage and transport infrastructure gaps.
     </p>
+    <div class="visual-placeholder">
+      <i class="fa-solid fa-mobile-screen-button"></i>
+      <span class="visual-label">[Visual 2: Field Staff Mobile View]</span>
+      A concept image showing a satellite map of a village cluster. Blue icons indicate water points, while a red circular overlay highlights population groups currently lacking adequate infrastructure access.
+    </div>
+
+    <h3>The Early Warning Timeline</h3>
     <p>
-      This project is not just about building a dashboard; it’s about creating a permanent asset for CLI. Through our Train-the-Trainer (ToT) program, we ensure that the technical capacity to maintain and evolve this system remains within the community it serves.
+      An AI-powered forecast that helps CLI better anticipate climate-related disasters weeks in advance.
+    </p>
+    <div class="visual-placeholder">
+      <i class="fa-solid fa-microchip"></i>
+      <span class="visual-label">[Visual 3: Human-in-the-Loop Workflow]</span>
+      A tablet interface displaying an AI-generated drought alert with a "Field Verification" box where staff can type "Confirmed" to validate the data, ensuring ground-truthed reliability.
+    </div>
+
+    <!-- 3. Technical Expertise -->
+    <h2><i class="fa-solid fa-brain"></i> 3. Technical Expertise: AI as a Force Multiplier</h2>
+    <p>To meet CLI’s requirement for efficiency and scalability, we have integrated a sophisticated layer of AI:</p>
+    <ul>
+      <li><strong>Automated Oversight:</strong> AI continuously scans satellite imagery across the NBR, performing the work of thousands of manual surveys to improve efficiency.</li>
+      <li><strong>Reliability (Human-in-the-Loop):</strong> We prioritize technology that is reliable; our system includes a feedback loop where field experts verify AI predictions against ground reality.</li>
+    </ul>
+
+    <!-- 4. Technology Safeguards -->
+    <h2><i class="fa-solid fa-shield-halved"></i> 4. Technology Safeguards: Risk Mitigation and Reliability</h2>
+    <p>
+      Acknowledging the challenges of operating in climate-vulnerable regions, our proposal includes robust technical safeguards to ensure the Sentinel remains a reliable tool:
+    </p>
+    <ul>
+      <li><strong>Redundant Data Streams:</strong> To mitigate the risk of satellite outages, the dashboard combines multiple sources (MODIS, Landsat) so CLI never loses its "eyes" on the NBR.</li>
+      <li><strong>Fail-Safe "Ground-Truth" Protocols:</strong> If the AI encounters an unknown anomaly, it triggers a "Verification Request" to field staff. Human expertise always serves as the final arbiter.</li>
+      <li><strong>Edge-Computing for Low Connectivity:</strong> Essential risk maps are stored locally on devices. Field staff can access critical data even if the regional internet network goes down.</li>
+    </ul>
+
+    <!-- 5. Sustainability -->
+    <h2><i class="fa-solid fa-seedling"></i> 5. Sustainability: The "Train-the-Trainer" Program</h2>
+    <p>To ensure long-term impact and feasibility, our support includes a comprehensive Train-the-Trainer (ToT) program:</p>
+    <ul>
+      <li><strong>Empowering Local Leaders:</strong> Training CLI technical leads to become internal experts on the Sentinel platform.</li>
+      <li><strong>Knowledge Transfer:</strong> "Master Trainers" will be equipped to train their own regional teams, keeping technical capacity within CLI.</li>
+    </ul>
+
+    <!-- 6. Practical Access -->
+    <h2><i class="fa-solid fa-hand-holding-hand"></i> 6. Practical Access & Field Utility: The Sentinel in Action</h2>
+    <p>The Sentinel is built with a "field-first" philosophy to ensure it is a help, not a burden, to staff.</p>
+    <ul>
+      <li><strong>Mobile-Ready Access:</strong> Lightweight, web-based application with Offline Synchronization for smartphones and tablets.</li>
+      <li><strong>Instant Reporting:</strong> "One-Tap Reporting" allows field staff to log observations instantly, reducing administrative time by an estimated 40%.</li>
+    </ul>
+
+    <!-- 7. Scaling Excellence -->
+    <h2><i class="fa-solid fa-arrow-up-right-dots"></i> 7. Scaling Excellence: From the North Bank to the Nation</h2>
+    <p>
+      The NBR Resilience Sentinel is a repeatable blueprint. Once calibrated for the NBR, CLI can replicate the dashboard for other regions with minimal cost, providing a unified reporting standard across the organization.
     </p>
 
-    <h2><i class="fa-solid fa-map"></i> Implementation Roadmap</h2>
-    <ul>
-      <li><strong>Phase 1:</strong> Data Ingestion & Risk Scoring (Completed)</li>
-      <li><strong>Phase 2:</strong> Deployment of the Resilience Sentinel Dashboard (Live)</li>
-      <li><strong>Phase 3:</strong> Field Team Training & Capacity Transfer (Starting Q3 2026)</li>
-      <li><strong>Phase 4:</strong> Expansion to Central River & Upper River Regions (Planned 2027)</li>
-    </ul>
+    <!-- 8. Implementation Roadmap -->
+    <h2><i class="fa-solid fa-calendar-days"></i> 8. Implementation Roadmap</h2>
+    <div class="roadmap-list">
+      <div class="roadmap-item">
+        <span class="roadmap-phase">Phase 1 (Sept – Oct 2026)</span>
+        Auditing local infrastructure and population data to create the "Deep Map" of the NBR.
+      </div>
+      <div class="roadmap-item">
+        <span class="roadmap-phase">Phase 2 (Nov – Dec 2026)</span>
+        Deploying the AI-driven Sentinel and launching the Train-the-Trainer program.
+      </div>
+      <div class="roadmap-item">
+        <span class="roadmap-phase">Phase 3 (Jan 2027 onwards)</span>
+        Reviewing NBR impact and preparing the tool for rapid rollout to other regions.
+      </div>
+    </div>
 
   </main>
 
