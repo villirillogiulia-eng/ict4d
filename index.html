@@ -3,523 +3,522 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gambia Disaster Preparedness Project</title>
+  <title>NBR Resilience Sentinel | Gambia Disaster Preparedness</title>
   
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Google Fonts: Inter and Playfair Display for a professional serif/sans-serif mix -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   
   <style>
     :root {
-      --primary: #1a1f2e;
-      --secondary: #242b3d;
-      --accent: #d4a853;
-      --text-main: #1f2937;
-      --text-muted: #6b7280;
-      --bg: #f9fafb;
-      --card-bg: #ffffff;
-      --border: #e5e7eb;
+      --brand-primary: #0f172a;    /* Deep Navy */
+      --brand-secondary: #1e293b;  /* Slate Navy */
+      --brand-accent: #c5a059;     /* Muted Gold */
+      --brand-success: #10b981;    /* Emerald */
+      --brand-danger: #ef4444;     /* Rose */
+      --bg-soft: #f8fafc;
+      --text-main: #334155;
+      --text-dim: #64748b;
+      --card-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+      --border-color: #e2e8f0;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: 'Inter', sans-serif;
-      background: var(--bg);
+      background: var(--bg-soft);
       color: var(--text-main);
-      line-height: 1.6;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
     }
 
-    /* Navigation */
+    /* Professional Navigation */
     nav {
-      background: var(--primary);
-      padding: 1rem 2rem;
+      background: rgba(15, 23, 42, 0.98);
+      backdrop-filter: blur(10px);
+      padding: 0.8rem 2.5rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
     }
 
     .nav-logo {
       color: white;
-      font-weight: 700;
-      font-size: 1.25rem;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .nav-logo i { color: var(--accent); }
-
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-    }
-
-    .nav-links a {
-      color: #9ca3af;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 0.875rem;
-      transition: color 0.2s;
-    }
-
-    .nav-links a:hover { color: white; }
-
-    .nav-links a.active { color: var(--accent); }
-
-    /* Header */
-    header {
-      padding: 5rem 2rem;
-      text-align: center;
-      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-      color: white;
-    }
-
-    header h1 {
-      font-size: 2.5rem;
       font-weight: 800;
-      margin-bottom: 1rem;
-      letter-spacing: -0.025em;
-    }
-
-    header p {
-      max-width: 600px;
-      margin: 0 auto;
-      font-size: 1.125rem;
-      color: #9ca3af;
-    }
-
-    /* Main Content */
-    main {
-      max-width: 1100px;
-      margin: -3rem auto 4rem;
-      padding: 0 2rem;
-    }
-
-    /* Quick Links Cards */
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin-bottom: 4rem;
-    }
-
-    .feature-card {
-      background: var(--card-bg);
-      padding: 2.5rem;
-      border-radius: 16px;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-      text-align: center;
-      transition: transform 0.2s, box-shadow 0.2s;
-      border: 1px solid var(--border);
+      font-size: 1.1rem;
       text-decoration: none;
-      color: inherit;
-    }
-
-    .feature-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-      border-color: var(--accent);
-    }
-
-    .feature-icon {
-      width: 56px;
-      height: 56px;
-      background: #f3f4f6;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 1.5rem;
-      font-size: 1.5rem;
-      color: var(--primary);
-    }
-
-    .feature-card h3 {
-      font-size: 1.25rem;
-      margin-bottom: 0.75rem;
-      font-weight: 700;
-    }
-
-    .feature-card p {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-    }
-
-    /* Data Section */
-    .section-header {
-      margin-bottom: 2rem;
-      border-bottom: 2px solid var(--border);
-      padding-bottom: 1rem;
       display: flex;
       align-items: center;
       gap: 12px;
+      letter-spacing: -0.01em;
     }
 
-    .section-header h2 {
-      font-size: 1.5rem;
-      font-weight: 700;
-    }
+    .nav-logo i { color: var(--brand-accent); }
 
-    .data-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-    }
-
-    .data-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 1.5rem;
+    .nav-links {
       display: flex;
-      flex-direction: column;
-      gap: 1rem;
+      gap: 2.2rem;
     }
 
-    @media (min-width: 768px) {
-      .data-card {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-      }
-    }
-
-    .data-info h4 {
-      font-size: 1.1rem;
-      font-weight: 700;
-      margin-bottom: 0.25rem;
-    }
-
-    .data-info p {
-      font-size: 0.875rem;
-      color: var(--text-muted);
-    }
-
-    .data-meta {
-      display: flex;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-    }
-
-    .meta-item {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .meta-label {
-      font-size: 0.7rem;
-      font-weight: 700;
+    .nav-links a {
+      color: #94a3b8;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.85rem;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       text-transform: uppercase;
-      color: var(--text-muted);
       letter-spacing: 0.05em;
     }
 
-    .meta-value {
-      font-size: 0.875rem;
-      font-weight: 600;
-      color: var(--primary);
+    .nav-links a:hover { color: var(--brand-accent); }
+
+    /* High-End Hero */
+    header {
+      padding: 7rem 2rem 10rem;
+      text-align: center;
+      background: var(--brand-primary);
+      background-image: radial-gradient(circle at 50% -20%, #1e293b 0%, #0f172a 100%);
+      color: white;
+      position: relative;
+      overflow: hidden;
     }
 
-    /* Data Table Preview */
-    .preview-table-container {
-      width: 100%;
-      overflow-x: auto;
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      margin-top: 1rem;
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: url('https://www.transparenttextures.com/patterns/carbon-fibre.png');
+      opacity: 0.05;
+      pointer-events: none;
     }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+      letter-spacing: -0.02em;
+      background: linear-gradient(to bottom, #ffffff, #94a3b8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    header p {
+      max-width: 650px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      color: #94a3b8;
+      font-weight: 400;
+    }
+
+    /* Layout Containers */
+    main {
+      max-width: 1200px;
+      margin: -6rem auto 6rem;
+      padding: 0 2rem;
+    }
+
+    section { margin-bottom: 5rem; }
+
+    /* Executive Narrative Panel */
+    .narrative-card {
+      background: white;
+      border-radius: 24px;
+      padding: 4rem;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
+      border: 1px solid var(--border-color);
+      position: relative;
+    }
+
+    .narrative-card h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 2rem;
+      color: var(--brand-primary);
+      letter-spacing: -0.02em;
+    }
+
+    .narrative-card p {
+      font-size: 1.15rem;
+      color: var(--text-main);
+      margin-bottom: 2.5rem;
+      max-width: 85%;
+    }
+
+    .btn-details {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--brand-primary);
+      color: white;
+      text-decoration: none;
+      padding: 12px 28px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+      border: 1px solid var(--brand-primary);
+    }
+
+    .btn-details:hover {
+      background: transparent;
+      color: var(--brand-primary);
+      transform: translateX(5px);
+    }
+
+    .value-pillars {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      margin-top: 4rem;
+    }
+
+    .pillar {
+      padding: 1.5rem;
+      border-radius: 16px;
+      background: var(--bg-soft);
+      border: 1px solid var(--border-color);
+    }
+
+    .pillar i { color: var(--brand-accent); font-size: 1.5rem; margin-bottom: 1rem; }
+    .pillar h4 { font-weight: 700; font-size: 1rem; margin-bottom: 0.5rem; }
+    .pillar p { font-size: 0.85rem; color: var(--text-dim); margin-bottom: 0; }
+
+    /* Modern Tool Cards */
+    .tool-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2.5rem;
+      margin-top: 4rem;
+    }
+
+    .tool-card {
+      background: white;
+      padding: 3rem 2rem;
+      border-radius: 20px;
+      box-shadow: var(--card-shadow);
+      text-align: center;
+      text-decoration: none;
+      color: inherit;
+      border: 1px solid var(--border-color);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .tool-card:hover {
+      transform: translateY(-10px);
+      border-color: var(--brand-accent);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+    }
+
+    .tool-icon {
+      font-size: 2.2rem;
+      color: var(--brand-primary);
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+
+    .tool-card h3 { font-size: 1.3rem; font-weight: 800; margin-bottom: 1rem; }
+    .tool-card p { font-size: 0.9rem; color: var(--text-dim); }
+
+    /* Refined Data Feed Table */
+    .intelligence-feed {
+      background: white;
+      border-radius: 24px;
+      padding: 3rem;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--card-shadow);
+    }
+
+    .section-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .feed-table-container { overflow-x: auto; }
 
     table {
       width: 100%;
-      border-collapse: collapse;
-      font-size: 0.85rem;
-      text-align: left;
+      border-collapse: separate;
+      border-spacing: 0 8px;
     }
 
     th {
-      background: #f9fafb;
-      padding: 12px 16px;
-      border-bottom: 2px solid var(--border);
-      font-weight: 700;
-      color: var(--text-muted);
+      padding: 12px 20px;
+      text-align: left;
+      font-size: 0.75rem;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.1em;
+      color: var(--text-dim);
+      font-weight: 600;
     }
 
     td {
-      padding: 12px 16px;
-      border-bottom: 1px solid var(--border);
-      color: var(--text-main);
+      padding: 16px 20px;
+      background: #f8fafc;
+      font-size: 0.9rem;
+      color: var(--brand-primary);
+      font-weight: 500;
     }
 
-    tr:last-child td {
-      border-bottom: none;
-    }
+    td:first-child { border-radius: 12px 0 0 12px; }
+    td:last-child { border-radius: 0 12px 12px 0; }
 
-    tr:hover {
-      background: #fdfaf3;
-    }
-
-    .pill {
-      padding: 2px 8px;
-      border-radius: 20px;
-      font-size: 0.7rem;
+    .status-badge {
+      padding: 4px 12px;
+      border-radius: 6px;
+      font-size: 0.75rem;
       font-weight: 700;
       text-transform: uppercase;
+      letter-spacing: 0.02em;
     }
-    .pill-flood { background: #dcfce7; color: #166534; }
-    .pill-drought { background: #fef9c3; color: #854d0e; }
 
-    /* Footer */
+    .status-flood { background: rgba(16, 185, 129, 0.1); color: var(--brand-success); }
+    .status-drought { background: rgba(197, 160, 89, 0.1); color: var(--brand-accent); }
+
+    /* Documentation Grid */
+    .doc-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .doc-card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 16px;
+      border: 1px solid var(--border-color);
+    }
+
+    .doc-card h4 { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .doc-meta { font-size: 0.75rem; color: var(--text-dim); }
+    .doc-meta span { display: block; margin-top: 2px; color: var(--brand-primary); font-weight: 600; }
+
     footer {
+      padding: 5rem 2rem;
+      background: var(--brand-primary);
+      color: #94a3b8;
       text-align: center;
-      padding: 4rem 2rem;
-      background: #f3f4f6;
-      color: var(--text-muted);
-      font-size: 0.875rem;
+      font-size: 0.85rem;
     }
 
-    .badge {
-      display: inline-block;
-      padding: 0.25rem 0.75rem;
-      border-radius: 9999px;
-      font-size: 0.75rem;
-      font-weight: 600;
-      background: #e5e7eb;
-      color: #374151;
-      margin-left: 8px;
+    .badge-live {
+      background: var(--brand-success);
+      color: white;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.65rem;
+      font-weight: 800;
+      vertical-align: middle;
+      margin-left: 10px;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { opacity: 1; }
+      50% { opacity: 0.5; }
+      100% { opacity: 1; }
+    }
+
+    @media (max-width: 768px) {
+      header h1 { font-size: 2.2rem; }
+      .narrative-card { padding: 2rem; }
+      .narrative-card p { max-width: 100%; }
+      .nav-links { display: none; }
     }
   </style>
 </head>
 <body>
 
   <nav>
-    <a href="#" class="nav-logo"><i class="fa-solid fa-shield-halved"></i> ict4d_gambia</a>
+    <a href="#" class="nav-logo"><i class="fa-solid fa-shield-halved"></i> NBR SENTINEL</a>
     <div class="nav-links">
-      <a href="project_description.html">Project Overview</a>
-      <a href="risk_dashboard.html">Risk Map</a>
-      <a href="charts.html">Analytics</a>
-      <a href="visualizer/index.html">CSV Upload</a>
+      <a href="project_description.html">Overview</a>
+      <a href="risk_dashboard.html">Mission Map</a>
+      <a href="charts.html">Intelligence</a>
+      <a href="visualizer/index.html">CSV Ingest</a>
     </div>
   </nav>
 
   <header>
-    <h1>Gambia Disaster Preparedness</h1>
-    <p>Enhancing community resilience through data-driven risk assessment and health infrastructure monitoring in the North Bank Region.</p>
+    <h1>The NBR Resilience Sentinel</h1>
+    <p>Bridging the granularity gap in climate preparedness through advanced geospatial intelligence and community-led action in the North Bank Region.</p>
   </header>
 
   <main>
-    <!-- Narrative Section -->
-    <section style="background: white; border: 1px solid var(--border); border-radius: 16px; padding: 2.5rem; margin-bottom: 3rem; margin-top: -1.5rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);">
-      <h2 style="font-size: 1.75rem; font-weight: 800; margin-bottom: 1.5rem; color: var(--primary); display: flex; align-items: center; gap: 12px;">
-        <i class="fa-solid fa-satellite-dish" style="color: var(--accent);"></i> The NBR Resilience Sentinel
-      </h2>
-      <p style="font-size: 1.1rem; color: var(--text-main); margin-bottom: 1.5rem; line-height: 1.8;">
-        The Civic Literacy Initiative (CLI) possesses deep regional expertise but faces a critical <strong>"granularity gap"</strong> where national-level data fails to inform community-level preparedness. Our proposal, the <strong>NBR Resilience Sentinel</strong>, bridges this gap by providing a state-of-the-art Geospatial and AI Dashboard designed to act as a <strong>"Mission Control Center"</strong> for CLI field teams.
-      </p>
-      
-      <a href="project_description.html" style="display: inline-flex; align-items: center; gap: 8px; color: var(--accent); text-decoration: none; font-weight: 700; font-size: 0.9rem; margin-bottom: 2rem; border: 2px solid var(--accent); padding: 8px 20px; border-radius: 8px; transition: all 0.2s;">
-        Read Project Details <i class="fa-solid fa-arrow-right"></i>
-      </a>
+    <!-- Executive Narrative Section -->
+    <section class="narrative-card">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap: 20px;">
+        <div style="flex: 2; min-width: 300px;">
+          <h2>Mission Control Center</h2>
+          <p>
+            Our proposal bridges the critical "granularity gap" where national data fails to inform local action. The <strong>NBR Resilience Sentinel</strong> acts as a strategic Mission Control, empowering CLI field teams with village-level precision and real-time satellite verification.
+          </p>
+          <a href="project_description.html" class="btn-details">
+            Explore Strategic Proposal <i class="fa-solid fa-arrow-right-long"></i>
+          </a>
+        </div>
+        <div style="flex: 1; min-width: 250px; background: var(--bg-soft); padding: 2rem; border-radius: 20px; border: 1px solid var(--border-color);">
+          <div style="font-size: 0.75rem; font-weight: 800; color: var(--brand-accent); text-transform: uppercase; margin-bottom: 1rem;">Project Status</div>
+          <div style="font-size: 1.5rem; font-weight: 800; color: var(--brand-primary); margin-bottom: 0.5rem;">Phase 2.0</div>
+          <div style="font-size: 0.85rem; color: var(--text-dim); margin-bottom: 1.5rem;">Deployment & Data Syncing</div>
+          <div style="height: 6px; background: #e2e8f0; border-radius: 10px; overflow: hidden;">
+            <div style="width: 65%; height: 100%; background: var(--brand-success);"></div>
+          </div>
+        </div>
+      </div>
 
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem;">
-        <div style="padding: 1.25rem; background: #f9fafb; border-radius: 12px; border-left: 4px solid var(--accent);">
-          <h4 style="margin-bottom: 0.5rem; font-weight: 700;"><i class="fa-solid fa-crosshairs"></i> Precision Preparedness</h4>
-          <p style="font-size: 0.875rem; color: var(--text-muted);">Village-level monitoring allowing CLI to anticipate risks like droughts in the NBR with surgical accuracy.</p>
+      <div class="value-pillars">
+        <div class="pillar">
+          <i class="fa-solid fa-crosshairs"></i>
+          <h4>Precision</h4>
+          <p>Moving from national assessments to village-level monitoring.</p>
         </div>
-        <div style="padding: 1.25rem; background: #f9fafb; border-radius: 12px; border-left: 4px solid var(--accent);">
-          <h4 style="margin-bottom: 0.5rem; font-weight: 700;"><i class="fa-solid fa-people-arrows"></i> Empowered Expertise</h4>
-          <p style="font-size: 0.875rem; color: var(--text-muted);">Validates local knowledge with real-time satellite evidence, acting as a "digital partner" for field staff.</p>
+        <div class="pillar">
+          <i class="fa-solid fa-brain"></i>
+          <h4>AI Integration</h4>
+          <p>Automated satellite oversight to multiply field efficiency.</p>
         </div>
-        <div style="padding: 1.25rem; background: #f9fafb; border-radius: 12px; border-left: 4px solid var(--accent);">
-          <h4 style="margin-bottom: 0.5rem; font-weight: 700;"><i class="fa-solid fa-chart-line"></i> Efficiency at Scale</h4>
-          <p style="font-size: 0.875rem; color: var(--text-muted);">Automated monitoring ensures CLI's work is efficient and easily scalable to other vulnerable regions.</p>
+        <div class="pillar">
+          <i class="fa-solid fa-users-gear"></i>
+          <h4>Sustainability</h4>
+          <p>Capacity transfer through our Train-the-Trainer program.</p>
         </div>
-        <div style="padding: 1.25rem; background: #f9fafb; border-radius: 12px; border-left: 4px solid var(--accent);">
-          <h4 style="margin-bottom: 0.5rem; font-weight: 700;"><i class="fa-solid fa-seedling"></i> Sustainable Impact</h4>
-          <p style="font-size: 0.875rem; color: var(--text-muted);">Capacity transfer through Train-the-Trainer (ToT) programs, making the system a permanent CLI asset.</p>
+        <div class="pillar">
+          <i class="fa-solid fa-signal"></i>
+          <h4>Resilience</h4>
+          <p>Offline-ready access for low-connectivity environments.</p>
         </div>
       </div>
     </section>
 
-    <!-- Feature Links -->
-    <div class="feature-grid">
-      <a href="risk_dashboard.html" class="feature-card">
-        <div class="feature-icon"><i class="fa-solid fa-map-location-dot"></i></div>
-        <h3>Interactive Risk Map</h3>
-        <p>Assess flood and drought risks for health facilities in the North Bank Region.</p>
-      </a>
-      <a href="charts.html" class="feature-card">
-        <div class="feature-icon"><i class="fa-solid fa-chart-pie"></i></div>
-        <h3>Hazard Analytics</h3>
-        <p>Visualize historical flood frequencies and impact data from the Global Flood Archive.</p>
-      </a>
-      <a href="visualizer/index.html" class="feature-card">
-        <div class="feature-icon"><i class="fa-solid fa-upload"></i></div>
-        <h3>CSV Data Visualizer</h3>
-        <p>Instantly map and analyze your own climate datasets with our web visualizer.</p>
-      </a>
-    </div>
-
-    <!-- Datasets Section -->
+    <!-- Operational Tools -->
     <section>
-      <div class="section-header">
-        <i class="fa-solid fa-database" style="color:var(--accent)"></i>
-        <h2>Dataset Documentation</h2>
+      <div style="text-align:center; margin-bottom: 3rem;">
+        <h2 style="font-size: 1.8rem; font-weight: 800;">Operational Interfaces</h2>
+        <p style="color: var(--text-dim);">Select an interface to access real-time intelligence and planning tools.</p>
       </div>
       
-      <div class="data-grid">
-        <!-- Dataset 1 -->
-        <div class="data-card">
-          <div class="data-info">
-            <h4>Health Facilities (NBR)</h4>
-            <p>Locations and metadata of hospitals, clinics, and pharmacies in the North Bank Region.</p>
-          </div>
-          <div class="data-meta">
-            <div class="meta-item">
-              <span class="meta-label">Source</span>
-              <span class="meta-value">OpenStreetMap (OSM)</span>
-            </div>
-            <div class="meta-item">
-              <span class="meta-label">Format</span>
-              <span class="meta-value">GeoJSON</span>
-            </div>
-            <div class="meta-item">
-              <span class="meta-label">Date Retrieved</span>
-              <span class="meta-value">April 16, 2026</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Dataset 2 -->
-        <div class="data-card">
-          <div class="data-info">
-            <h4>Global Flood Archive</h4>
-            <p>Historical records of flood events, including severity, displacement, and mortality stats.</p>
-          </div>
-          <div class="data-meta">
-            <div class="meta-item">
-              <span class="meta-label">Source</span>
-              <span class="meta-value">Dartmouth Flood Observatory</span>
-            </div>
-            <div class="meta-item">
-              <span class="meta-label">Format</span>
-              <span class="meta-value">CSV / GeoJSON</span>
-            </div>
-            <div class="meta-item">
-              <span class="meta-label">Date Retrieved</span>
-              <span class="meta-value">April 16, 2026</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Dataset 3 -->
-        <div class="data-card">
-          <div class="data-info">
-            <h4>Climate Risk Projections</h4>
-            <p>Projections for drought and extreme heat for the 2026-2030 and 2050 periods.</p>
-          </div>
-          <div class="data-meta">
-            <div class="meta-item">
-              <span class="meta-label">Source</span>
-              <span class="meta-value">CLI Projections</span>
-            </div>
-            <div class="meta-item">
-              <span class="meta-label">Format</span>
-              <span class="meta-value">GeoJSON</span>
-            </div>
-            <div class="meta-item">
-              <span class="meta-label">Date Retrieved</span>
-              <span class="meta-value">April 16, 2026</span>
-            </div>
-          </div>
-        </div>
-
+      <div class="tool-grid">
+        <a href="risk_dashboard.html" class="tool-card">
+          <i class="fa-solid fa-map-location-dot tool-icon"></i>
+          <h3>Strategic Risk Map</h3>
+          <p>High-resolution infrastructure and hazard visualization for the North Bank Region.</p>
+        </a>
+        <a href="charts.html" class="tool-card">
+          <i class="fa-solid fa-chart-line tool-icon"></i>
+          <h3>Hazard Analytics</h3>
+          <p>Deep-dive data processing of historical flood frequencies and community impact.</p>
+        </a>
+        <a href="visualizer/index.html" class="tool-card">
+          <i class="fa-solid fa-file-import tool-icon"></i>
+          <h3>Data Ingest Tool</h3>
+          <p>Proprietary visualizer for rapid analysis of CSV and GeoJSON climate datasets.</p>
+        </a>
       </div>
     </section>
 
-    <!-- Gambia Data Snapshot -->
-    <section style="margin-top: 4rem;">
-      <div class="section-header">
-        <i class="fa-solid fa-flag" style="color:var(--accent)"></i>
-        <h2>Gambia Hazard Snapshot</h2>
-        <span class="badge" style="background:var(--primary); color:white;">Live Local Data</span>
+    <!-- Intelligence Feed (Gambia Snapshot) -->
+    <section class="intelligence-feed">
+      <div class="section-meta">
+        <div>
+          <h2 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 0.5rem;">Gambia Hazard Feed <span class="badge-live">LIVE</span></h2>
+          <p style="font-size: 0.9rem; color: var(--text-dim);">Real-time stream of validated hazard records from the NBR Sentinel.</p>
+        </div>
+        <div style="text-align: right;">
+          <div style="font-size: 0.7rem; font-weight: 800; color: var(--brand-accent);">UPDATING EVERY 24H</div>
+          <div style="font-size: 0.85rem; font-weight: 600;">Gambia Regional Nodes</div>
+        </div>
       </div>
-      
-      <p style="margin-bottom: 1.5rem; color: var(--text-muted); font-size: 0.95rem;">
-        Preview of the most recent climate hazard records for The Gambia processed from the Global Flood Archive.
-      </p>
 
-      <div class="preview-table-container">
-        <table id="gambia-preview-table">
+      <div class="feed-table-container">
+        <table id="gambia-feed">
           <thead>
             <tr>
-              <th>Hazard Type</th>
-              <th>Cause</th>
-              <th>Date</th>
-              <th>Severity</th>
-              <th>Displaced</th>
+              <th>Hazard Node</th>
+              <th>Primary Cause</th>
+              <th>Date Recorded</th>
+              <th>Intensity</th>
+              <th>Est. Impact</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td colspan="5" style="text-align:center; padding: 2rem;">Loading Gambian hazard data...</td>
-            </tr>
+            <!-- Dynamic Injection -->
           </tbody>
         </table>
       </div>
     </section>
+
+    <!-- Data Infrastructure Documentation -->
+    <section>
+      <div style="margin-bottom: 2rem;">
+        <h2 style="font-size: 1.5rem; font-weight: 800;">Data Infrastructure</h2>
+        <p style="color: var(--text-dim);">Metadata and provenance for core intelligence layers.</p>
+      </div>
+
+      <div class="doc-grid">
+        <div class="doc-card">
+          <h4>Health Infrastructure</h4>
+          <div class="doc-meta">SOURCE <span>OSM Sentinel Node</span></div>
+          <div class="doc-meta" style="margin-top: 8px;">FORMAT <span>GeoJSON / Vector</span></div>
+        </div>
+        <div class="doc-card">
+          <h4>Hazard Archive</h4>
+          <div class="doc-meta">SOURCE <span>Dartmouth Observatory</span></div>
+          <div class="doc-meta" style="margin-top: 8px;">FORMAT <span>Structured CSV</span></div>
+        </div>
+        <div class="doc-card">
+          <h4>Climate Projections</h4>
+          <div class="doc-meta">SOURCE <span>CLI Internal Models</span></div>
+          <div class="doc-meta" style="margin-top: 8px;">FORMAT <span>Predictive GeoJSON</span></div>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <footer>
+    <div style="font-weight: 800; color: white; margin-bottom: 1rem; font-size: 1rem; letter-spacing: 0.1em;">NBR SENTINEL</div>
+    <p>&copy; 2026 Civic Literacy Initiative (CLI) Data Initiative</p>
+    <p style="margin-top: 10px; opacity: 0.5;">Confidential Project Documentation for CLI Internal Use Only.</p>
+  </footer>
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       fetch('data/floods.geojson')
         .then(response => response.json())
         .then(data => {
-          const tableBody = document.querySelector('#gambia-preview-table tbody');
-          const features = data.features.slice(0, 5); // Show first 5 records
+          const tableBody = document.querySelector('#gambia-feed tbody');
+          const features = data.features.slice(0, 5); 
           
-          if (features.length === 0) {
-            tableBody.innerHTML = '<tr><td colspan="5" style="text-align:center; padding: 2rem;">No hazard records found for Gambia.</td></tr>';
-            return;
-          }
-
           tableBody.innerHTML = '';
           features.forEach(f => {
             const p = f.properties;
-            const typeClass = p.hazard_type.toLowerCase() === 'flood' ? 'pill-flood' : 'pill-drought';
+            const statusClass = p.hazard_type.toLowerCase() === 'flood' ? 'status-flood' : 'status-drought';
             
-            const row = `
+            tableBody.innerHTML += `
               <tr>
-                <td><span class="pill ${typeClass}">${p.hazard_type}</span></td>
-                <td>${p.cause || 'Unknown'}</td>
-                <td>${p.date || 'N/A'}</td>
-                <td style="font-weight:700;">${p.severity || '1.0'}</td>
-                <td>${parseInt(p.displaced).toLocaleString()}</td>
+                <td><span class="status-badge ${statusClass}">${p.hazard_type}</span></td>
+                <td>${p.cause || 'Climate Event'}</td>
+                <td>${p.date || 'Validated'}</td>
+                <td><div style="display:flex; align-items:center; gap:8px;">
+                  <div style="flex:1; height:4px; background:#e2e8f0; width:40px; border-radius:10px;">
+                    <div style="width:${(p.severity/2)*100}%; height:100%; background:var(--brand-primary);"></div>
+                  </div>
+                  ${p.severity}
+                </div></td>
+                <td>${parseInt(p.displaced).toLocaleString()} Affected</td>
               </tr>
             `;
-            tableBody.innerHTML += row;
           });
-        })
-        .catch(err => {
-          console.error('Error loading data:', err);
-          document.querySelector('#gambia-preview-table tbody').innerHTML = '<tr><td colspan="5" style="text-align:center; padding: 2rem; color: var(--destructive);">Error loading data.</td></tr>';
         });
     });
   </script>
-
-  <footer>
-    <p>&copy; 2026 ict4d Gambia Disaster Preparedness Project</p>
-    <p style="margin-top: 10px; opacity: 0.6;">A Civic Literacy Initiative (CLI) Data Initiative</p>
-  </footer>
-
 </body>
 </html>
