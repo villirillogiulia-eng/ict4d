@@ -18,8 +18,11 @@
         "name:fr": "Poste de sant\u00e9",
         "source": "Personal Experience",
         "osm_id": 2182202259,
+        "climate_risk_score": 0.546,
+        "nearest_hazard_distance_km": 9.761,
+        "nearest_hazard_type": "Coastal",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 9.761,
+        "climate_risk_level": "Low",
         "region": "North Bank"
       }
     },
@@ -36,8 +39,11 @@
         "amenity": "hospital",
         "healthcare": "hospital",
         "osm_id": 2487593830,
+        "climate_risk_score": 0.159,
+        "nearest_hazard_distance_km": 9.038,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 9.038,
+        "climate_risk_level": "Low",
         "region": "North Bank"
       }
     },
@@ -55,8 +61,11 @@
         "healthcare": "clinic",
         "name": "Kerewan Health Center",
         "osm_id": 5307044028,
+        "climate_risk_score": 0.619,
+        "nearest_hazard_distance_km": 7.564,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 7.564,
+        "climate_risk_level": "Low",
         "region": "North Bank"
       }
     },
@@ -74,8 +83,11 @@
         "healthcare": "clinic",
         "name": "Dembo Fula Clinic",
         "osm_id": 5360996823,
+        "climate_risk_score": 0.64,
+        "nearest_hazard_distance_km": 7.29,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 7.29,
+        "climate_risk_level": "Low",
         "region": "North Bank"
       }
     },
@@ -92,8 +104,11 @@
         "amenity": "pharmacy",
         "healthcare": "pharmacy",
         "osm_id": 5426422922,
+        "climate_risk_score": 0.589,
+        "nearest_hazard_distance_km": 2.717,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 2.717,
+        "climate_risk_level": "Low",
         "region": "North Bank"
       }
     },
@@ -111,8 +126,11 @@
         "healthcare": "pharmacy",
         "name": "Pharmacy",
         "osm_id": 5732570023,
+        "climate_risk_score": 0.616,
+        "nearest_hazard_distance_km": 7.611,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 7.611,
+        "climate_risk_level": "Low",
         "region": "North Bank"
       }
     },
@@ -131,8 +149,11 @@
         "name": "Brikama Ba drug store",
         "phone": "2705406",
         "osm_id": 6025072234,
+        "climate_risk_score": 0.137,
+        "nearest_hazard_distance_km": 16.308,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 16.308,
+        "climate_risk_level": "Low",
         "region": "North Bank"
       }
     },
@@ -152,8 +173,11 @@
         "opening_hours": "Mo-Su 07:00-00:00",
         "phone": "7000288",
         "osm_id": 6518229985,
+        "climate_risk_score": 0.572,
+        "nearest_hazard_distance_km": 2.608,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 2.608,
+        "climate_risk_level": "Low",
         "region": "North Bank"
       }
     },
@@ -182,8 +206,11 @@
         "water_source": "Water works",
         "wheelchair": "yes",
         "osm_id": 8132683968,
+        "climate_risk_score": 0.454,
+        "nearest_hazard_distance_km": 12.627,
+        "nearest_hazard_type": "Coastal",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 12.627,
+        "climate_risk_level": "Low",
         "region": "North Bank"
       }
     },
@@ -205,8 +232,11 @@
         "operator": "immunization, antenatal services",
         "operator:type": "government",
         "osm_id": 10759160780,
-        "flood_risk": "low",
-        "nearest_flood_distance_km": 8.592,
+        "climate_risk_score": 0.867,
+        "nearest_hazard_distance_km": 8.592,
+        "nearest_hazard_type": "Flood",
+        "flood_risk": "medium",
+        "climate_risk_level": "Medium",
         "region": "North Bank"
       }
     },
@@ -226,8 +256,11 @@
         "name": "RCH",
         "opening_hours": "first tuesday of every month",
         "osm_id": 10787211671,
+        "climate_risk_score": 0.703,
+        "nearest_hazard_distance_km": 5.029,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 5.029,
+        "climate_risk_level": "Low",
         "region": "North Bank"
       }
     },
@@ -245,8 +278,11 @@
         "healthcare": "clinic",
         "name": "Kubandar clinic",
         "osm_id": 10787244198,
+        "climate_risk_score": 0.694,
+        "nearest_hazard_distance_km": 4.025,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 4.025,
+        "climate_risk_level": "Low",
         "region": "North Bank"
       }
     },
@@ -264,8 +300,11 @@
         "healthcare": "clinic",
         "name": "Ballinghor RCH",
         "osm_id": 10787344789,
+        "climate_risk_score": 0.574,
+        "nearest_hazard_distance_km": 6.359,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 6.359,
+        "climate_risk_level": "Low",
         "region": "North Bank"
       }
     },
@@ -282,8 +321,11 @@
         "amenity": "hospital",
         "name": "Illiassa Minor Health Clinic",
         "osm_id": 11085308005,
-        "flood_risk": "low",
-        "nearest_flood_distance_km": 5.617,
+        "climate_risk_score": 1.978,
+        "nearest_hazard_distance_km": 5.617,
+        "nearest_hazard_type": "Flood",
+        "flood_risk": "high",
+        "climate_risk_level": "High",
         "region": "North Bank"
       }
     },
@@ -299,8 +341,11 @@
       "properties": {
         "amenity": "clinic",
         "osm_id": 11099939906,
+        "climate_risk_score": 0.769,
+        "nearest_hazard_distance_km": 6.754,
+        "nearest_hazard_type": "Coastal",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 6.754,
+        "climate_risk_level": "Low",
         "region": "North Bank"
       }
     },
@@ -316,8 +361,11 @@
       "properties": {
         "amenity": "clinic",
         "osm_id": 11100041005,
-        "flood_risk": "low",
-        "nearest_flood_distance_km": 3.414,
+        "climate_risk_score": 1.201,
+        "nearest_hazard_distance_km": 3.414,
+        "nearest_hazard_type": "Flood",
+        "flood_risk": "medium",
+        "climate_risk_level": "Medium",
         "region": "North Bank"
       }
     },
@@ -334,8 +382,11 @@
         "amenity": "clinic",
         "name": "Saaba village clinic",
         "osm_id": 11100043805,
-        "flood_risk": "low",
-        "nearest_flood_distance_km": 3.42,
+        "climate_risk_score": 1.2,
+        "nearest_hazard_distance_km": 3.42,
+        "nearest_hazard_type": "Flood",
+        "flood_risk": "medium",
+        "climate_risk_level": "Medium",
         "region": "North Bank"
       }
     },
@@ -365,8 +416,11 @@
         "source": "local knowledge",
         "start_date": "04.05.1991 / 19.09.2004",
         "osm_id": 255585110,
+        "climate_risk_score": 0.144,
+        "nearest_hazard_distance_km": 11.69,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 11.69,
+        "climate_risk_level": "Low",
         "region": "North Bank"
       }
     },
@@ -385,8 +439,11 @@
         "healthcare": "hospital",
         "name": "Janjanbureh Health Clinic",
         "osm_id": 255596695,
+        "climate_risk_score": 0.116,
+        "nearest_hazard_distance_km": 33.264,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 33.264,
+        "climate_risk_level": "Low",
         "region": "North Bank"
       }
     },
@@ -404,8 +461,11 @@
         "healthcare": "clinic",
         "name": "Ngayen Sanjal Clinic",
         "osm_id": 327976701,
+        "climate_risk_score": 0.327,
+        "nearest_hazard_distance_km": 8.869,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 8.869,
+        "climate_risk_level": "Low",
         "region": "North Bank"
       }
     },
@@ -422,8 +482,11 @@
         "amenity": "hospital",
         "name": "Njawara Clinic",
         "osm_id": 353262890,
+        "climate_risk_score": 0.509,
+        "nearest_hazard_distance_km": 9.428,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 9.428,
+        "climate_risk_level": "Low",
         "region": "North Bank"
       }
     },
@@ -440,8 +503,11 @@
         "amenity": "clinic",
         "building": "yes",
         "osm_id": 353262891,
+        "climate_risk_score": 0.508,
+        "nearest_hazard_distance_km": 9.439,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 9.439,
+        "climate_risk_level": "Low",
         "region": "North Bank"
       }
     },
@@ -459,8 +525,11 @@
         "barrier": "wall",
         "name": "H\u00f4pital de Keur Moussa Fronti\u00e8re",
         "osm_id": 368155287,
-        "flood_risk": "low",
-        "nearest_flood_distance_km": 5.079,
+        "climate_risk_score": 1.108,
+        "nearest_hazard_distance_km": 5.079,
+        "nearest_hazard_type": "Heat",
+        "flood_risk": "medium",
+        "climate_risk_level": "Medium",
         "region": "North Bank"
       }
     },
@@ -477,8 +546,11 @@
         "amenity": "hospital",
         "name": "Ballangharr Clinic",
         "osm_id": 370001116,
+        "climate_risk_score": 0.283,
+        "nearest_hazard_distance_km": 16.9,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 16.9,
+        "climate_risk_level": "Low",
         "region": "North Bank"
       }
     },
@@ -496,8 +568,11 @@
         "healthcare": "hospital",
         "name": "Njaba Kunda Health Clinic",
         "osm_id": 370001560,
-        "flood_risk": "low",
-        "nearest_flood_distance_km": 1.698,
+        "climate_risk_score": 0.984,
+        "nearest_hazard_distance_km": 1.698,
+        "nearest_hazard_type": "Fire",
+        "flood_risk": "medium",
+        "climate_risk_level": "Medium",
         "region": "North Bank"
       }
     },
@@ -516,8 +591,11 @@
         "healthcare": "hospital",
         "name": "Dankunku Clinic",
         "osm_id": 370003892,
+        "climate_risk_score": 0.249,
+        "nearest_hazard_distance_km": 21.196,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 21.196,
+        "climate_risk_level": "Low",
         "region": "North Bank"
       }
     },
@@ -535,8 +613,11 @@
         "building": "yes",
         "healthcare": "clinic",
         "osm_id": 370209342,
+        "climate_risk_score": 0.212,
+        "nearest_hazard_distance_km": 24.022,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 24.022,
+        "climate_risk_level": "Low",
         "region": "North Bank"
       }
     },
@@ -557,8 +638,11 @@
         "healthcare": "hospital",
         "name": "Farafenni Hospital",
         "osm_id": 370438583,
+        "climate_risk_score": 0.593,
+        "nearest_hazard_distance_km": 2.875,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 2.875,
+        "climate_risk_level": "Low",
         "region": "North Bank"
       }
     },
@@ -583,8 +667,11 @@
         "operator": "Government",
         "operator:type": "government",
         "osm_id": 371247166,
+        "climate_risk_score": 0.42,
+        "nearest_hazard_distance_km": 12.839,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 12.839,
+        "climate_risk_level": "Low",
         "region": "North Bank"
       }
     },
@@ -601,8 +688,11 @@
         "amenity": "clinic",
         "building": "yes",
         "osm_id": 388436769,
-        "flood_risk": "low",
-        "nearest_flood_distance_km": 10.649,
+        "climate_risk_score": 1.124,
+        "nearest_hazard_distance_km": 10.649,
+        "nearest_hazard_type": "Flood",
+        "flood_risk": "medium",
+        "climate_risk_level": "Medium",
         "region": "North Bank"
       }
     },
@@ -619,8 +709,11 @@
         "amenity": "hospital",
         "name": "Clinic",
         "osm_id": 410271253,
+        "climate_risk_score": 0.307,
+        "nearest_hazard_distance_km": 11.962,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 11.962,
+        "climate_risk_level": "Low",
         "region": "North Bank"
       }
     },
@@ -637,8 +730,11 @@
         "amenity": "clinic",
         "name": "Jailan Bakadaji Health Center",
         "osm_id": 497865724,
+        "climate_risk_score": 0.149,
+        "nearest_hazard_distance_km": 16.671,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 16.671,
+        "climate_risk_level": "Low",
         "region": "North Bank"
       }
     },
@@ -655,8 +751,11 @@
         "amenity": "hospital",
         "healthcare": "hospital",
         "osm_id": 784166546,
+        "climate_risk_score": 0.159,
+        "nearest_hazard_distance_km": 9.039,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 9.039,
+        "climate_risk_level": "Low",
         "region": "North Bank"
       }
     },
@@ -675,8 +774,11 @@
         "healthcare": "hospital",
         "name": "Old Kerr Katim Clinic",
         "osm_id": 806023818,
-        "flood_risk": "low",
-        "nearest_flood_distance_km": 3.171,
+        "climate_risk_score": 1.25,
+        "nearest_hazard_distance_km": 3.171,
+        "nearest_hazard_type": "Heat",
+        "flood_risk": "medium",
+        "climate_risk_level": "Medium",
         "region": "North Bank"
       }
     },
@@ -703,8 +805,11 @@
         "operator:type": "private_non_profit",
         "solar": "yes",
         "osm_id": 828908614,
+        "climate_risk_score": 4.153,
+        "nearest_hazard_distance_km": 0.978,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "high",
-        "nearest_flood_distance_km": 0.978,
+        "climate_risk_level": "High",
         "region": "North Bank"
       }
     },
@@ -722,8 +827,11 @@
         "healthcare": "hospital",
         "name": "Salikenne Hospital",
         "osm_id": 1299963427,
+        "climate_risk_score": 0.743,
+        "nearest_hazard_distance_km": 3.71,
+        "nearest_hazard_type": "Drought",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 3.71,
+        "climate_risk_level": "Low",
         "region": "North Bank"
       }
     }

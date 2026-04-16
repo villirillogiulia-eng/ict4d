@@ -31,4 +31,4 @@ def filter_nbr_facilities(input_file, output_file):
     print(f"Of these, {high_risk} are at high risk of flooding.")
 
 if __name__ == "__main__":
-    filter_nbr_facilities('health_facilities_with_risk.geojson', 'nbr_health_facilities.geojson')
+    filter_nbr_facilities('data/health_facilities_with_risk.geojson', 'data/nbr_health_facilities.geojson')

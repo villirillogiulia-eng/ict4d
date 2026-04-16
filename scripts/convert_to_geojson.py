@@ -13,12 +13,32 @@ def csv_to_geojson(csv_file, geojson_file):
                 
                 # Only include Gambia records
                 country = clean_row.get('Country', 'Unknown')
-                if 'gambia' not in country.lower():
+                other_country = clean_row.get('OtherCountry', '')
+                
+                if 'gambia' not in country.lower() and 'gambia' not in other_country.lower():
                     continue
 
-                lon = float(clean_row['long'])
-                lat = float(clean_row['lat'])
+                lon_str = clean_row.get('long')
+                lat_str = clean_row.get('lat')
                 
+                if not lon_str or not lat_str:
+                    continue
+                    
+                lon = float(lon_str)
+                lat = float(lat_str)
+                
+                # Determine hazard type based on MainCause
+                cause = clean_row.get('MainCause', 'Unknown')
+                hazard_type = 'Flood' # Default
+                if any(x in cause.lower() for x in ['drought', 'dry spell', 'rainfall deficit']):
+                    hazard_type = 'Drought'
+                elif any(x in cause.lower() for x in ['fire', 'bushfire']):
+                    hazard_type = 'Fire'
+                elif any(x in cause.lower() for x in ['erosion', 'salinity']):
+                    hazard_type = 'Coastal'
+                elif 'heat' in cause.lower():
+                    hazard_type = 'Heat'
+
                 feature = {
                     "type": "Feature",
                     "geometry": {
@@ -27,15 +47,20 @@ def csv_to_geojson(csv_file, geojson_file):
                     },
                     "properties": {
                         "id": clean_row.get('ID', 'N/A'),
-                        "country": clean_row.get('Country', 'Unknown'),
-                        "cause": clean_row.get('MainCause', 'Unknown'),
+                        "country": country,
+                        "hazard_type": hazard_type,
+                        "cause": cause,
                         "date": clean_row.get('Began', 'N/A'),
-                        "severity": clean_row.get('Severity', 'N/A')
+                        "severity": clean_row.get('Severity', 'N/A'),
+                        "dead": clean_row.get('Dead', '0'),
+                        "displaced": clean_row.get('Displaced', '0'),
+                        "area": clean_row.get('Area', '0')
                     }
                 }
                 features.append(feature)
                 count += 1
             except (ValueError, KeyError) as e:
+                # print(f"Skipping row due to error: {e}")
                 continue
 
     geojson = {
@@ -46,7 +71,7 @@ def csv_to_geojson(csv_file, geojson_file):
     with open(geojson_file, 'w', encoding='utf-8') as f:
         json.dump(geojson, f, indent=2)
     
-    print(f"Successfully processed {count} flood events into {geojson_file}")
+    print(f"Successfully processed {count} climate hazard events into {geojson_file}")
 
 if __name__ == "__main__":
-    csv_to_geojson('FloodArchive.csv', 'floods.geojson')
+    csv_to_geojson('data/FloodArchive.csv', 'data/floods.geojson')

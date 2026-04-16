@@ -15,8 +15,11 @@
         "healthcare": "pharmacy",
         "name": "Stop Step",
         "osm_id": 619476507,
+        "climate_risk_score": 0.3,
+        "nearest_hazard_distance_km": 19.85,
+        "nearest_hazard_type": "Coastal",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 15.237
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -33,8 +36,11 @@
         "healthcare": "hospital",
         "name": "Lamtoro Clinic",
         "osm_id": 1143756708,
+        "climate_risk_score": 0.299,
+        "nearest_hazard_distance_km": 19.886,
+        "nearest_hazard_type": "Coastal",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 15.286
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -54,8 +60,11 @@
         "name:fr": "Poste de sant\u00e9",
         "source": "Personal Experience",
         "osm_id": 2182202259,
+        "climate_risk_score": 0.546,
+        "nearest_hazard_distance_km": 9.761,
+        "nearest_hazard_type": "Coastal",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 9.761
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -71,8 +80,11 @@
         "amenity": "hospital",
         "healthcare": "hospital",
         "osm_id": 2487593830,
+        "climate_risk_score": 0.159,
+        "nearest_hazard_distance_km": 9.038,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 9.038
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -90,8 +102,11 @@
         "healthcare": "pharmacy",
         "name": "Pharmacie",
         "osm_id": 2627653101,
+        "climate_risk_score": 0.18,
+        "nearest_hazard_distance_km": 40.834,
+        "nearest_hazard_type": "Coastal",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 40.834
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -109,8 +124,11 @@
         "healthcare": "hospital",
         "name": "Africmed",
         "osm_id": 3530428244,
+        "climate_risk_score": 0.28,
+        "nearest_hazard_distance_km": 21.894,
+        "nearest_hazard_type": "Coastal",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 16.963
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -126,8 +144,11 @@
         "amenity": "clinic",
         "healthcare": "clinic",
         "osm_id": 3686979501,
+        "climate_risk_score": 0.206,
+        "nearest_hazard_distance_km": 27.094,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 27.094
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -143,8 +164,11 @@
         "amenity": "pharmacy",
         "healthcare": "pharmacy",
         "osm_id": 3686979508,
+        "climate_risk_score": 0.276,
+        "nearest_hazard_distance_km": 22.272,
+        "nearest_hazard_type": "Coastal",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 17.352
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -161,8 +185,11 @@
         "healthcare": "pharmacy",
         "name": "Malack Chemist",
         "osm_id": 3741545793,
+        "climate_risk_score": 0.35,
+        "nearest_hazard_distance_km": 15.926,
+        "nearest_hazard_type": "Coastal",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 11.577
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -179,8 +206,11 @@
         "healthcare": "hospital",
         "name": "Village Clinic",
         "osm_id": 4197014592,
+        "climate_risk_score": 0.467,
+        "nearest_hazard_distance_km": 12.511,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 12.511
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -197,8 +227,11 @@
         "name": "Pharmacie Al Barakatou",
         "source": "survey",
         "osm_id": 4347300903,
+        "climate_risk_score": 0.245,
+        "nearest_hazard_distance_km": 29.282,
+        "nearest_hazard_type": "Coastal",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 29.282
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -215,8 +248,11 @@
         "name": "Njoben Wollof Health Post",
         "operator": "Tamba Sabally",
         "osm_id": 4494495240,
+        "climate_risk_score": 0.139,
+        "nearest_hazard_distance_km": 24.487,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 24.487
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -233,8 +269,11 @@
         "healthcare": "clinic",
         "name": "Lamin Heath center",
         "osm_id": 4528583201,
+        "climate_risk_score": 0.381,
+        "nearest_hazard_distance_km": 14.714,
+        "nearest_hazard_type": "Coastal",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 9.756
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -250,8 +289,11 @@
         "amenity": "clinic",
         "name": "Case de Sante de Touba Mboyenne",
         "osm_id": 5202071821,
+        "climate_risk_score": 0.116,
+        "nearest_hazard_distance_km": 38.926,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 38.926
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -268,8 +310,11 @@
         "healthcare": "clinic",
         "name": "Poste de Sante de Niaming",
         "osm_id": 5226804022,
+        "climate_risk_score": 0.112,
+        "nearest_hazard_distance_km": 45.103,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 45.103
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -286,8 +331,11 @@
         "healthcare": "clinic",
         "name": "Kerewan Health Center",
         "osm_id": 5307044028,
+        "climate_risk_score": 0.619,
+        "nearest_hazard_distance_km": 7.564,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 7.564
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -304,8 +352,11 @@
         "healthcare": "clinic",
         "name": "Dembo Fula Clinic",
         "osm_id": 5360996823,
+        "climate_risk_score": 0.64,
+        "nearest_hazard_distance_km": 7.29,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 7.29
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -321,8 +372,11 @@
         "amenity": "pharmacy",
         "healthcare": "pharmacy",
         "osm_id": 5426422922,
+        "climate_risk_score": 0.589,
+        "nearest_hazard_distance_km": 2.717,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 2.717
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -341,8 +395,11 @@
         "name": "Kartong Community Clinic",
         "operator": "Community",
         "osm_id": 5594772406,
+        "climate_risk_score": 0.151,
+        "nearest_hazard_distance_km": 30.672,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 30.672
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -362,8 +419,11 @@
         "opening_hours": "Fr-Sa 08:00-22:00",
         "operator": "sakar touray",
         "osm_id": 5596863989,
+        "climate_risk_score": 0.15,
+        "nearest_hazard_distance_km": 30.889,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 30.889
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -380,8 +440,11 @@
         "healthcare": "pharmacy",
         "name": "Pharmacy",
         "osm_id": 5732570023,
+        "climate_risk_score": 0.616,
+        "nearest_hazard_distance_km": 7.611,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 7.611
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -399,8 +462,11 @@
         "name:en": "Fafacourou Health Post",
         "name:fr": "Poste de Sant\u00e9 Fafacourou",
         "osm_id": 5766775853,
+        "climate_risk_score": 0.09,
+        "nearest_hazard_distance_km": 51.787,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 51.787
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -417,8 +483,11 @@
         "name": "Casse de Sant\u00e9 Sar\u00e9 Dickel",
         "name:en": "Sar\u00e9 Dickel Health Hut",
         "osm_id": 5795264955,
+        "climate_risk_score": 0.091,
+        "nearest_hazard_distance_km": 57.761,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 57.761
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -434,8 +503,11 @@
         "amenity": "hospital",
         "name": "fagikunda major hospital",
         "osm_id": 5836379388,
+        "climate_risk_score": 0.356,
+        "nearest_hazard_distance_km": 15.725,
+        "nearest_hazard_type": "Coastal",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 10.698
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -452,8 +524,11 @@
         "healthcare": "clinic",
         "name": "sharab",
         "osm_id": 5836381290,
+        "climate_risk_score": 0.376,
+        "nearest_hazard_distance_km": 14.296,
+        "nearest_hazard_type": "Coastal",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 10.03
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -470,8 +545,11 @@
         "healthcare": "pharmacy",
         "name": "Bismilah Drug Store",
         "osm_id": 6024793787,
+        "climate_risk_score": 0.409,
+        "nearest_hazard_distance_km": 13.873,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 13.873
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -489,8 +567,11 @@
         "name": "Brikama Ba drug store",
         "phone": "2705406",
         "osm_id": 6025072234,
+        "climate_risk_score": 0.137,
+        "nearest_hazard_distance_km": 16.308,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 16.308
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -507,8 +588,11 @@
         "healthcare": "hospital",
         "name": "Basse health centre",
         "osm_id": 6027550386,
+        "climate_risk_score": 0.243,
+        "nearest_hazard_distance_km": 8.025,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 8.025
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -527,8 +611,11 @@
         "healthcare": "pharmacy",
         "name": "Mame Diarra Bousso",
         "osm_id": 6207591824,
+        "climate_risk_score": 0.056,
+        "nearest_hazard_distance_km": 71.899,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 71.899
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -545,8 +632,11 @@
         "healthcare": "clinic",
         "name": "Chinese Mango Clinic",
         "osm_id": 6299152595,
+        "climate_risk_score": 0.228,
+        "nearest_hazard_distance_km": 8.604,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 8.604
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -563,8 +653,11 @@
         "healthcare": "clinic",
         "name": "Sutukoba Community Clinic",
         "osm_id": 6402440670,
+        "climate_risk_score": 0.085,
+        "nearest_hazard_distance_km": 24.816,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 24.816
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -581,8 +674,11 @@
         "healthcare": "clinic",
         "name": "Lupitane",
         "osm_id": 6434314785,
+        "climate_risk_score": 0.113,
+        "nearest_hazard_distance_km": 18.494,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 18.494
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -599,8 +695,11 @@
         "healthcare": "pharmacy",
         "name": "Pharamacy #2",
         "osm_id": 6436269786,
+        "climate_risk_score": 0.112,
+        "nearest_hazard_distance_km": 18.538,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 18.538
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -617,8 +716,11 @@
         "healthcare": "pharmacy",
         "name:en": "Pharmacy",
         "osm_id": 6466609085,
+        "climate_risk_score": 0.11,
+        "nearest_hazard_distance_km": 53.039,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 53.039
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -637,8 +739,11 @@
         "opening_hours": "Mo-Su 07:00-00:00",
         "phone": "7000288",
         "osm_id": 6518229985,
+        "climate_risk_score": 0.572,
+        "nearest_hazard_distance_km": 2.608,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 2.608
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -656,8 +761,11 @@
         "name": "Manding Drug Store",
         "opening_hours": "Mo-Su 08:30-00:00",
         "osm_id": 6576673185,
+        "climate_risk_score": 0.266,
+        "nearest_hazard_distance_km": 11.171,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 11.171
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -675,8 +783,11 @@
         "name": "Ma Jawara Drug Store",
         "opening_hours": "Mo-Su 09:00-21:00",
         "osm_id": 6576674985,
+        "climate_risk_score": 0.302,
+        "nearest_hazard_distance_km": 4.518,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 4.518
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -693,8 +804,11 @@
         "name": "Ma\u00efmouna",
         "source": "survey",
         "osm_id": 6784956927,
+        "climate_risk_score": 0.057,
+        "nearest_hazard_distance_km": 72.227,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 72.227
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -711,8 +825,11 @@
         "name": "Alhamdoulillahi",
         "source": "survey",
         "osm_id": 6784956928,
+        "climate_risk_score": 0.056,
+        "nearest_hazard_distance_km": 72.252,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 72.252
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -728,8 +845,11 @@
         "amenity": "hospital",
         "name": "Bundung Maternal & Child Health Hospital",
         "osm_id": 6945375788,
+        "climate_risk_score": 0.34,
+        "nearest_hazard_distance_km": 16.684,
+        "nearest_hazard_type": "Coastal",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 11.742
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -746,8 +866,11 @@
         "healthcare": "clinic",
         "name": "INFIRMERIE PRIVEE",
         "osm_id": 6970486434,
+        "climate_risk_score": 0.485,
+        "nearest_hazard_distance_km": 20.959,
+        "nearest_hazard_type": "Heat",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 20.959
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -764,8 +887,11 @@
         "healthcare": "pharmacy",
         "name": "PHARMACIE M L NIASSE",
         "osm_id": 6970486439,
+        "climate_risk_score": 0.479,
+        "nearest_hazard_distance_km": 21.265,
+        "nearest_hazard_type": "Heat",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 21.265
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -782,8 +908,11 @@
         "healthcare": "pharmacy",
         "name": "Stop Step Pharmacy Westfield",
         "osm_id": 6988066185,
+        "climate_risk_score": 0.361,
+        "nearest_hazard_distance_km": 15.18,
+        "nearest_hazard_type": "Coastal",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 10.497
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -800,8 +929,11 @@
         "healthcare": "hospital",
         "name": "Brikama Hospital",
         "osm_id": 7025887086,
+        "climate_risk_score": 0.265,
+        "nearest_hazard_distance_km": 10.53,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 10.53
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -818,8 +950,11 @@
         "healthcare": "hospital",
         "name": "stop step pharmacy",
         "osm_id": 7151547934,
+        "climate_risk_score": 0.261,
+        "nearest_hazard_distance_km": 24.072,
+        "nearest_hazard_type": "Coastal",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 19.129
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -836,8 +971,11 @@
         "healthcare": "pharmacy",
         "name": "Stop Step pharmacy",
         "osm_id": 7214638986,
+        "climate_risk_score": 0.277,
+        "nearest_hazard_distance_km": 22.163,
+        "nearest_hazard_type": "Coastal",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 17.246
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -856,8 +994,11 @@
         "name": "Sheikh Zayed Regional Eye Care Centre",
         "phone": "+220 9967049; +220 2088707",
         "osm_id": 7231778551,
+        "climate_risk_score": 0.367,
+        "nearest_hazard_distance_km": 14.793,
+        "nearest_hazard_type": "Coastal",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 10.442
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -874,8 +1015,11 @@
         "healthcare": "clinic",
         "name": "Fatou Gaye",
         "osm_id": 7720650590,
+        "climate_risk_score": 0.325,
+        "nearest_hazard_distance_km": 17.518,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 13.171
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -901,8 +1045,11 @@
         "water_source": "water works",
         "wheelchair": "yes",
         "osm_id": 8132683957,
+        "climate_risk_score": 0.559,
+        "nearest_hazard_distance_km": 20.55,
+        "nearest_hazard_type": "Heat",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 20.55
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -930,8 +1077,11 @@
         "water_source": "Water works",
         "wheelchair": "yes",
         "osm_id": 8132683968,
+        "climate_risk_score": 0.454,
+        "nearest_hazard_distance_km": 12.627,
+        "nearest_hazard_type": "Coastal",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 12.627
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -959,8 +1109,11 @@
         "water_source": "powered pump",
         "wheelchair": "yes",
         "osm_id": 8132683981,
+        "climate_risk_score": 0.109,
+        "nearest_hazard_distance_km": 53.818,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 53.818
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -985,8 +1138,11 @@
         "water_source": "Water works",
         "wheelchair": "yes",
         "osm_id": 8132683982,
+        "climate_risk_score": 0.18,
+        "nearest_hazard_distance_km": 40.755,
+        "nearest_hazard_type": "Coastal",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 40.755
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -1003,8 +1159,11 @@
         "amenity": "pharmacy",
         "name": "Pharmacie orientale",
         "osm_id": 8165186615,
+        "climate_risk_score": 0.056,
+        "nearest_hazard_distance_km": 72.188,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 72.188
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -1020,8 +1179,11 @@
         "amenity": "clinic",
         "healthcare": "clinic",
         "osm_id": 8390261117,
+        "climate_risk_score": 0.383,
+        "nearest_hazard_distance_km": 17.688,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 17.688
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -1038,8 +1200,11 @@
         "healthcare": "clinic",
         "name": "MRCG Keneba Programmer Office",
         "osm_id": 8390371817,
+        "climate_risk_score": 0.383,
+        "nearest_hazard_distance_km": 17.696,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 17.696
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -1056,8 +1221,11 @@
         "healthcare": "hospital",
         "name": "Sukuta health center",
         "osm_id": 8415821817,
+        "climate_risk_score": 0.308,
+        "nearest_hazard_distance_km": 19.223,
+        "nearest_hazard_type": "Coastal",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 14.318
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -1074,8 +1242,11 @@
         "healthcare": "hospital",
         "name": "Poste de Sant\u00e9 de BOTOU",
         "osm_id": 8933099797,
+        "climate_risk_score": 0.054,
+        "nearest_hazard_distance_km": 82.656,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 82.656
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -1104,8 +1275,11 @@
         "staff_count:nurses": "35",
         "wheelchair": "yes",
         "osm_id": 9001340425,
+        "climate_risk_score": 0.176,
+        "nearest_hazard_distance_km": 24.966,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 24.966
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -1132,8 +1306,11 @@
         "staff_count:nurses": "2",
         "wheelchair": "no",
         "osm_id": 9001340426,
+        "climate_risk_score": 0.221,
+        "nearest_hazard_distance_km": 21.352,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 21.352
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -1161,8 +1338,11 @@
         "staff_count:nurses": "7",
         "wheelchair": "yes",
         "osm_id": 9001340427,
+        "climate_risk_score": 0.244,
+        "nearest_hazard_distance_km": 13.653,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 13.653
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -1190,8 +1370,11 @@
         "staff_count:nurses": "3",
         "wheelchair": "yes",
         "osm_id": 9001340428,
+        "climate_risk_score": 0.179,
+        "nearest_hazard_distance_km": 25.651,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 25.651
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -1221,8 +1404,11 @@
         "staff_count:nurses": "7",
         "wheelchair": "yes",
         "osm_id": 9001340429,
+        "climate_risk_score": 0.217,
+        "nearest_hazard_distance_km": 26.984,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 25.597
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -1239,8 +1425,11 @@
         "healthcare": "doctor",
         "name": "Mara Gambia",
         "osm_id": 9076961218,
+        "climate_risk_score": 0.256,
+        "nearest_hazard_distance_km": 10.374,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 10.374
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -1256,8 +1445,11 @@
         "amenity": "clinic",
         "name": "PRESTAVET",
         "osm_id": 10230883317,
+        "climate_risk_score": 0.092,
+        "nearest_hazard_distance_km": 69.684,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 69.684
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -1273,8 +1465,11 @@
         "addr:street": "kolda-pata",
         "amenity": "clinic",
         "osm_id": 10230883417,
+        "climate_risk_score": 0.139,
+        "nearest_hazard_distance_km": 20.382,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 20.382
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -1295,8 +1490,11 @@
         "operator": "immunization, antenatal services",
         "operator:type": "government",
         "osm_id": 10759160780,
-        "flood_risk": "low",
-        "nearest_flood_distance_km": 8.592
+        "climate_risk_score": 0.867,
+        "nearest_hazard_distance_km": 8.592,
+        "nearest_hazard_type": "Flood",
+        "flood_risk": "medium",
+        "climate_risk_level": "Medium"
       }
     },
     {
@@ -1315,8 +1513,11 @@
         "name": "RCH",
         "opening_hours": "first tuesday of every month",
         "osm_id": 10787211671,
+        "climate_risk_score": 0.703,
+        "nearest_hazard_distance_km": 5.029,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 5.029
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -1333,8 +1534,11 @@
         "healthcare": "clinic",
         "name": "Kubandar clinic",
         "osm_id": 10787244198,
+        "climate_risk_score": 0.694,
+        "nearest_hazard_distance_km": 4.025,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 4.025
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -1351,8 +1555,11 @@
         "healthcare": "clinic",
         "name": "Ballinghor RCH",
         "osm_id": 10787344789,
+        "climate_risk_score": 0.574,
+        "nearest_hazard_distance_km": 6.359,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 6.359
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -1370,8 +1577,11 @@
         "healthcare": "hospital",
         "name": "Ahmadiyya Hospital",
         "osm_id": 10997434543,
+        "climate_risk_score": 0.353,
+        "nearest_hazard_distance_km": 15.854,
+        "nearest_hazard_type": "Coastal",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 10.888
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -1387,8 +1597,11 @@
         "amenity": "hospital",
         "name": "Illiassa Minor Health Clinic",
         "osm_id": 11085308005,
-        "flood_risk": "low",
-        "nearest_flood_distance_km": 5.617
+        "climate_risk_score": 1.978,
+        "nearest_hazard_distance_km": 5.617,
+        "nearest_hazard_type": "Flood",
+        "flood_risk": "high",
+        "climate_risk_level": "High"
       }
     },
     {
@@ -1403,8 +1616,11 @@
       "properties": {
         "amenity": "clinic",
         "osm_id": 11099939906,
+        "climate_risk_score": 0.769,
+        "nearest_hazard_distance_km": 6.754,
+        "nearest_hazard_type": "Coastal",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 6.754
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -1419,8 +1635,11 @@
       "properties": {
         "amenity": "clinic",
         "osm_id": 11100041005,
-        "flood_risk": "low",
-        "nearest_flood_distance_km": 3.414
+        "climate_risk_score": 1.201,
+        "nearest_hazard_distance_km": 3.414,
+        "nearest_hazard_type": "Flood",
+        "flood_risk": "medium",
+        "climate_risk_level": "Medium"
       }
     },
     {
@@ -1436,8 +1655,11 @@
         "amenity": "clinic",
         "name": "Saaba village clinic",
         "osm_id": 11100043805,
-        "flood_risk": "low",
-        "nearest_flood_distance_km": 3.42
+        "climate_risk_score": 1.2,
+        "nearest_hazard_distance_km": 3.42,
+        "nearest_hazard_type": "Flood",
+        "flood_risk": "medium",
+        "climate_risk_level": "Medium"
       }
     },
     {
@@ -1453,8 +1675,11 @@
         "amenity": "doctors",
         "name": "Poste de sant\u00e9 Darou Salam",
         "osm_id": 11238540499,
+        "climate_risk_score": 0.295,
+        "nearest_hazard_distance_km": 38.685,
+        "nearest_hazard_type": "Heat",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 38.685
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -1470,8 +1695,11 @@
         "amenity": "doctors",
         "name": "Centre de sant\u00e9 Ndoffane",
         "osm_id": 11238651645,
+        "climate_risk_score": 0.296,
+        "nearest_hazard_distance_km": 38.592,
+        "nearest_hazard_type": "Heat",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 38.592
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -1489,8 +1717,11 @@
         "opening_hours": "Mo-Fr 09:00-17:00",
         "wheelchair": "limited",
         "osm_id": 11452321847,
+        "climate_risk_score": 0.147,
+        "nearest_hazard_distance_km": 52.997,
+        "nearest_hazard_type": "Coastal",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 52.997
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -1506,8 +1737,11 @@
         "amenity": "health_post",
         "name": "Dispensaire de Bassoul",
         "osm_id": 11452597443,
+        "climate_risk_score": 0.162,
+        "nearest_hazard_distance_km": 47.54,
+        "nearest_hazard_type": "Coastal",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 47.54
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -1524,8 +1758,11 @@
         "healthcare": "pharmacy",
         "name": "Pharmacie Bassoul",
         "osm_id": 11452639761,
+        "climate_risk_score": 0.161,
+        "nearest_hazard_distance_km": 47.822,
+        "nearest_hazard_type": "Coastal",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 47.822
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -1541,8 +1778,11 @@
         "amenity": "pharmacy",
         "name": "D\u00e9p\u00f4t pharmacie Djirnda",
         "osm_id": 11452834434,
+        "climate_risk_score": 0.144,
+        "nearest_hazard_distance_km": 53.88,
+        "nearest_hazard_type": "Coastal",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 53.88
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -1558,8 +1798,11 @@
         "amenity": "doctors",
         "name": "Poste de sant\u00e9 de Falia",
         "osm_id": 11452854524,
+        "climate_risk_score": 0.154,
+        "nearest_hazard_distance_km": 50.795,
+        "nearest_hazard_type": "Coastal",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 50.795
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -1575,8 +1818,11 @@
         "amenity": "doctors",
         "name": "Dispensaire de Bassar",
         "osm_id": 11452990769,
+        "climate_risk_score": 0.161,
+        "nearest_hazard_distance_km": 47.772,
+        "nearest_hazard_type": "Coastal",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 47.772
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -1592,8 +1838,11 @@
         "amenity": "doctors",
         "name": "Maternit\u00e9 de Djirnda",
         "osm_id": 11462703148,
+        "climate_risk_score": 0.144,
+        "nearest_hazard_distance_km": 53.773,
+        "nearest_hazard_type": "Coastal",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 53.773
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -1609,8 +1858,11 @@
         "amenity": "clinic",
         "name": "Dispensaire Djirnda",
         "osm_id": 11462752131,
+        "climate_risk_score": 0.144,
+        "nearest_hazard_distance_km": 53.801,
+        "nearest_hazard_type": "Coastal",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 53.801
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -1626,8 +1878,11 @@
         "amenity": "doctors",
         "name": "Case de Sant\u00e9 feu Adama Senghor de Thialane",
         "osm_id": 11462776967,
+        "climate_risk_score": 0.157,
+        "nearest_hazard_distance_km": 49.203,
+        "nearest_hazard_type": "Coastal",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 49.203
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -1643,8 +1898,11 @@
         "amenity": "doctors",
         "name": "Case de Sant\u00e9 Fambine",
         "osm_id": 11462781416,
+        "climate_risk_score": 0.14,
+        "nearest_hazard_distance_km": 55.229,
+        "nearest_hazard_type": "Coastal",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 55.229
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -1660,8 +1918,11 @@
         "amenity": "doctors",
         "name": "Poste de sant\u00e9 de dionewar",
         "osm_id": 11462837452,
+        "climate_risk_score": 0.155,
+        "nearest_hazard_distance_km": 49.918,
+        "nearest_hazard_type": "Coastal",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 49.918
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -1677,8 +1938,11 @@
         "amenity": "doctors",
         "name": "Case de Sante de Siwo",
         "osm_id": 11494398340,
+        "climate_risk_score": 0.16,
+        "nearest_hazard_distance_km": 48.624,
+        "nearest_hazard_type": "Coastal",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 48.624
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -1694,8 +1958,11 @@
         "amenity": "hospital",
         "name": "District sanitaire",
         "osm_id": 11508306367,
+        "climate_risk_score": 0.139,
+        "nearest_hazard_distance_km": 56.109,
+        "nearest_hazard_type": "Coastal",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 56.109
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -1711,8 +1978,11 @@
         "amenity": "pharmacy",
         "name": "Pharmacie",
         "osm_id": 11508333719,
+        "climate_risk_score": 0.139,
+        "nearest_hazard_distance_km": 56.155,
+        "nearest_hazard_type": "Coastal",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 56.155
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -1728,8 +1998,11 @@
         "amenity": "pharmacy",
         "name": "Pharmacie Niodior",
         "osm_id": 11508356353,
+        "climate_risk_score": 0.166,
+        "nearest_hazard_distance_km": 46.291,
+        "nearest_hazard_type": "Coastal",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 46.291
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -1745,8 +2018,11 @@
         "amenity": "pharmacy",
         "name": "Pharmacie",
         "osm_id": 11508363864,
+        "climate_risk_score": 0.155,
+        "nearest_hazard_distance_km": 49.885,
+        "nearest_hazard_type": "Coastal",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 49.885
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -1762,8 +2038,11 @@
         "amenity": "hospital",
         "name": "Centre de sant\u00e9 de Niodior",
         "osm_id": 11508365457,
+        "climate_risk_score": 0.166,
+        "nearest_hazard_distance_km": 46.36,
+        "nearest_hazard_type": "Coastal",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 46.36
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -1779,8 +2058,11 @@
         "amenity": "hospital",
         "name": "Case de sant\u00e9 de Falia",
         "osm_id": 11508399127,
+        "climate_risk_score": 0.154,
+        "nearest_hazard_distance_km": 50.798,
+        "nearest_hazard_type": "Coastal",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 50.798
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -1800,8 +2082,11 @@
         "healthcare:speciality": "general",
         "name": "Old Jeshwang health Center",
         "osm_id": 12025753816,
+        "climate_risk_score": 0.384,
+        "nearest_hazard_distance_km": 13.824,
+        "nearest_hazard_type": "Coastal",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 9.432
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -1821,8 +2106,11 @@
         "operator": "Private",
         "operator:type": "community",
         "osm_id": 12025761232,
+        "climate_risk_score": 0.263,
+        "nearest_hazard_distance_km": 20.452,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 19.128
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -1842,8 +2130,11 @@
         "operator": "Community",
         "operator:type": "community",
         "osm_id": 12025767906,
+        "climate_risk_score": 0.255,
+        "nearest_hazard_distance_km": 20.845,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 20.07
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -1862,8 +2153,11 @@
         "operator": "health workers",
         "operator:type": "private",
         "osm_id": 12041324368,
+        "climate_risk_score": 0.263,
+        "nearest_hazard_distance_km": 21.564,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 18.936
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -1878,8 +2172,11 @@
       "properties": {
         "amenity": "pharmacy",
         "osm_id": 12789833696,
+        "climate_risk_score": 0.242,
+        "nearest_hazard_distance_km": 29.697,
+        "nearest_hazard_type": "Coastal",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 29.697
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -1895,8 +2192,11 @@
         "amenity": "health_post",
         "name": "Maternit\u00e9",
         "osm_id": 12789837454,
+        "climate_risk_score": 0.242,
+        "nearest_hazard_distance_km": 29.69,
+        "nearest_hazard_type": "Coastal",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 29.69
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -1912,8 +2212,11 @@
         "amenity": "hospital",
         "healthcare": "hospital",
         "osm_id": 12863623522,
+        "climate_risk_score": 0.264,
+        "nearest_hazard_distance_km": 7.313,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 7.313
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -1934,8 +2237,11 @@
         "operator": "Dr . Muhammed Danjo",
         "operator:type": "private_non_profit",
         "osm_id": 12863623525,
+        "climate_risk_score": 0.232,
+        "nearest_hazard_distance_km": 8.443,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 8.443
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -1954,8 +2260,11 @@
         "name:tr": "Bwiam Genel Hastanesi",
         "wikidata": "Q2364301",
         "osm_id": 125548270,
+        "climate_risk_score": 0.276,
+        "nearest_hazard_distance_km": 21.325,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 21.325
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -1972,8 +2281,11 @@
         "building": "yes",
         "name": "Poste de Sant\u00e9 de kayemor",
         "osm_id": 214331522,
+        "climate_risk_score": 0.378,
+        "nearest_hazard_distance_km": 23.227,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 23.227
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -1990,8 +2302,11 @@
         "healthcare": "hospital",
         "name": "Bansang Hospital",
         "osm_id": 243107254,
+        "climate_risk_score": 0.105,
+        "nearest_hazard_distance_km": 46.186,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 46.186
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -2008,8 +2323,11 @@
         "healthcare": "hospital",
         "name": "Kafuta Health Center",
         "osm_id": 244899882,
+        "climate_risk_score": 0.243,
+        "nearest_hazard_distance_km": 13.715,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 13.715
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -2026,8 +2344,11 @@
         "healthcare": "hospital",
         "name": "Gambia Family Planning Clinic/Office",
         "osm_id": 247124195,
+        "climate_risk_score": 0.276,
+        "nearest_hazard_distance_km": 21.006,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 21.006
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -2052,8 +2373,11 @@
         "wikidata": "Q2171145",
         "wikipedia": "en:Edward Francis Small Teaching Hospital",
         "osm_id": 249740590,
-        "flood_risk": "high",
-        "nearest_flood_distance_km": 0.349
+        "climate_risk_score": 0.678,
+        "nearest_hazard_distance_km": 4.738,
+        "nearest_hazard_type": "Coastal",
+        "flood_risk": "low",
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -2082,8 +2406,11 @@
         "source": "local knowledge",
         "start_date": "04.05.1991 / 19.09.2004",
         "osm_id": 255585110,
+        "climate_risk_score": 0.144,
+        "nearest_hazard_distance_km": 11.69,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 11.69
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -2101,8 +2428,11 @@
         "healthcare": "hospital",
         "name": "Janjanbureh Health Clinic",
         "osm_id": 255596695,
+        "climate_risk_score": 0.116,
+        "nearest_hazard_distance_km": 33.264,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 33.264
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -2119,8 +2449,11 @@
         "building": "yes",
         "healthcare": "clinic",
         "osm_id": 255657240,
+        "climate_risk_score": 0.152,
+        "nearest_hazard_distance_km": 30.534,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 30.534
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -2137,8 +2470,11 @@
         "healthcare": "hospital",
         "name": "Psychiatric Hospital",
         "osm_id": 255706212,
-        "flood_risk": "high",
-        "nearest_flood_distance_km": 0.739
+        "climate_risk_score": 0.631,
+        "nearest_hazard_distance_km": 5.593,
+        "nearest_hazard_type": "Coastal",
+        "flood_risk": "low",
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -2155,8 +2491,11 @@
         "healthcare": "hospital",
         "name": "Brikama Hospital",
         "osm_id": 255951399,
+        "climate_risk_score": 0.265,
+        "nearest_hazard_distance_km": 10.531,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 10.531
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -2173,8 +2512,11 @@
         "healthcare": "clinic",
         "name": "Ngayen Sanjal Clinic",
         "osm_id": 327976701,
+        "climate_risk_score": 0.327,
+        "nearest_hazard_distance_km": 8.869,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 8.869
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -2191,8 +2533,11 @@
         "building": "yes",
         "healthcare": "clinic",
         "osm_id": 327988167,
+        "climate_risk_score": 0.145,
+        "nearest_hazard_distance_km": 14.12,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 14.12
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -2220,8 +2565,11 @@
         "water_source": "water works",
         "wheelchair": "limited",
         "osm_id": 338327821,
+        "climate_risk_score": 0.181,
+        "nearest_hazard_distance_km": 40.848,
+        "nearest_hazard_type": "Coastal",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 40.848
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -2237,8 +2585,11 @@
         "amenity": "hospital",
         "name": "Kwinella Health Center",
         "osm_id": 353255670,
+        "climate_risk_score": 0.757,
+        "nearest_hazard_distance_km": 16.298,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 16.298
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -2254,8 +2605,11 @@
         "amenity": "clinic",
         "building": "yes",
         "osm_id": 353258779,
+        "climate_risk_score": 0.459,
+        "nearest_hazard_distance_km": 13.11,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 13.11
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -2271,8 +2625,11 @@
         "amenity": "hospital",
         "name": "Njawara Clinic",
         "osm_id": 353262890,
+        "climate_risk_score": 0.509,
+        "nearest_hazard_distance_km": 9.428,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 9.428
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -2288,8 +2645,11 @@
         "amenity": "clinic",
         "building": "yes",
         "osm_id": 353262891,
+        "climate_risk_score": 0.508,
+        "nearest_hazard_distance_km": 9.439,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 9.439
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -2308,8 +2668,11 @@
         "healthcare": "clinic",
         "name": "Sage-femme",
         "osm_id": 359373409,
+        "climate_risk_score": 0.481,
+        "nearest_hazard_distance_km": 21.165,
+        "nearest_hazard_type": "Heat",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 21.165
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -2326,8 +2689,11 @@
         "building": "yes",
         "healthcare": "pharmacy",
         "osm_id": 359373411,
+        "climate_risk_score": 0.479,
+        "nearest_hazard_distance_km": 21.273,
+        "nearest_hazard_type": "Heat",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 21.273
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -2344,8 +2710,11 @@
         "building": "yes",
         "healthcare": "pharmacy",
         "osm_id": 359606181,
+        "climate_risk_score": 0.484,
+        "nearest_hazard_distance_km": 21.007,
+        "nearest_hazard_type": "Heat",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 21.007
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -2362,8 +2731,11 @@
         "barrier": "wall",
         "name": "H\u00f4pital de Keur Moussa Fronti\u00e8re",
         "osm_id": 368155287,
-        "flood_risk": "low",
-        "nearest_flood_distance_km": 5.079
+        "climate_risk_score": 1.108,
+        "nearest_hazard_distance_km": 5.079,
+        "nearest_hazard_type": "Heat",
+        "flood_risk": "medium",
+        "climate_risk_level": "Medium"
       }
     },
     {
@@ -2379,8 +2751,11 @@
         "amenity": "hospital",
         "name": "Ballangharr Clinic",
         "osm_id": 370001116,
+        "climate_risk_score": 0.283,
+        "nearest_hazard_distance_km": 16.9,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 16.9
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -2397,8 +2772,11 @@
         "healthcare": "hospital",
         "name": "Njaba Kunda Health Clinic",
         "osm_id": 370001560,
-        "flood_risk": "low",
-        "nearest_flood_distance_km": 1.698
+        "climate_risk_score": 0.984,
+        "nearest_hazard_distance_km": 1.698,
+        "nearest_hazard_type": "Fire",
+        "flood_risk": "medium",
+        "climate_risk_level": "Medium"
       }
     },
     {
@@ -2416,8 +2794,11 @@
         "healthcare": "hospital",
         "name": "Dankunku Clinic",
         "osm_id": 370003892,
+        "climate_risk_score": 0.249,
+        "nearest_hazard_distance_km": 21.196,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 21.196
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -2435,8 +2816,11 @@
         "name": "Medical Research Council",
         "wikidata": "Q30280323",
         "osm_id": 370186566,
+        "climate_risk_score": 0.348,
+        "nearest_hazard_distance_km": 16.068,
+        "nearest_hazard_type": "Coastal",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 12.02
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -2453,8 +2837,11 @@
         "healthcare": "hospital",
         "name": "Serekunda General Hospital",
         "osm_id": 370203144,
+        "climate_risk_score": 0.368,
+        "nearest_hazard_distance_km": 14.736,
+        "nearest_hazard_type": "Coastal",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 10.352
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -2471,8 +2858,11 @@
         "building": "yes",
         "healthcare": "clinic",
         "osm_id": 370209342,
+        "climate_risk_score": 0.212,
+        "nearest_hazard_distance_km": 24.022,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 24.022
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -2489,8 +2879,11 @@
         "building": "yes",
         "healthcare": "pharmacy",
         "osm_id": 370427364,
+        "climate_risk_score": 0.362,
+        "nearest_hazard_distance_km": 15.251,
+        "nearest_hazard_type": "Coastal",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 10.327
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -2510,8 +2903,11 @@
         "healthcare": "hospital",
         "name": "Farafenni Hospital",
         "osm_id": 370438583,
+        "climate_risk_score": 0.593,
+        "nearest_hazard_distance_km": 2.875,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 2.875
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -2535,8 +2931,11 @@
         "operator": "Government",
         "operator:type": "government",
         "osm_id": 371247166,
+        "climate_risk_score": 0.42,
+        "nearest_hazard_distance_km": 12.839,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 12.839
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -2553,8 +2952,11 @@
         "healthcare": "hospital",
         "surface": "dirt",
         "osm_id": 372016821,
+        "climate_risk_score": 0.069,
+        "nearest_hazard_distance_km": 55.175,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 55.175
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -2569,8 +2971,11 @@
       "properties": {
         "amenity": "hospital",
         "osm_id": 374492438,
+        "climate_risk_score": 0.138,
+        "nearest_hazard_distance_km": 46.718,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 46.718
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -2587,8 +2992,11 @@
         "healthcare": "hospital",
         "name": "Basse health centre",
         "osm_id": 384017358,
+        "climate_risk_score": 0.243,
+        "nearest_hazard_distance_km": 8.025,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 8.025
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -2604,8 +3012,11 @@
         "amenity": "hospital",
         "name": "Somita Clinic",
         "osm_id": 385775093,
+        "climate_risk_score": 0.215,
+        "nearest_hazard_distance_km": 28.019,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 28.019
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -2621,8 +3032,11 @@
         "amenity": "clinic",
         "building": "yes",
         "osm_id": 388436769,
-        "flood_risk": "low",
-        "nearest_flood_distance_km": 10.649
+        "climate_risk_score": 1.124,
+        "nearest_hazard_distance_km": 10.649,
+        "nearest_hazard_type": "Flood",
+        "flood_risk": "medium",
+        "climate_risk_level": "Medium"
       }
     },
     {
@@ -2639,8 +3053,11 @@
         "healthcare": "doctor",
         "name": "Case de Sant\u00e9 de Diankankounda Ogel",
         "osm_id": 392128443,
+        "climate_risk_score": 0.078,
+        "nearest_hazard_distance_km": 44.257,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 44.257
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -2657,8 +3074,11 @@
         "healthcare": "hospital",
         "name": "Song Kunda Health Center",
         "osm_id": 406596106,
+        "climate_risk_score": 0.061,
+        "nearest_hazard_distance_km": 39.039,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 39.039
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -2674,8 +3094,11 @@
         "amenity": "hospital",
         "name": "Clinic",
         "osm_id": 410271253,
+        "climate_risk_score": 0.307,
+        "nearest_hazard_distance_km": 11.962,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 11.962
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -2703,8 +3126,11 @@
         "water_source": "water works",
         "wheelchair": "limited",
         "osm_id": 422397104,
+        "climate_risk_score": 0.056,
+        "nearest_hazard_distance_km": 72.991,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 72.991
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -2720,8 +3146,11 @@
         "amenity": "doctors",
         "name": "Djinkore Poste de Sant\u00e9",
         "osm_id": 438460684,
+        "climate_risk_score": 0.056,
+        "nearest_hazard_distance_km": 69.71,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 69.71
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -2737,8 +3166,11 @@
         "amenity": "doctors",
         "name": "Djinkore Peul Poste de Sant\u00e9",
         "osm_id": 439503025,
+        "climate_risk_score": 0.056,
+        "nearest_hazard_distance_km": 69.698,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 69.698
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -2753,8 +3185,11 @@
       "properties": {
         "amenity": "hospital",
         "osm_id": 439517325,
+        "climate_risk_score": 0.056,
+        "nearest_hazard_distance_km": 69.689,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 69.689
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -2771,8 +3206,11 @@
         "building": "yes",
         "name": "Health Sub Center",
         "osm_id": 445394344,
+        "climate_risk_score": 0.123,
+        "nearest_hazard_distance_km": 32.707,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 32.707
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -2788,8 +3226,11 @@
         "amenity": "hospital",
         "healthcare": "hospital",
         "osm_id": 449693178,
+        "climate_risk_score": 0.107,
+        "nearest_hazard_distance_km": 50.286,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 50.286
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -2806,8 +3247,11 @@
         "healthcare": "hospital",
         "name": "Diabugu Batapa Health Center",
         "osm_id": 452700829,
+        "climate_risk_score": 0.101,
+        "nearest_hazard_distance_km": 20.813,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 20.813
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -2824,8 +3268,11 @@
         "healthcare": "hospital",
         "name": "Bijilo Medical Center",
         "osm_id": 477742482,
+        "climate_risk_score": 0.286,
+        "nearest_hazard_distance_km": 21.216,
+        "nearest_hazard_type": "Coastal",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 16.407
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -2845,8 +3292,11 @@
         "operator": "1 Midwife, 1 Nurse and 1 Nurse assistant",
         "smoking": "no",
         "osm_id": 488031046,
+        "climate_risk_score": 0.093,
+        "nearest_hazard_distance_km": 33.938,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 33.938
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -2862,8 +3312,11 @@
         "amenity": "clinic",
         "name": "Jailan Bakadaji Health Center",
         "osm_id": 497865724,
+        "climate_risk_score": 0.149,
+        "nearest_hazard_distance_km": 16.671,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 16.671
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -2879,8 +3332,11 @@
         "amenity": "hospital",
         "name": "H\u00f4pital R\u00e9gional de Tambacounda",
         "osm_id": 584069506,
+        "climate_risk_score": 0.056,
+        "nearest_hazard_distance_km": 71.393,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 71.393
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -2897,8 +3353,11 @@
         "healthcare": "hospital",
         "name": "Wassadu clinic",
         "osm_id": 624734295,
+        "climate_risk_score": 0.337,
+        "nearest_hazard_distance_km": 34.863,
+        "nearest_hazard_type": "Drought",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 34.863
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -2917,8 +3376,11 @@
         "healthcare": "pharmacy",
         "name": "EMJ Pharmacy Retail",
         "osm_id": 644780591,
+        "climate_risk_score": 0.261,
+        "nearest_hazard_distance_km": 10.762,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 10.762
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -2944,8 +3406,11 @@
         "water_source": "water works",
         "wheelchair": "yes",
         "osm_id": 645478408,
+        "climate_risk_score": 0.056,
+        "nearest_hazard_distance_km": 72.248,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 72.248
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -2962,8 +3427,11 @@
         "healthcare": "hospital",
         "name": "Clinique Milogo",
         "osm_id": 661000238,
+        "climate_risk_score": 0.056,
+        "nearest_hazard_distance_km": 72.443,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 72.443
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -2981,8 +3449,11 @@
         "name": "Dispensaire Saint Joseph",
         "religion": "christian",
         "osm_id": 661000239,
+        "climate_risk_score": 0.056,
+        "nearest_hazard_distance_km": 72.156,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 72.156
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -3001,8 +3472,11 @@
         "name": "Dongoro Ba Community Health Clinic",
         "source": "local knowledge;aerial imagery",
         "osm_id": 678374463,
+        "climate_risk_score": 0.223,
+        "nearest_hazard_distance_km": 32.075,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 32.075
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -3019,8 +3493,11 @@
         "healthcare": "hospital",
         "name": "Sare Musa Health Clinic",
         "osm_id": 683088414,
+        "climate_risk_score": 0.374,
+        "nearest_hazard_distance_km": 19.779,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 19.779
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -3037,8 +3514,11 @@
         "building": "yes",
         "healthcare": "clinic",
         "osm_id": 684961358,
+        "climate_risk_score": 0.295,
+        "nearest_hazard_distance_km": 19.343,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 19.343
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -3055,8 +3535,11 @@
         "healthcare": "hospital",
         "name": "Baja Kunda Health Center",
         "osm_id": 731911809,
+        "climate_risk_score": 0.102,
+        "nearest_hazard_distance_km": 20.495,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 20.495
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -3074,8 +3557,11 @@
         "healthcare": "clinic",
         "name": "Kundam Mafatty RCH Clinic\\",
         "osm_id": 753872255,
+        "climate_risk_score": 0.174,
+        "nearest_hazard_distance_km": 11.629,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 11.629
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -3092,8 +3578,11 @@
         "healthcare": "clinic",
         "name": "Jalambang Health Center",
         "osm_id": 761432538,
+        "climate_risk_score": 0.246,
+        "nearest_hazard_distance_km": 14.594,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 14.594
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -3110,8 +3599,11 @@
         "healthcare": "hospital",
         "name": "mbowen clinic",
         "osm_id": 772877949,
+        "climate_risk_score": 0.37,
+        "nearest_hazard_distance_km": 14.645,
+        "nearest_hazard_type": "Coastal",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 10.315
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -3128,8 +3620,11 @@
         "healthcare": "hospital",
         "name": "Lamtoro Clinic",
         "osm_id": 784162066,
+        "climate_risk_score": 0.299,
+        "nearest_hazard_distance_km": 19.884,
+        "nearest_hazard_type": "Coastal",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 15.282
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -3145,8 +3640,11 @@
         "amenity": "hospital",
         "healthcare": "hospital",
         "osm_id": 784166546,
+        "climate_risk_score": 0.159,
+        "nearest_hazard_distance_km": 9.039,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 9.039
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -3163,8 +3661,11 @@
         "healthcare": "hospital",
         "name": "Westfield Clinic",
         "osm_id": 784166815,
+        "climate_risk_score": 0.361,
+        "nearest_hazard_distance_km": 15.167,
+        "nearest_hazard_type": "Coastal",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 10.492
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -3181,8 +3682,11 @@
         "healthcare": "hospital",
         "name": "Africmed",
         "osm_id": 784166946,
+        "climate_risk_score": 0.28,
+        "nearest_hazard_distance_km": 21.908,
+        "nearest_hazard_type": "Coastal",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 16.978
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -3199,8 +3703,11 @@
         "healthcare": "hospital",
         "name": "Village Clinic",
         "osm_id": 784167157,
+        "climate_risk_score": 0.467,
+        "nearest_hazard_distance_km": 12.511,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 12.511
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -3217,8 +3724,11 @@
         "healthcare": "hospital",
         "name": "Njoben Wollof Health Post",
         "osm_id": 784167461,
+        "climate_risk_score": 0.139,
+        "nearest_hazard_distance_km": 24.493,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 24.493
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -3235,8 +3745,11 @@
         "healthcare": "hospital",
         "name": "Kartong Community Clinic",
         "osm_id": 784167686,
+        "climate_risk_score": 0.151,
+        "nearest_hazard_distance_km": 30.683,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 30.683
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -3253,8 +3766,11 @@
         "healthcare": "hospital",
         "name": "fagikunda major hospital",
         "osm_id": 784168408,
+        "climate_risk_score": 0.356,
+        "nearest_hazard_distance_km": 15.715,
+        "nearest_hazard_type": "Coastal",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 10.688
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -3271,8 +3787,11 @@
         "healthcare": "hospital",
         "name": "Medical Research Council",
         "osm_id": 784172543,
+        "climate_risk_score": 0.224,
+        "nearest_hazard_distance_km": 8.783,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 8.783
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -3289,8 +3808,11 @@
         "healthcare": "hospital",
         "name": "Bundung Maternal & Child Health Hospital",
         "osm_id": 784172640,
+        "climate_risk_score": 0.341,
+        "nearest_hazard_distance_km": 16.665,
+        "nearest_hazard_type": "Coastal",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 11.722
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -3306,8 +3828,11 @@
         "amenity": "hospital",
         "healthcare": "hospital",
         "osm_id": 784173159,
+        "climate_risk_score": 0.261,
+        "nearest_hazard_distance_km": 24.062,
+        "nearest_hazard_type": "Coastal",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 19.119
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -3324,8 +3849,11 @@
         "healthcare": "hospital",
         "name": "stop step pharmacy",
         "osm_id": 784173160,
+        "climate_risk_score": 0.261,
+        "nearest_hazard_distance_km": 24.062,
+        "nearest_hazard_type": "Coastal",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 19.119
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -3353,8 +3881,11 @@
         "water_source": "well",
         "wheelchair": "no",
         "osm_id": 789979690,
+        "climate_risk_score": 0.242,
+        "nearest_hazard_distance_km": 29.755,
+        "nearest_hazard_type": "Coastal",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 29.755
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -3370,8 +3901,11 @@
         "amenity": "clinic",
         "name": "Maternit\u00e9 de Kaymor",
         "osm_id": 806018822,
+        "climate_risk_score": 0.379,
+        "nearest_hazard_distance_km": 23.288,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 23.288
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -3389,8 +3923,11 @@
         "healthcare": "hospital",
         "name": "Old Kerr Katim Clinic",
         "osm_id": 806023818,
-        "flood_risk": "low",
-        "nearest_flood_distance_km": 3.171
+        "climate_risk_score": 1.25,
+        "nearest_hazard_distance_km": 3.171,
+        "nearest_hazard_type": "Heat",
+        "flood_risk": "medium",
+        "climate_risk_level": "Medium"
       }
     },
     {
@@ -3406,8 +3943,11 @@
         "amenity": "hospital",
         "healthcare": "hospital",
         "osm_id": 806030328,
+        "climate_risk_score": 0.297,
+        "nearest_hazard_distance_km": 41.374,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 41.374
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -3425,8 +3965,11 @@
         "name": "Case de Sant\u00e9 Sar\u00e9 Dickel",
         "name:en": "Sar\u00e9 Dickel Health Hut",
         "osm_id": 814626445,
+        "climate_risk_score": 0.094,
+        "nearest_hazard_distance_km": 60.149,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 60.149
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -3451,8 +3994,11 @@
         "water_source": "groundwater",
         "wheelchair": "yes",
         "osm_id": 819225139,
+        "climate_risk_score": 0.056,
+        "nearest_hazard_distance_km": 69.429,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 69.429
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -3478,8 +4024,11 @@
         "operator:type": "private_non_profit",
         "solar": "yes",
         "osm_id": 828908614,
+        "climate_risk_score": 4.153,
+        "nearest_hazard_distance_km": 0.978,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "high",
-        "nearest_flood_distance_km": 0.978
+        "climate_risk_level": "High"
       }
     },
     {
@@ -3496,8 +4045,11 @@
         "building": "yes",
         "healthcare": "doctor",
         "osm_id": 936252174,
+        "climate_risk_score": 0.22,
+        "nearest_hazard_distance_km": 26.584,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 25.054
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -3514,8 +4066,11 @@
         "building": "yes",
         "healthcare": "doctor",
         "osm_id": 936252175,
+        "climate_risk_score": 0.22,
+        "nearest_hazard_distance_km": 26.61,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 25.063
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -3532,8 +4087,11 @@
         "building": "yes",
         "healthcare": "doctor",
         "osm_id": 936252176,
+        "climate_risk_score": 0.22,
+        "nearest_hazard_distance_km": 26.597,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 25.05
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -3553,8 +4111,11 @@
         "operator": "Community",
         "operator:type": "community",
         "osm_id": 940312956,
+        "climate_risk_score": 0.438,
+        "nearest_hazard_distance_km": 28.851,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 28.851
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -3575,8 +4136,11 @@
         "operator": "Ministry of Health (GoTG)",
         "operator:type": "public",
         "osm_id": 1150424292,
+        "climate_risk_score": 0.206,
+        "nearest_hazard_distance_km": 22.653,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 22.653
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -3592,8 +4156,11 @@
         "amenity": "hospital",
         "healthcare": "hospital",
         "osm_id": 1175609797,
+        "climate_risk_score": 0.054,
+        "nearest_hazard_distance_km": 82.655,
+        "nearest_hazard_type": "Flood",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 82.655
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -3610,8 +4177,11 @@
         "healthcare": "hospital",
         "name": "Salikenne Hospital",
         "osm_id": 1299963427,
+        "climate_risk_score": 0.743,
+        "nearest_hazard_distance_km": 3.71,
+        "nearest_hazard_type": "Drought",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 3.71
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -3629,8 +4199,11 @@
         "healthcare": "clinic",
         "name": "Medicare",
         "osm_id": 1416289462,
+        "climate_risk_score": 0.277,
+        "nearest_hazard_distance_km": 22.186,
+        "nearest_hazard_type": "Coastal",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 17.268
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -3647,8 +4220,11 @@
         "building": "yes",
         "healthcare": "pharmacy",
         "osm_id": 1416289463,
+        "climate_risk_score": 0.277,
+        "nearest_hazard_distance_km": 22.162,
+        "nearest_hazard_type": "Coastal",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 17.245
+        "climate_risk_level": "Low"
       }
     },
     {
@@ -3666,8 +4242,11 @@
         "healthcare": "hospital",
         "name": "Tanka Tanka",
         "osm_id": 1484077335,
+        "climate_risk_score": 0.28,
+        "nearest_hazard_distance_km": 22.008,
+        "nearest_hazard_type": "Coastal",
         "flood_risk": "low",
-        "nearest_flood_distance_km": 16.999
+        "climate_risk_level": "Low"
       }
     }
   ]
