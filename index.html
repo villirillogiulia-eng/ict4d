@@ -546,6 +546,10 @@
         }
 
         function showRadar() {
+            if (radarLayers.length === 0) {
+                document.getElementById('radar-status').innerText = 'Loading radar data...';
+                return;
+            }
             radarLayers.forEach(obj => obj.layer.addTo(map));
             updateRadarFrame(radarLayers.length - 1); // Show latest first
         }
@@ -557,10 +561,20 @@
         }
 
         function updateRadarFrame(index) {
+            if (!radarLayers[index] || !radarLayers[index].ts) return;
+            
             radarLayers.forEach((obj, i) => {
                 obj.layer.setOpacity(i === index ? 0.7 : 0);
             });
-            const date = new Date(radarLayers[index].ts * 1000);
+            
+            // Ensure timestamp is a number
+            const ts = parseInt(radarLayers[index].ts);
+            if (isNaN(ts)) {
+                document.getElementById('radarTime').innerText = "Live";
+                return;
+            }
+
+            const date = new Date(ts * 1000);
             document.getElementById('radarTime').innerText = date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
             currentRadarIndex = index;
         }
