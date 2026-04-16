@@ -69,6 +69,14 @@
         }
         .sidebar-toggle.collapsed { left: 20px; }
         .sidebar-toggle:hover { transform: scale(1.05); background: var(--accent-color); color: white; }
+
+        /* Toggle Slider CSS */
+        .switch input:checked + .slider { background-color: var(--accent-color); }
+        .switch .slider:before {
+            position: absolute; content: ""; height: 14px; width: 14px; left: 3px; bottom: 3px;
+            background-color: white; transition: .4s; border-radius: 50%;
+        }
+        .switch input:checked + .slider:before { transform: translateX(14px); }
         
         h2 { margin: 0; font-size: 22px; font-weight: 700; letter-spacing: -0.5px; display: flex; align-items: center; gap: 12px; }
         .subtitle { margin: 6px 0 20px 0; font-size: 14px; color: #64748b; font-weight: 400; }
@@ -250,6 +258,21 @@
             </div>
         </div>
 
+        <div id="radar-control" style="margin: 20px 0; padding: 20px; background: rgba(15, 23, 42, 0.05); border-radius: 20px; font-size: 13px; border: 1px solid rgba(0,0,0,0.05);">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 12px;">
+                <strong style="display:flex; align-items:center; gap:8px;"><i class="fa-solid fa-satellite-dish"></i> Live Weather Radar</strong>
+                <label class="switch" style="position:relative; display:inline-block; width:34px; height:20px;">
+                    <input type="checkbox" id="radarToggle" style="opacity:0; width:0; height:0;">
+                    <span class="slider" style="position:absolute; cursor:pointer; top:0; left:0; right:0; bottom:0; background-color:#ccc; transition:.4s; border-radius:34px;"></span>
+                </label>
+            </div>
+            <div id="radar-status" style="color:#64748b; font-size:11px; margin-bottom:10px;">Enable to see moving precipitation</div>
+            <div id="radar-playback" style="display:none; align-items:center; gap:10px;">
+                <button id="radarPlay" style="background:var(--accent-color); color:white; border:none; border-radius:8px; padding:5px 12px; cursor:pointer; font-size:12px;"><i class="fa-solid fa-play"></i> Play</button>
+                <span id="radarTime" style="font-family:monospace; font-weight:600; color:var(--accent-color);">--:--</span>
+            </div>
+        </div>
+
         <div class="legend-section">
             <label class="legend-title">Hazard Legend</label>
             <div class="legend-grid">
@@ -364,6 +387,7 @@
 
                 loadLiveAlerts();
                 loadNBRWeather();
+                loadRadar();
                 loadDroughtProjections();
                 loadMainCities();
             })
@@ -473,6 +497,85 @@
                         liveLayer.addLayer(marker);
                     });
             });
+        }
+
+        // --- RainViewer Radar Logic ---
+        let radarLayers = [];
+        let radarTimeStamps = [];
+        let currentRadarIndex = 0;
+        let radarInterval = null;
+
+        function loadRadar() {
+            fetch('https://api.rainviewer.com/public/weather-maps.json')
+                .then(res => res.json())
+                .then(data => {
+                    radarTimeStamps = data.radar.past;
+                    const host = data.host;
+                    
+                    // Pre-load the last 5 frames for animation
+                    const lastFrames = radarTimeStamps.slice(-5);
+                    lastFrames.forEach((ts, index) => {
+                        const layer = L.tileLayer(`${host}/v2/radar/${ts}/256/{z}/{x}/{y}/2/1_1.png`, {
+                            tileSize: 256, opacity: 0, zIndex: 500
+                        });
+                        radarLayers.push({ ts: ts, layer: layer });
+                    });
+                    
+                    document.getElementById('radarToggle').addEventListener('change', function(e) {
+                        if (this.checked) {
+                            showRadar();
+                            document.getElementById('radar-playback').style.display = 'flex';
+                            document.getElementById('radar-status').innerText = 'Displaying past 1hr movement';
+                        } else {
+                            hideRadar();
+                            document.getElementById('radar-playback').style.display = 'none';
+                            document.getElementById('radar-status').innerText = 'Enable to see moving precipitation';
+                        }
+                    });
+
+                    document.getElementById('radarPlay').addEventListener('click', function() {
+                        if (radarInterval) {
+                            stopAnimation();
+                            this.innerHTML = '<i class="fa-solid fa-play"></i> Play';
+                        } else {
+                            startAnimation();
+                            this.innerHTML = '<i class="fa-solid fa-pause"></i> Pause';
+                        }
+                    });
+                });
+        }
+
+        function showRadar() {
+            radarLayers.forEach(obj => obj.layer.addTo(map));
+            updateRadarFrame(radarLayers.length - 1); // Show latest first
+        }
+
+        function hideRadar() {
+            stopAnimation();
+            radarLayers.forEach(obj => map.removeLayer(obj.layer));
+            document.getElementById('radarPlay').innerHTML = '<i class="fa-solid fa-play"></i> Play';
+        }
+
+        function updateRadarFrame(index) {
+            radarLayers.forEach((obj, i) => {
+                obj.layer.setOpacity(i === index ? 0.7 : 0);
+            });
+            const date = new Date(radarLayers[index].ts * 1000);
+            document.getElementById('radarTime').innerText = date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+            currentRadarIndex = index;
+        }
+
+        function startAnimation() {
+            if (radarInterval) clearInterval(radarInterval);
+            radarInterval = setInterval(() => {
+                let nextIndex = (currentRadarIndex + 1) % radarLayers.length;
+                updateRadarFrame(nextIndex);
+            }, 800);
+        }
+
+        function stopAnimation() {
+            clearInterval(radarInterval);
+            radarInterval = null;
         }
 
         function loadDroughtProjections() {
