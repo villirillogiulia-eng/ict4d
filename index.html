@@ -243,6 +243,13 @@
             </div>
         </div>
 
+        <div id="weather-nbr" style="margin: 20px 0; padding: 20px; background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(5, 150, 105, 0.1) 100%); border-radius: 20px; font-size: 13px; border: 1px solid rgba(16, 185, 129, 0.2);">
+            <strong style="display:flex; align-items:center; gap:8px; margin-bottom: 12px; color: #065f46;"><i class="fa-solid fa-cloud-sun"></i> NBR Weather Forecast</strong>
+            <div id="weather-content" style="color: #475569;">
+                <i class="fa-solid fa-spinner fa-spin"></i> Loading forecast...
+            </div>
+        </div>
+
         <div class="legend-section">
             <label class="legend-title">Hazard Legend</label>
             <div class="legend-grid">
@@ -356,6 +363,7 @@
                 }
 
                 loadLiveAlerts();
+                loadNBRWeather();
                 loadDroughtProjections();
                 loadMainCities();
             })
@@ -363,6 +371,46 @@
                 console.error('Error loading the GeoJSON:', error);
                 document.getElementById('loader').innerHTML = '<p style="color:red; font-weight:600;">DATABASE SYNC ERROR</p>';
             });
+
+        function loadNBRWeather() {
+            // Centered on Kerewan, North Bank Region
+            const lat = 13.50;
+            const lon = -16.09;
+            const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true&daily=temperature_2m_max,temperature_2m_min,precipitation_sum,weathercode&timezone=auto`;
+
+            fetch(url)
+                .then(res => res.json())
+                .then(data => {
+                    const current = data.current_weather;
+                    const daily = data.daily;
+                    const weatherContent = document.getElementById('weather-content');
+                    
+                    // Simple weather code mapping
+                    const weatherCodes = {
+                        0: "Clear Sky", 1: "Mainly Clear", 2: "Partly Cloudy", 3: "Overcast",
+                        45: "Fog", 48: "Depositing Rime Fog",
+                        51: "Light Drizzle", 53: "Moderate Drizzle", 55: "Dense Drizzle",
+                        61: "Slight Rain", 63: "Moderate Rain", 65: "Heavy Rain",
+                        80: "Slight Rain Showers", 81: "Moderate Rain Showers", 82: "Violent Rain Showers",
+                        95: "Thunderstorm"
+                    };
+                    const condition = weatherCodes[current.weathercode] || "Conditions Normal";
+
+                    weatherContent.innerHTML = `
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+                            <span style="font-size:24px; font-weight:700; color:var(--text-color);">${Math.round(current.temperature)}°C</span>
+                            <span style="font-weight:600; color:var(--accent-color);">${condition}</span>
+                        </div>
+                        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px; border-top:1px solid rgba(0,0,0,0.05); pt:10px; margin-top:5px;">
+                            <div><span style="font-size:10px; text-transform:uppercase; display:block; color:#94a3b8;">High / Low</span> <strong>${Math.round(daily.temperature_2m_max[0])}° / ${Math.round(daily.temperature_2m_min[0])}°</strong></div>
+                            <div><span style="font-size:10px; text-transform:uppercase; display:block; color:#94a3b8;">Precipitation</span> <strong>${daily.precipitation_sum[0]}mm</strong></div>
+                        </div>
+                    `;
+                })
+                .catch(err => {
+                    document.getElementById('weather-content').innerHTML = "Weather data unavailable.";
+                });
+        }
 
         function loadLiveAlerts() {
             fetch('https://www.gdacs.org/gdacsapi/api/events/geteventlist/SEARCH?eventlist=FL;DR;WF')

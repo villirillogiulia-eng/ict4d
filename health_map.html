@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gambia Health Infrastructure & Flood Risk</title>
-    <!-- Google Fonts -->
+    <!-- Google Fonts & Font Awesome -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
@@ -170,6 +171,13 @@
             <a href="index.html" class="btn-back">➜ Back to Climate Map</a>
         </div>
 
+        <div id="weather-nbr" style="margin: 15px 0; padding: 15px; background: rgba(16, 185, 129, 0.1); border-radius: 12px; font-size: 13px; border: 1px solid rgba(16, 185, 129, 0.2);">
+            <strong style="display:flex; align-items:center; gap:8px; margin-bottom: 8px; color: #065f46;"><i class="fa-solid fa-cloud-sun"></i> NBR Live Weather</strong>
+            <div id="weather-content">
+                <i class="fa-solid fa-spinner fa-spin"></i>
+            </div>
+        </div>
+
         <div class="filter-group">
             <label for="riskSelect">Filter NBR Sites (36):</label>
             <select id="riskSelect">
@@ -288,6 +296,7 @@
                 statusEl.style.color = "#155724";
                 layerControl.addOverlay(healthLayer, "NBR Health Facilities");
                 loadLiveAlerts();
+                loadWeather();
             })
             .catch(err => {
                 const statusEl = document.getElementById('status');
@@ -345,6 +354,38 @@
                             }
                         });
                     }
+                });
+        }
+        function loadWeather() {
+            const lat = 13.50;
+            const lon = -16.09;
+            const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true&daily=temperature_2m_max,temperature_2m_min,weathercode&timezone=auto`;
+
+            fetch(url)
+                .then(res => res.json())
+                .then(data => {
+                    const current = data.current_weather;
+                    const daily = data.daily;
+                    const weatherContent = document.getElementById('weather-content');
+                    
+                    const weatherCodes = {
+                        0: "Clear Sky", 1: "Mainly Clear", 2: "Partly Cloudy", 3: "Overcast",
+                        45: "Fog", 61: "Slight Rain", 63: "Moderate Rain", 95: "Thunderstorm"
+                    };
+                    const condition = weatherCodes[current.weathercode] || "Normal";
+
+                    weatherContent.innerHTML = `
+                        <div style="display:flex; justify-content:space-between; align-items:center;">
+                            <span style="font-size:18px; font-weight:700;">${Math.round(current.temperature)}°C</span>
+                            <span style="font-weight:600; color:#10b981;">${condition}</span>
+                        </div>
+                        <div style="margin-top:5px; color:#666; font-size:11px;">
+                            High: ${Math.round(daily.temperature_2m_max[0])}° | Low: ${Math.round(daily.temperature_2m_min[0])}°
+                        </div>
+                    `;
+                })
+                .catch(err => {
+                    document.getElementById('weather-content').innerHTML = "Unavailable";
                 });
         }
     </script>
