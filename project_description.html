@@ -237,10 +237,84 @@
     <p>
       A high-resolution visualization monitoring every village in real-time to detect early signs of drought exposure.
     </p>
-    <div class="visual-placeholder">
-      <i class="fa-solid fa-map-location-dot"></i>
-      <span class="visual-label">[Visual 1: The Regional 'Mission Control' View]</span>
-      A digital mock-up showing a color-coded heat map of the North Bank Region. Areas of high drought risk are highlighted in red, with a sidebar ranking districts by vulnerability scores.
+    
+    <!-- HIGH FIDELITY MOCK-UP: Visual 1 -->
+    <div style="background: #0f172a; border-radius: 16px; overflow: hidden; margin: 2rem 0; box-shadow: 0 20px 50px rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1);">
+      <div style="background: rgba(255,255,255,0.05); padding: 12px 20px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">
+        <div style="display: flex; gap: 6px;">
+          <div style="width: 10px; height: 10px; border-radius: 50%; background: #ef4444;"></div>
+          <div style="width: 10px; height: 10px; border-radius: 50%; background: #f59e0b;"></div>
+          <div style="width: 10px; height: 10px; border-radius: 50%; background: #10b981;"></div>
+        </div>
+        <div style="color: #94a3b8; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;">Mission Control: NBR Regional Pulse</div>
+      </div>
+      
+      <div style="display: grid; grid-template-columns: 280px 1fr; height: 400px;">
+        <!-- Sidebar -->
+        <div style="background: rgba(255,255,255,0.02); border-right: 1px solid rgba(255,255,255,0.1); padding: 20px;">
+          <div style="font-size: 0.7rem; color: #c5a059; font-weight: 800; margin-bottom: 15px; letter-spacing: 0.1em; text-transform: uppercase;">District Vulnerability Index</div>
+          
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 12px; background: rgba(239, 68, 68, 0.1); border-radius: 8px; border-left: 3px solid #ef4444;">
+              <span style="font-size: 0.8rem; color: #f8fafc; font-weight: 600;">Upper Baddibu</span>
+              <span style="font-size: 0.8rem; color: #ef4444; font-weight: 800;">8.4</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 12px; background: rgba(239, 68, 68, 0.1); border-radius: 8px; border-left: 3px solid #ef4444;">
+              <span style="font-size: 0.8rem; color: #f8fafc; font-weight: 600;">Jokadu</span>
+              <span style="font-size: 0.8rem; color: #ef4444; font-weight: 800;">7.9</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 12px; background: rgba(245, 158, 11, 0.1); border-radius: 8px; border-left: 3px solid #f59e0b;">
+              <span style="font-size: 0.8rem; color: #f8fafc; font-weight: 600;">Lower Baddibu</span>
+              <span style="font-size: 0.8rem; color: #f59e0b; font-weight: 800;">5.2</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 12px; background: rgba(245, 158, 11, 0.1); border-radius: 8px; border-left: 3px solid #f59e0b;">
+              <span style="font-size: 0.8rem; color: #f8fafc; font-weight: 600;">Central Baddibu</span>
+              <span style="font-size: 0.8rem; color: #f59e0b; font-weight: 800;">4.8</span>
+            </div>
+          </div>
+          
+          <div style="margin-top: 30px; padding: 12px; background: rgba(255,255,255,0.03); border-radius: 10px; border: 1px solid rgba(255,255,255,0.05);">
+            <div style="font-size: 0.6rem; color: #94a3b8; margin-bottom: 4px;">ACTIVE SENSORS</div>
+            <div style="font-size: 1.2rem; font-weight: 800; color: #10b981;">142 <span style="font-size: 0.7rem; color: #94a3b8; font-weight: 400;">Online</span></div>
+          </div>
+        </div>
+
+        <!-- Map Container -->
+        <div style="padding: 20px; position: relative; background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%); display: flex; align-items: center; justify-content: center;">
+          <svg viewBox="0 0 600 200" style="width: 100%; height: auto; filter: drop-shadow(0 0 20px rgba(0,0,0,0.5));">
+            <!-- NBR District Mockup Paths -->
+            <!-- Lower Niumi -->
+            <path d="M50 100 L120 80 L140 120 L80 140 Z" fill="#10b981" fill-opacity="0.3" stroke="#10b981" stroke-width="2" />
+            <!-- Upper Niumi -->
+            <path d="M120 80 L200 60 L220 100 L140 120 Z" fill="#f59e0b" fill-opacity="0.3" stroke="#f59e0b" stroke-width="2" />
+            <!-- Jokadu -->
+            <path d="M200 60 L280 50 L300 90 L220 100 Z" fill="#ef4444" fill-opacity="0.5" stroke="#ef4444" stroke-width="2" />
+            <!-- Lower Baddibu -->
+            <path d="M280 50 L350 45 L370 85 L300 90 Z" fill="#f59e0b" fill-opacity="0.3" stroke="#f59e0b" stroke-width="2" />
+            <!-- Central Baddibu -->
+            <path d="M350 45 L430 40 L450 80 L370 85 Z" fill="#10b981" fill-opacity="0.2" stroke="#10b981" stroke-width="2" />
+            <!-- Upper Baddibu -->
+            <path d="M430 40 L550 35 L570 75 L450 80 Z" fill="#ef4444" fill-opacity="0.6" stroke="#ef4444" stroke-width="3" />
+            
+            <!-- Pulse Animation over high risk districts -->
+            <circle cx="500" cy="55" r="5" fill="#ef4444">
+              <animate attributeName="r" values="5;15;5" dur="2s" repeatCount="indefinite" />
+              <animate attributeName="opacity" values="1;0;1" dur="2s" repeatCount="indefinite" />
+            </circle>
+            <circle cx="250" cy="75" r="5" fill="#ef4444">
+              <animate attributeName="r" values="5;15;5" dur="2.5s" repeatCount="indefinite" />
+              <animate attributeName="opacity" values="1;0;1" dur="2.5s" repeatCount="indefinite" />
+            </circle>
+          </svg>
+          
+          <!-- Legend Overlay -->
+          <div style="position: absolute; bottom: 20px; right: 20px; background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(8px); padding: 12px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.1); font-size: 0.7rem; color: white;">
+            <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px;"><div style="width:8px; height:8px; background:#ef4444; border-radius:50%;"></div> High Hazard</div>
+            <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px;"><div style="width:8px; height:8px; background:#f59e0b; border-radius:50%;"></div> Moderate</div>
+            <div style="display:flex; align-items:center; gap:8px;"><div style="width:8px; height:8px; background:#10b981; border-radius:50%;"></div> Nominal</div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <h3>The Infrastructure Gap Overlay</h3>
