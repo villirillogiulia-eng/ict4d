@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Description | NBR Resilience Sentinel</title>
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary: #1a1f2e;
+      --secondary: #242b3d;
+      --accent: #d4a853;
+      --text-main: #1f2937;
+      --text-muted: #6b7280;
+      --bg: #f9fafb;
+      --card-bg: #ffffff;
+      --border: #e5e7eb;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text-main);
+      line-height: 1.8;
+    }
+
+    /* Navigation */
+    nav {
+      background: var(--primary);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .nav-logo {
+      color: white;
+      font-weight: 700;
+      font-size: 1.25rem;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-logo i { color: var(--accent); }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      color: #9ca3af;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.875rem;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: white; }
+
+    /* Main Content */
+    .content-container {
+      max-width: 800px;
+      margin: 4rem auto;
+      padding: 0 2rem;
+      background: white;
+      padding: 4rem;
+      border-radius: 20px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+      border: 1px solid var(--border);
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      margin-bottom: 2rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      color: var(--primary);
+      line-height: 1.2;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    h2 i { color: var(--accent); font-size: 1.25rem; }
+
+    p {
+      margin-bottom: 1.5rem;
+      color: var(--text-main);
+    }
+
+    ul {
+      margin-bottom: 2rem;
+      padding-left: 1.5rem;
+    }
+
+    li {
+      margin-bottom: 0.75rem;
+    }
+
+    .highlight-box {
+      background: #fdfaf3;
+      border-left: 4px solid var(--accent);
+      padding: 2rem;
+      margin: 3rem 0;
+      border-radius: 0 12px 12px 0;
+    }
+
+    .highlight-box h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 4rem 2rem;
+      color: var(--text-muted);
+      font-size: 0.875rem;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo"><i class="fa-solid fa-shield-halved"></i> ict4d_gambia</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="risk_dashboard.html">Risk Map</a>
+      <a href="charts.html">Analytics</a>
+      <a href="visualizer/index.html">CSV Upload</a>
+    </div>
+  </nav>
+
+  <main class="content-container">
+    <a href="index.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to Dashboard</a>
+    
+    <h1>Project Description</h1>
+    <p class="lead" style="font-size: 1.25rem; color: var(--text-muted); margin-bottom: 3rem;">
+      Strengthening community-level disaster preparedness in The Gambia's North Bank Region through the NBR Resilience Sentinel.
+    </p>
+
+    <h2><i class="fa-solid fa-eye"></i> Our Vision</h2>
+    <p>
+      The <strong>NBR Resilience Sentinel</strong> was born from a simple but urgent realization: national-level climate data is often too broad to be useful for local action. While national reports might predict a drought for the entire country, our field teams need to know exactly which villages in the North Bank Region will be hardest hit and which health facilities are most vulnerable.
+    </p>
+    <p>
+      Our vision is to transform CLI’s field operations into a data-empowered "Mission Control" where local expertise is amplified by high-resolution geospatial intelligence.
+    </p>
+
+    <h2><i class="fa-solid fa-gears"></i> Methodology</h2>
+    <p>
+      Our approach is built on three main pillars of analysis:
+    </p>
+    <ul>
+      <li><strong>Infrastructure Vulnerability Mapping:</strong> We use OpenStreetMap data to map every health facility in the NBR and calculate its specific risk profile based on proximity to historical flood zones.</li>
+      <li><strong>Historical Hazard Analysis:</strong> By processing decades of data from the Global Flood Archive, we identify recurring hazard patterns that simple forecasts often miss.</li>
+      <li><strong>Future Climate Projections:</strong> We integrate 2026-2030 and 2050 climate models to ensure that today's preparedness plans remain effective decades into the future.</li>
+    </ul>
+
+    <div class="highlight-box">
+      <h3>The AI Difference</h3>
+      <p>
+        The Sentinel utilizes AI-driven automated monitoring to scan satellite feeds and climate data at a scale that would be impossible for manual analysis. This allows CLI to shift from reactive disaster response to <strong>proactive resilience building</strong>.
+      </p>
+    </div>
+
+    <h2><i class="fa-solid fa-earth-africa"></i> Strategic Impact</h2>
+    <p>
+      The North Bank Region is our proving ground. By successfully bridging the granularity gap here, we are creating a blueprint for climate-resilient development that can be scaled across the entire Gambia and the broader West African region.
+    </p>
+    <p>
+      This project is not just about building a dashboard; it’s about creating a permanent asset for CLI. Through our Train-the-Trainer (ToT) program, we ensure that the technical capacity to maintain and evolve this system remains within the community it serves.
+    </p>
+
+    <h2><i class="fa-solid fa-map"></i> Implementation Roadmap</h2>
+    <ul>
+      <li><strong>Phase 1:</strong> Data Ingestion & Risk Scoring (Completed)</li>
+      <li><strong>Phase 2:</strong> Deployment of the Resilience Sentinel Dashboard (Live)</li>
+      <li><strong>Phase 3:</strong> Field Team Training & Capacity Transfer (Starting Q3 2026)</li>
+      <li><strong>Phase 4:</strong> Expansion to Central River & Upper River Regions (Planned 2027)</li>
+    </ul>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 ict4d Gambia Disaster Preparedness Project</p>
+  </footer>
+
+</body>
+</html>
