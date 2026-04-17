@@ -278,6 +278,13 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.02em;
+      transition: all 0.2s ease;
+    }
+
+    .status-badge:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.2);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
     .status-flood { background: rgba(16, 185, 129, 0.1); color: var(--brand-success); }
@@ -367,10 +374,10 @@
         </div>
         <div style="flex: 1; min-width: 250px; background: var(--bg-soft); padding: 2rem; border-radius: 20px; border: 1px solid var(--border-color);">
           <div style="font-size: 0.75rem; font-weight: 800; color: var(--brand-accent); text-transform: uppercase; margin-bottom: 1rem;">Project Status</div>
-          <div style="font-size: 1.5rem; font-weight: 800; color: var(--brand-primary); margin-bottom: 0.5rem;">Phase 2.0</div>
-          <div style="font-size: 0.85rem; color: var(--text-dim); margin-bottom: 1.5rem;">Deployment & Data Syncing</div>
+          <div id="status-phase" style="font-size: 1.5rem; font-weight: 800; color: var(--brand-primary); margin-bottom: 0.5rem;">Syncing...</div>
+          <div id="status-desc" style="font-size: 0.85rem; color: var(--text-dim); margin-bottom: 1.5rem;">Connecting to Sentinel Data</div>
           <div style="height: 6px; background: #e2e8f0; border-radius: 10px; overflow: hidden;">
-            <div style="width: 65%; height: 100%; background: var(--brand-success);"></div>
+            <div id="status-bar" style="width: 0%; height: 100%; background: var(--brand-success); transition: width 1s ease-out;"></div>
           </div>
         </div>
       </div>
@@ -447,6 +454,7 @@
               <th>Date Recorded</th>
               <th>Intensity</th>
               <th>Est. Impact</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
@@ -491,6 +499,22 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
+      // 1. Dynamic Status Update
+      fetch('data/health_facilities_with_risk.geojson')
+        .then(response => response.json())
+        .then(data => {
+          const count = data.features.length;
+          document.getElementById('status-phase').textContent = 'Live Ready';
+          document.getElementById('status-desc').textContent = `${count} Regional Sites Validated`;
+          document.getElementById('status-bar').style.width = '100%';
+        })
+        .catch(err => {
+          document.getElementById('status-phase').textContent = 'Phase 2.0';
+          document.getElementById('status-desc').textContent = 'Offline Data Mode';
+          document.getElementById('status-bar').style.width = '65%';
+        });
+
+      // 2. Gambia Hazard Feed
       fetch('data/floods.geojson')
         .then(response => response.json())
         .then(data => {
@@ -500,6 +524,7 @@
           tableBody.innerHTML = '';
           features.forEach(f => {
             const p = f.properties;
+            const coords = f.geometry.coordinates;
             const statusClass = p.hazard_type.toLowerCase() === 'flood' ? 'status-flood' : 'status-drought';
             
             tableBody.innerHTML += `
@@ -514,6 +539,7 @@
                   ${p.severity}
                 </div></td>
                 <td>${parseInt(p.displaced).toLocaleString()} Affected</td>
+                <td><a href="risk_dashboard.html?lat=${coords[1]}&lon=${coords[0]}" class="status-badge" style="background:var(--brand-primary); color:white; text-decoration:none;">Pin on Map</a></td>
               </tr>
             `;
           });

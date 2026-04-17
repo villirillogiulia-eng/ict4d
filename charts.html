@@ -1,118 +1,405 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flood Data Insights</title>
-    <!-- Chart.js and PapaParse (CSV Reader) -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
-    <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f0f2f5; margin: 0; padding: 20px; color: #333; }
-        .header { text-align: center; margin-bottom: 40px; }
-        .header h1 { margin: 0; color: #1a73e8; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 25px; max-width: 1200px; margin: 0 auto; }
-        .card { background: white; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); padding: 25px; display: flex; flex-direction: column; align-items: center; }
-        .card h3 { margin-top: 0; font-size: 18px; color: #5f6368; width: 100%; text-align: left; border-bottom: 1px solid #eee; padding-bottom: 10px; }
-        canvas { width: 100% !important; max-height: 300px; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Intelligence Analytics | NBR Resilience Sentinel</title>
+  
+  <!-- Chart.js and PapaParse -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --brand-primary: #0f172a;
+      --brand-secondary: #1e293b;
+      --brand-accent: #c5a059;
+      --brand-success: #10b981;
+      --brand-danger: #ef4444;
+      --bg-soft: #f8fafc;
+      --text-main: #334155;
+      --text-dim: #64748b;
+      --text-light: #f8fafc;
+      --card-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+      --border-color: #e2e8f0;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-soft);
+      color: var(--text-main);
+      line-height: 1.7;
+    }
+
+    /* Navigation */
+    nav {
+      background: rgba(15, 23, 42, 0.98);
+      backdrop-filter: blur(10px);
+      padding: 0.8rem 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .nav-logo {
+      color: white;
+      font-weight: 800;
+      font-size: 1.1rem;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .nav-logo i { color: var(--brand-accent); }
+
+    .nav-links { display: flex; gap: 2.2rem; }
+
+    .nav-links a {
+      color: #94a3b8;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.85rem;
+      transition: all 0.3s;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .nav-links a:hover { color: var(--brand-accent); }
+
+    /* Hero Section */
+    header {
+      padding: 6rem 2rem 10rem;
+      text-align: center;
+      background: var(--brand-primary);
+      background-image: radial-gradient(circle at 50% -20%, #1e293b 0%, #0f172a 100%);
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url('https://www.transparenttextures.com/patterns/carbon-fibre.png');
+      opacity: 0.05;
+      pointer-events: none;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+      background: linear-gradient(to bottom, #ffffff, #94a3b8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    header p {
+      max-width: 650px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      color: #94a3b8;
+    }
+
+    /* Main Content */
+    main {
+      max-width: 1200px;
+      margin: -6rem auto 6rem;
+      padding: 0 2rem;
+    }
+
+    /* Executive Summary Card */
+    .summary-card {
+      background: white;
+      border-radius: 24px;
+      padding: 3rem;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
+      border: 1px solid var(--border-color);
+      margin-bottom: 4rem;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+    }
+
+    .stat-pill {
+      padding: 1.5rem;
+      background: var(--bg-soft);
+      border-radius: 16px;
+      border: 1px solid var(--border-color);
+    }
+
+    .stat-pill i { color: var(--brand-accent); font-size: 1.2rem; margin-bottom: 0.5rem; display: block; }
+    .stat-pill .label { font-size: 0.75rem; font-weight: 700; color: var(--text-dim); text-transform: uppercase; }
+    .stat-pill .value { font-size: 1.5rem; font-weight: 800; color: var(--brand-primary); }
+
+    /* Chart Grid */
+    .chart-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .chart-card {
+      background: white;
+      border-radius: 20px;
+      padding: 2.5rem;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--card-shadow);
+    }
+
+    .chart-card h3 {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--brand-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .chart-card h3 i { color: var(--brand-accent); }
+
+    canvas {
+      width: 100% !important;
+      max-height: 350px;
+    }
+
+    footer {
+      padding: 5rem 2rem;
+      background: var(--brand-primary);
+      color: #94a3b8;
+      text-align: center;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 768px) {
+      .chart-grid { grid-template-columns: 1fr; }
+      header h1 { font-size: 2.2rem; }
+    }
+  </style>
 </head>
 <body>
 
-    <div class="header">
-        <h1>Global Flood Archive Analytics</h1>
-        <p>Visualizing historical flood data and impact</p>
+  <nav>
+    <a href="index.html" class="nav-logo"><i class="fa-solid fa-shield-halved"></i> NBR SENTINEL</a>
+    <div class="nav-links">
+      <a href="project_description.html">Overview</a>
+      <a href="risk_dashboard.html">Mission Map</a>
+      <a href="charts.html" style="color: var(--brand-accent);">Intelligence</a>
+      <a href="visualizer/index.html">CSV Ingest</a>
     </div>
+  </nav>
 
-    <div class="grid">
-        <div class="card">
-            <h3>Top 20 Countries by Flood Frequency</h3>
-            <canvas id="countryChart"></canvas>
+  <header>
+    <h1>Strategic Intelligence Analytics</h1>
+    <p>Visualizing global climate patterns and historical hazard impacts to inform the NBR community resilience strategy.</p>
+  </header>
+
+  <main>
+    <!-- Executive Summary -->
+    <section class="summary-card">
+      <div style="margin-bottom: 2rem;">
+        <h2 style="font-size: 1.5rem; font-weight: 800; color: var(--brand-primary);">Executive Data Summary</h2>
+        <p style="color: var(--text-dim);">Live analysis of the Global Flood Archive dataset.</p>
+      </div>
+      <div class="summary-grid">
+        <div class="stat-pill">
+          <i class="fa-solid fa-database"></i>
+          <div class="label">Total Records</div>
+          <div id="total-records" class="value">--</div>
         </div>
-        <div class="card">
-            <h3>Flood Events Over Time (Per Year)</h3>
-            <canvas id="yearChart"></canvas>
+        <div class="stat-pill">
+          <i class="fa-solid fa-earth-africa"></i>
+          <div class="label">Countries Analyzed</div>
+          <div id="total-countries" class="value">--</div>
         </div>
-        <div class="card">
-            <h3>Distribution by Cause Category</h3>
-            <canvas id="categoryChart"></canvas>
+        <div class="stat-pill">
+          <i class="fa-solid fa-users-rays"></i>
+          <div class="label">Total Displaced</div>
+          <div id="total-displaced" class="value">--</div>
         </div>
-        <div class="card">
-            <h3>Total Displaced by Flood Severity</h3>
-            <canvas id="severityChart"></canvas>
+        <div class="stat-pill">
+          <i class="fa-solid fa-calendar-check"></i>
+          <div class="label">Archive Span</div>
+          <div class="value">1985 - 2026</div>
         </div>
+      </div>
+    </section>
+
+    <!-- Analytics Visualization -->
+    <div class="chart-grid">
+      <div class="chart-card">
+        <h3><i class="fa-solid fa-chart-bar"></i> Flood Frequency by Nation</h3>
+        <canvas id="countryChart"></canvas>
+      </div>
+      <div class="chart-card">
+        <h3><i class="fa-solid fa-chart-line"></i> Annual Hazard Trends</h3>
+        <canvas id="yearChart"></canvas>
+      </div>
+      <div class="chart-card">
+        <h3><i class="fa-solid fa-arrows-to-circle"></i> Primary Cause Distribution</h3>
+        <canvas id="categoryChart"></canvas>
+      </div>
+      <div class="chart-card">
+        <h3><i class="fa-solid fa-person-falling-burst"></i> Displacement Impact</h3>
+        <canvas id="severityChart"></canvas>
+      </div>
     </div>
+  </main>
 
-    <script>
-        Papa.parse("data/FloodArchive.csv", {
-            download: true,
-            header: true,
-            dynamicTyping: true,
-            complete: function(results) {
-                const data = results.data.filter(row => row.Country); // Remove empty rows
-                processData(data);
+  <footer>
+    <div style="font-weight: 800; color: white; margin-bottom: 1rem; font-size: 1rem; letter-spacing: 0.1em;">NBR SENTINEL</div>
+    <p>&copy; 2026 Civic Literacy Initiative (CLI) Data Initiative</p>
+  </footer>
+
+  <script>
+    // Global Chart Defaults
+    Chart.defaults.color = '#64748b';
+    Chart.defaults.font.family = "'Inter', sans-serif";
+    Chart.defaults.font.weight = '500';
+
+    Papa.parse("data/FloodArchive.csv", {
+      download: true,
+      header: true,
+      dynamicTyping: true,
+      complete: function(results) {
+        const data = results.data.filter(row => row.Country);
+        updateSummary(data);
+        processData(data);
+      }
+    });
+
+    function updateSummary(data) {
+      const totalRecords = data.length;
+      const countries = new Set(data.map(row => row.Country)).size;
+      const displaced = data.reduce((acc, row) => acc + (parseInt(row.Displaced) || 0), 0);
+      
+      document.getElementById('total-records').textContent = totalRecords.toLocaleString();
+      document.getElementById('total-countries').textContent = countries;
+      document.getElementById('total-displaced').textContent = (displaced / 1000000).toFixed(1) + 'M';
+    }
+
+    function processData(data) {
+      // 1. Country Counts
+      const countries = {};
+      data.forEach(row => countries[row.Country] = (countries[row.Country] || 0) + 1);
+      const sortedCountries = Object.entries(countries).sort((a,b) => b[1] - a[1]).slice(0, 15);
+      createBarChart('countryChart', sortedCountries.map(x => x[0]), sortedCountries.map(x => x[1]), 'Events', '#c5a059');
+
+      // 2. Events per Year
+      const years = {};
+      data.forEach(row => {
+        if (row.Began) {
+          const year = new Date(row.Began).getFullYear();
+          if (!isNaN(year)) years[year] = (years[year] || 0) + 1;
+        }
+      });
+      const sortedYears = Object.entries(years).sort((a,b) => a[0] - b[0]);
+      createLineChart('yearChart', sortedYears.map(x => x[0]), sortedYears.map(x => x[1]), 'Annual Events', '#ef4444');
+
+      // 3. Events by Cause
+      const causes = {};
+      data.forEach(row => {
+        const cause = row.MainCause || "Unknown";
+        causes[cause] = (causes[cause] || 0) + 1;
+      });
+      const topCauses = Object.entries(causes).sort((a,b) => b[1] - a[1]).slice(0, 8);
+      createBarChart('categoryChart', topCauses.map(x => x[0]), topCauses.map(x => x[1]), 'Total Records', '#10b981', true);
+
+      // 4. Displaced by Severity
+      const severityImpact = {};
+      data.forEach(row => {
+        const sev = row.Severity || 1;
+        const displaced = parseInt(row.Displaced) || 0;
+        severityImpact[sev] = (severityImpact[sev] || 0) + displaced;
+      });
+      const sortedSeverity = Object.entries(severityImpact).sort((a,b) => a[0] - b[0]);
+      createBarChart('severityChart', sortedSeverity.map(x => "Level " + x[0]), sortedSeverity.map(x => x[1]), 'People Displaced', '#3b82f6');
+    }
+
+    function createBarChart(id, labels, data, label, color, horizontal = false) {
+      new Chart(document.getElementById(id), {
+        type: 'bar',
+        data: {
+          labels: labels,
+          datasets: [{ 
+            label: label, 
+            data: data, 
+            backgroundColor: color,
+            borderRadius: 8,
+            borderSkipped: false
+          }]
+        },
+        options: { 
+          indexAxis: horizontal ? 'y' : 'x',
+          responsive: true, 
+          plugins: { 
+            legend: { display: false },
+            tooltip: {
+              backgroundColor: '#0f172a',
+              padding: 12,
+              titleFont: { size: 14, weight: 'bold' }
             }
-        });
-
-        function processData(data) {
-            // 1. Country Counts (Top 20)
-            const countries = {};
-            data.forEach(row => countries[row.Country] = (countries[row.Country] || 0) + 1);
-            const sortedCountries = Object.entries(countries).sort((a,b) => b[1] - a[1]).slice(0, 20);
-            createBarChart('countryChart', sortedCountries.map(x => x[0]), sortedCountries.map(x => x[1]), 'Flood Events', '#4285f4');
-
-            // 2. Events per Year
-            const years = {};
-            data.forEach(row => {
-                if (row.Began) {
-                    const year = new Date(row.Began).getFullYear();
-                    if (!isNaN(year)) years[year] = (years[year] || 0) + 1;
-                }
-            });
-            const sortedYears = Object.entries(years).sort((a,b) => a[0] - b[0]);
-            createLineChart('yearChart', sortedYears.map(x => x[0]), sortedYears.map(x => x[1]), 'Annual Events', '#ea4335');
-
-            // 3. Events by Cause
-            const causes = {};
-            data.forEach(row => {
-                const cause = row.MainCause || "Unknown";
-                causes[cause] = (causes[cause] || 0) + 1;
-            });
-            const topCauses = Object.entries(causes).sort((a,b) => b[1] - a[1]).slice(0, 10);
-            createBarChart('categoryChart', topCauses.map(x => x[0]), topCauses.map(x => x[1]), 'Events by Cause', '#fbbc05');
-
-            // 4. Displaced by Severity
-            const severityImpact = {};
-            data.forEach(row => {
-                const sev = row.Severity || 1;
-                const displaced = parseInt(row.Displaced) || 0;
-                severityImpact[sev] = (severityImpact[sev] || 0) + displaced;
-            });
-            const sortedSeverity = Object.entries(severityImpact).sort((a,b) => a[0] - b[0]);
-            createBarChart('severityChart', sortedSeverity.map(x => "Level " + x[0]), sortedSeverity.map(x => x[1]), 'Total People Displaced', '#34a853');
+          },
+          scales: {
+            x: { grid: { display: false }, border: { display: false } },
+            y: { grid: { color: '#f1f5f9' }, border: { display: false } }
+          }
         }
+      });
+    }
 
-        function createBarChart(id, labels, data, label, color) {
-            new Chart(document.getElementById(id), {
-                type: 'bar',
-                data: {
-                    labels: labels,
-                    datasets: [{ label: label, data: data, backgroundColor: color }]
-                },
-                options: { responsive: true, plugins: { legend: { display: false } } }
-            });
+    function createLineChart(id, labels, data, label, color) {
+      new Chart(document.getElementById(id), {
+        type: 'line',
+        data: {
+          labels: labels,
+          datasets: [{ 
+            label: label, 
+            data: data, 
+            borderColor: color, 
+            backgroundColor: 'rgba(239, 68, 68, 0.05)',
+            fill: true, 
+            tension: 0.4,
+            pointRadius: 0,
+            pointHoverRadius: 6,
+            borderWidth: 3
+          }]
+        },
+        options: { 
+          responsive: true,
+          plugins: { 
+            legend: { display: false },
+            tooltip: {
+              backgroundColor: '#0f172a',
+              padding: 12
+            }
+          },
+          scales: {
+            x: { grid: { display: false }, border: { display: false } },
+            y: { grid: { color: '#f1f5f9' }, border: { display: false } }
+          }
         }
-
-        function createLineChart(id, labels, data, label, color) {
-            new Chart(document.getElementById(id), {
-                type: 'line',
-                data: {
-                    labels: labels,
-                    datasets: [{ label: label, data: data, borderColor: color, fill: false, tension: 0.1 }]
-                },
-                options: { responsive: true }
-            });
-        }
-    </script>
+      });
+    }
+  </script>
 </body>
 </html>

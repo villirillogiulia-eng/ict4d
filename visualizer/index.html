@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gambia Sentinel Ingest | CLI Data Portal</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -25,8 +27,54 @@
       background: var(--bg-primary);
       color: var(--text-primary);
       min-height: 100vh;
+      overflow: hidden;
     }
-    .container { display: flex; height: 100vh; }
+
+    /* Professional Navigation */
+    nav {
+      background: rgba(15, 23, 42, 0.98);
+      backdrop-filter: blur(10px);
+      padding: 0.8rem 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      color: white;
+      font-weight: 800;
+      font-size: 1.1rem;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      letter-spacing: -0.01em;
+    }
+
+    .nav-logo i { color: var(--accent); }
+
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+    }
+
+    .nav-links a {
+      color: #94a3b8;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.85rem;
+      transition: color 0.3s;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .nav-links a:hover { color: var(--accent); }
+
+    .container { display: flex; height: calc(100vh - 60px); }
     .sidebar { width: 380px; background: var(--bg-secondary); border-right: 1px solid var(--border); display: flex; flex-direction: column; overflow: hidden; }
     .sidebar-header { padding: 20px; border-bottom: 1px solid var(--border); }
     .sidebar-header h1 { font-size: 1.5rem; font-weight: 600; margin-bottom: 4px; color: var(--accent); }
@@ -49,6 +97,16 @@
   </style>
 </head>
 <body>
+  <nav>
+    <a href="../index.html" class="nav-logo"><i class="fa-solid fa-shield-halved"></i> NBR SENTINEL</a>
+    <div class="nav-links">
+      <a href="../project_description.html">Overview</a>
+      <a href="../risk_dashboard.html">Mission Map</a>
+      <a href="../charts.html">Intelligence</a>
+      <a href="index.html" style="color: var(--accent);">CSV Ingest</a>
+    </div>
+  </nav>
+
   <div class="container">
     <aside class="sidebar">
       <div class="sidebar-header">

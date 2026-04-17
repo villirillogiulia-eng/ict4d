@@ -44,7 +44,7 @@
 
     .container {
       display: flex;
-      height: 100vh;
+      height: calc(100vh - 60px);
     }
 
     /* Sidebar Styles */
@@ -376,6 +376,18 @@
 </head>
 <body>
 
+  <nav style="background: rgba(15, 23, 42, 0.98); backdrop-filter: blur(10px); padding: 0.8rem 2.5rem; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid var(--border);">
+    <a href="index.html" class="nav-logo" style="color: white; font-weight: 800; font-size: 1.1rem; text-decoration: none; display: flex; align-items: center; gap: 12px; letter-spacing: -0.01em;">
+      <i class="fa-solid fa-shield-halved" style="color: var(--accent);"></i> NBR SENTINEL
+    </a>
+    <div class="nav-links" style="display: flex; gap: 2.2rem;">
+      <a href="project_description.html" style="color: #94a3b8; text-decoration: none; font-weight: 500; font-size: 0.85rem; transition: color 0.3s; text-transform: uppercase; letter-spacing: 0.05em;">Overview</a>
+      <a href="risk_dashboard.html" style="color: var(--accent); text-decoration: none; font-weight: 500; font-size: 0.85rem; transition: color 0.3s; text-transform: uppercase; letter-spacing: 0.05em;">Mission Map</a>
+      <a href="charts.html" style="color: #94a3b8; text-decoration: none; font-weight: 500; font-size: 0.85rem; transition: color 0.3s; text-transform: uppercase; letter-spacing: 0.05em;">Intelligence</a>
+      <a href="visualizer/index.html" style="color: #94a3b8; text-decoration: none; font-weight: 500; font-size: 0.85rem; transition: color 0.3s; text-transform: uppercase; letter-spacing: 0.05em;">CSV Ingest</a>
+    </div>
+  </nav>
+
   <div id="loader">
     <div class="loader-spin"></div>
     <p style="margin-top: 20px; font-weight: 600; letter-spacing: 1px; color: var(--text-secondary);">SYNCING RISK DATA...</p>
@@ -390,6 +402,13 @@
       
       <div class="sidebar-content">
         
+        <!-- Search Section -->
+        <div class="section-title"><i class="fa-solid fa-magnifying-glass"></i> Quick Discovery</div>
+        <div class="filter-group" style="position: relative;">
+          <input type="text" id="facility-search" class="select-input" placeholder="Search Health Facility..." style="cursor: text;">
+          <div id="search-results" style="position: absolute; top: 100%; left: 0; right: 0; background: var(--bg-tertiary); border: 1px solid var(--border); border-radius: 8px; z-index: 1002; display: none; max-height: 200px; overflow-y: auto; box-shadow: 0 4px 12px rgba(0,0,0,0.5);"></div>
+        </div>
+
         <!-- Stats Section -->
         <div class="section-title"><i class="fa-solid fa-chart-simple"></i> Region Overview</div>
         <div class="stats-grid">
@@ -476,6 +495,14 @@
           </div>
         </div>
 
+        <div class="card" style="margin-top: 24px; border-color: var(--brand-success); background: rgba(34, 197, 94, 0.05);">
+          <div style="font-size: 0.75rem; font-weight: 800; color: var(--success); text-transform: uppercase; margin-bottom: 8px;">Field Operations</div>
+          <button id="report-btn" class="btn" style="width: 100%; background: var(--success); color: var(--bg-primary); border: none; padding: 12px; border-radius: 8px; display: flex; align-items: center; justify-content: center; gap: 8px; font-weight: 700; cursor: pointer;">
+            <i class="fa-solid fa-location-arrow"></i> Report Observation
+          </button>
+          <p style="font-size: 0.7rem; color: var(--text-secondary); margin-top: 8px; text-align: center;">Syncs instantly with Mission Control</p>
+        </div>
+
         <a href="charts.html" class="btn" style="width: 100%; text-decoration: none; justify-content: center; background: var(--bg-tertiary); color: var(--text-primary); border: 1px solid var(--border); padding: 12px; border-radius: 8px; display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: 0.875rem; margin-top: 10px;">
           <i class="fa-solid fa-chart-line"></i> View Analytics Dashboard
         </a>
@@ -505,7 +532,13 @@
     
     // Initialize Map
     function initMap() {
-      map = L.map('map', { zoomControl: false }).setView([13.44, -15.45], 8);
+      const urlParams = new URLSearchParams(window.location.search);
+      const lat = parseFloat(urlParams.get('lat'));
+      const lon = parseFloat(urlParams.get('lon'));
+      const initialView = (lat && lon) ? [lat, lon] : [13.44, -15.45];
+      const initialZoom = (lat && lon) ? 12 : 8;
+
+      map = L.map('map', { zoomControl: false }).setView(initialView, initialZoom);
       
       // Dark themed basemap from Carto
       L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
@@ -518,6 +551,22 @@
       healthLayer = L.layerGroup().addTo(map);
       droughtLayer = L.layerGroup();
       liveLayer = L.layerGroup().addTo(map);
+
+      if (lat && lon) {
+        L.circleMarker([lat, lon], {
+          radius: 20,
+          color: 'var(--accent)',
+          fillOpacity: 0,
+          weight: 2
+        }).addTo(map).fadeOut = function() {
+          let op = 1;
+          const timer = setInterval(() => {
+            if (op <= 0.1) { clearInterval(timer); map.removeLayer(this); }
+            this.setStyle({ opacity: op });
+            op -= 0.1;
+          }, 200);
+        };
+      }
     }
 
     // Load Data
@@ -606,8 +655,14 @@
             weight: 2,
             fillOpacity: 0.5
           });
+        },
+        onEachFeature: (f, layer) => {
+          layer.bindPopup(createPopup('Drought Projection', f.properties.village || 'Area Cluster', [
+            ['Risk Level', f.properties.risk_level || 'Moderate'],
+            ['Timeline', f.properties.projection_date || 'Winter 2026']
+          ]));
         }
-      });
+      }).addTo(droughtLayer);
     }
 
     // Helper: Create Styled Popup
@@ -713,6 +768,75 @@
       });
       document.getElementById('radar-play').addEventListener('click', () => {
         if (radarInterval) stopRadar(); else startRadar();
+      });
+
+      document.getElementById('report-btn').addEventListener('click', () => {
+        alert("Observation Sent! Field data has been queued for validation by CLI Mission Control.");
+      });
+
+      // Search Logic
+      const searchInput = document.getElementById('facility-search');
+      const searchResults = document.getElementById('search-results');
+
+      searchInput.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase();
+        if (query.length < 2) { searchResults.style.display = 'none'; return; }
+
+        const matches = allHealthData.features.filter(f => 
+          (f.properties.name || '').toLowerCase().includes(query)
+        ).slice(0, 5);
+
+        if (matches.length > 0) {
+          searchResults.innerHTML = matches.map(m => `
+            <div class="search-item" style="padding: 10px 12px; cursor: pointer; border-bottom: 1px solid var(--border); font-size: 0.85rem;" 
+                 onclick="jumpToFacility(${m.geometry.coordinates[1]}, ${m.geometry.coordinates[0]}, '${m.properties.name || 'Unnamed Clinic'}')">
+              <i class="fa-solid fa-hospital-user" style="color: var(--accent); margin-right: 8px;"></i>
+              ${m.properties.name || 'Unnamed Clinic'}
+            </div>
+          `).join('');
+          searchResults.style.display = 'block';
+        } else {
+          searchResults.style.display = 'none';
+        }
+      });
+
+      window.jumpToFacility = (lat, lon, name) => {
+        map.setView([lat, lon], 15);
+        L.popup()
+          .setLatLng([lat, lon])
+          .setContent(`<div style="padding:10px; font-family:sans-serif;"><b>${name}</b><br>Mission Map Focus</div>`)
+          .openOn(map);
+        searchResults.style.display = 'none';
+        searchInput.value = name;
+      };
+
+      // Region Filter Logic
+      document.getElementById('region-filter').addEventListener('change', async (e) => {
+        const region = e.target.value;
+        const file = region === 'nbr' ? 'data/nbr_health_facilities.geojson' : 'data/health_facilities_with_risk.geojson';
+        
+        try {
+          const response = await fetch(file);
+          const data = await response.json();
+          allHealthData = data;
+          
+          // Re-apply type filter if necessary
+          const type = document.getElementById('type-filter').value;
+          const filtered = type === 'all' 
+            ? allHealthData 
+            : { ...allHealthData, features: allHealthData.features.filter(f => f.properties.amenity === type) };
+          
+          renderHealth(filtered);
+          updateStats();
+          
+          // Fit bounds to new data
+          if (allHealthData.features.length > 0) {
+            const bounds = L.geoJSON(allHealthData).getBounds();
+            map.fitBounds(bounds, { padding: [50, 50] });
+          }
+        } catch (err) {
+          console.error("Error filtering region:", err);
+        }
       });
 
       // Filter Logic (Simple implementation)
